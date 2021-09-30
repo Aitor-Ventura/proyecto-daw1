@@ -6,14 +6,20 @@
     </head>
     <body>
         <header class="flex flex-col items-center justify-center pt-10">
-            <form class="w-full px-20">
-                <input type="text" class="py-2 w-full bg-gray-200 rounded-lg text-center" placeholder="Search for a product or a category">
-            </form>
+            <div class="w-full flex flex-row justify-around">
+                <form>
+                    <input type="text" class="py-2 w-full bg-gray-200 rounded-lg text-center" placeholder="Search for a product or a category">
+                </form>
+                <div class="flex-row flex">
+                    <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg>
+                    <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+                </div>
+            </div>
             <figure class="pb-5">
-                <img src="#" alt="Logo from Figustore" class="h-20 w-20">                
+                <img src="logo.png" alt="Logo from Figustore" class="h-20 w-20">
             </figure>
         </header>
-        <nav class="pt-3 pb-3 px-30 lg:px-60 w-full bg-gray-200 justify-around flex flex-row px-5 underline text-blue-400 items-center">
+        <nav class="pt-3 pb-3 px-30 lg:px-30 w-full bg-gray-200 justify-around flex flex-row px-5 underline text-blue-400 items-center">
             <a href="category.html" class="mx-5">Disney</a>
             <a href="category.html" class="mx-5">Anime and manga</a>
             <a href="category.html" class="mx-5">Videogames</a>
@@ -31,25 +37,62 @@
                 <a href="#"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum incidunt expedita fugiat totam molestias impedit dolorum consequatur aut, nostrum, dolore doloremque assumenda consectetur excepturi quo, dolorem velit ducimus accusantium deleniti.</p></a>
             </div>
         </div>
-        <div class="w-full flex flex-row items-center pt-10">
-            <div class="lg:w-1/6 w-2/6 sm:w-full">
-                <h1 class="font-bold text-xl flex flex-wrap flex-row">Best selling products</h1>
-                <a href="#">Marvel Comics</a><br>
-                <a href="#">Anime and Manga</a><br>
-                <a href="#">Videogames</a><br>
-                <a href="#">DC Comics</a><br>
-                <a href="#">Disney</a>
+        <div class="flex flex-row items-center pt-10 justify-around flex-wrap">
+            <div class="flex flex-col w-1/6 h-auto items-start flex-wrap">
+                <h1 class="font-bold text-xl mb-4">Best selling products</h1>
+                <a href="category.html" class="text-purple-500 underline">Marvel Comics</a>
+                <a href="category.html" class="text-purple-500 mt-1 underline">Anime and Manga</a>
+                <a href="category.html" class="text-purple-500 mt-1 underline">Videogames</a>
+                <a href="category.html" class="text-purple-500 mt-1 underline">DC Comics</a>
+                <a href="category.html" class="text-purple-500 mt-1 underline">Disney</a>
             </div>
-            <div class="lg:w-5/6 w-4\/6 flex flex-row flex-wrap h-full px-20 justify-center">
+            <div class="w-4/6 flex flex-row flex-wrap h-full px-20 justify-center">
                 <div class="flex flexrow justify-around">
-                    <div class="w-1/3 border-2 rounded-md border-grey-200 flex flex-col px-14 py-14 justify-center items-center mx-5">Producto 1</div>
-                    <div class="w-1/3 border-2 rounded-md border-grey-200 flex flex-col px-14 py-14 justify-center items-center mx-5">Producto 2</div>
-                    <div class="w-1/3 border-2 rounded-md border-grey-200 flex flex-col px-14 py-14 justify-center items-center mx-5">Producto 3</div>
+                    <div class="w-1/3 border-2 rounded-md border-grey-200 flex flex-col px-14 py-14 justify-center items-center mx-5"><a href="product.html">Producto 1</a></div>
+                    <div class="w-1/3 border-2 rounded-md border-grey-200 flex flex-col px-14 py-14 justify-center items-center mx-5"><a href="product.html">Producto 2</a></div>
+                    <div class="w-1/3 border-2 rounded-md border-grey-200 flex flex-col px-14 py-14 justify-center items-center mx-5"><a href="product.html" class="h-full w-full">Producto 3</a></div>
                 </div>
             </div>
         </div>
-        <footer>
-            
+        <div class="justify-around flex flex-row pt-20">
+            <div class="w-1/5 h-auto">
+                <span class="font-bold">Get in touch</span>
+                <div id="links" class="flex flex-col justify-center">
+                    <a href="#" class="text-purple-500 mt-1.5">About Us</a>
+                    <a href="#" class="text-purple-500 mt-2">Careers</a>
+                </div>
+            </div>
+            <div class="w-1/5 h-auto">
+                <span class="font-bold">Connections</span>
+                <div id="links" class="flex flex-col h-full">
+                    <a href="#" class="text-purple-500 mt-1.5">Facebook</a>
+                    <a href="#" class="text-purple-500 mt-2">Twitter</a>
+                    <a href="#" class="text-purple-500 mt-2">Instagram</a>
+                    <a href="#" class="text-purple-500 mt-2">Youtube</a>
+                    <a href="#" class="text-purple-500 mt-2">Linkedin</a>
+                </div>
+            </div>
+            <div class="w-1/5 h-auto">
+                <span class="font-bold">Earnings</span>
+                <div id="links" class="flex flex-col items-start">
+                    <a href="#" class="text-purple-500 mt-1.5">Become an Affiliate</a>
+                    <a href="#" class="text-purple-500 mt-2">Advertise your product</a>
+                    <a href="#" class="text-purple-500 mt-2">Sell on Market</a>
+                </div>
+            </div>
+            <div class="w-1/5 h-auto">
+                <span class="font-bold">Account</span>
+                <div id="links" class="flex flex-col items-start">
+                    <a href="#" class="text-purple-500 mt-1.5">Your account</a>
+                    <a href="#" class="text-purple-500 mt-2">Returns Centre</a>
+                    <a href="#" class="text-purple-500 mt-2">100% purchase protection</a>
+                    <a href="#" class="text-purple-500 mt-2">Contact us</a>
+                    <a href="#" class="text-purple-500 mt-2">Help</a>
+                </div>
+            </div>
+        </div>
+        <footer class="pt-20 pl-10 pb-10">
+            <p>Copyright © 2021 figustore.com</p>
         </footer>
     </body>
 </html>
