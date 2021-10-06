@@ -1,0 +1,104 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Figustore - Checkout</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $(".header").load("header.html")
+                $(".footer").load("footer.html")
+            })
+        </script>
+    </head>
+    <body>
+        <div class="header"></div>
+        <div class="px-8 pt-4">
+            <div class="text-sm text-gray-400">
+                <p><a href=".">Homepage</a> / <a href="#" class="text-black">Checkout page</a></p>
+            </div>
+            <div class="w-full flex flex-row sm:flex-col">
+                <div class="w-1/2 flex flex-col">
+                    <div class="mt-5 flex flex-col">
+                        <form action="post" class="flex flex-col">
+                            <div class="flex flex-row">
+                                <div class="flex flex-col mr-2.5">
+                                    <div class="flex flex-col">
+                                        <p>First name</p>
+                                        <input type="text" name="firstname" placeholder="First name" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p>Email address</p>
+                                        <input type="text" name="email" placeholder="Email address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p>Address</p>
+                                        <input type="text" name="address" placeholder="Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p>State / Country</p>
+                                        <input type="text" name="country" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        <datalist id="countryList">
+                                            <option value="Country 1"></option>
+                                            <option value="Country 2"></option>
+                                            <option value="Country 3"></option>
+                                            <option value="Country 4"></option>
+                                        </datalist>
+                                    </div>
+                                    <div class="flex items-center bg-gray-200 border-gray-300 border-2 rounded-md my-5 py-2 justify-center">
+                                        <input type="checkbox" class="ml-3" onchange="if(this.checked) {document.getElementById('newAddressCheckout').style.display=''} else {document.getElementById('newAddressCheckout').style.display='none'}">
+                                        <p class="mx-5">Ship to a different address?</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col ml-2.5">
+                                    <div class="flex flex-col">
+                                        <p>Last name</p>
+                                        <input type="text" placeholder="Last name" name="lastname" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p>Phone number</p>
+                                        <input type="text" placeholder="Phone number" name="number" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p>Town / City</p>
+                                        <input type="text" placeholder="Town or city" name="city" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <p>ZIP / Postal code</p>
+                                        <input type="text" name="postcode" placeholder="ZIP / Postal code" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col" id="newAddressCheckout" style="display: none;">
+                            <div>
+                                <p>New Address</p>
+                                <input type="text" name="newAddress" placeholder="New Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                            </div>
+                            <div>
+                                <p>State / Country</p>
+                                <input type="text" name="newState" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                            </div>
+                            <div>
+                                <p>Town or city</p>
+                                <input type="text" name="newTown" placeholder="Town or City" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                            </div>
+                            <div>
+                                <p>ZIP / Postal code</p>
+                                <input type="text" name="newPostcode" placeholder="ZIP / Postal code" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                            </div>
+                        </div>
+                        </form>
+                        
+                    </div>
+                    
+                </div>
+                <div class="w-1/2">
+                
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </body>
+    
+</html> 
