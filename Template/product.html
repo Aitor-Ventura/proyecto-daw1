@@ -1,12 +1,18 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Figustore</title>
+        <title>G2babies - Product</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     </head>
     <body>
-        <header></header>
-        <nav></nav>
-        
-        <footer></footer>
+        <div class="header"></div>
+        <div class="footer"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".header").load("header.html")
+                $(".footer").load("footer.html")
+            })
+        </script>
     </body>
 </html>
