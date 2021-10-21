@@ -6,6 +6,52 @@
     </head>
     <body>
         <div class="header"></div>
+        <div class="flex flex-row">
+            <div class="flex flex-row justify-center w-2/5 py-20">
+                <img src="./Images/PixelArt_Aitor.png" alt="Logo perfil" class="rounded-full bg-gray-200">
+            </div>
+            <form class="flex flex-row w-3/5 py-28 ml-10 justify-items-center">
+                <div class="flex flex-col mr-5 justify-around">
+                    <label for="user_name" class="font-bold">
+                        User's name
+                    </label>
+                    <input type="text" name="name" placeholder="Name" id="user_name" class="rounded-md bg-gray-200 py-1 text-center" value="Aitor V.">
+                    <label for="user_email" class="font-bold"> 
+                        Email address
+                    </label>
+                    <input type="text" name="email" placeholder="Email address" id="user_email" class="rounded-md bg-gray-200 py-1 text-center" value="aventura@g2babies.com">
+                    <label for="user_address" class="font-bold">
+                        Address
+                    </label>
+                    <input type="text" name="address" placeholder="Address" id="user_address" class="rounded-md bg-gray-200 py-1 text-center" value="Edificio central de G2babies">
+                    <label for="user_country" class="font-bold">
+                        State / Country
+                    </label>
+                    <input type="text" name="country" list="countryList" placeholder="State / Country" id="user_country" class="rounded-md bg-gray-200 py-1 text-center" value="ESPAÑA">
+                    <datalist id="countryList">
+                        <option value="Country 1"></option>
+                        <option value="Country 2"></option>
+                        <option value="Country 3"></option>
+                        <option value="Country 4"></option>
+                    </datalist>
+                </div>
+                <div class="flex flex-col ml-5 justify-around">
+                    <label for="user_phone" class="font-bold">
+                        Phone number
+                    </label>
+                    <input type="text" name="phone" placeholder="Phone number" id="user_phone" class="rounded-md bg-gray-200 py-1 text-center" value="698217069">
+                    <label for="user_city" class="font-bold"> 
+                        Town / City
+                    </label>
+                    <input type="text" name="city" placeholder="Town / City" id="user_city" class="rounded-md bg-gray-200 py-1 text-center" value="Alcorcón">
+                    <label for="user_zip" class="font-bold">
+                        ZIP / Postal code
+                    </label>
+                    <input type="text" name="postcode" placeholder="ZIP / Postal code" id="user_zip" class="rounded-md bg-gray-200 py-1 text-center" value="28921">
+                    <input type="submit" value="Submit changes" class="text-white text-xl rounded-md py-0.5 bg-blue-600 cursor-pointer">
+                </div>
+            </form>
+        </div>
         <div class="footer"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
@@ -14,5 +60,6 @@
                 $(".footer").load("footer.html")
             })
         </script>
+        
     </body>
 </html>
