@@ -19,9 +19,8 @@
 
   max-width: 100%;
   margin: 0;
-  height: 114em; /* 1859px en figma -> 116em */
 
-  background: linear-gradient(to top, #dadada 98%, #f7f7f7 0);
+  background: linear-gradient(to top, #dadada 98%, rgba(0, 0, 0, 0) 0);
 }
 
 .article-card {
@@ -63,9 +62,14 @@
 }
 
 /*La primera carta va un poco mas arriba*/
-.article-card:first-child {
+.article-card:first-child,
+.article-card-inverted:first-child {
   margin: 0 0 1.25em 0;
-  background: white;
+}
+
+.article-card:last-child,
+.article-card-inverted:last-child {
+  margin: 1.25em 0 2.5em 0;
 }
 
 .contenedor-texto-card {
