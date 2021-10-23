@@ -1,0 +1,148 @@
+.contenedor-head {
+  padding: 0 0 10vh 0;
+  max-width: 100%;
+  margin: 0;
+  height: 70vh;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  font-size: 3rem;
+}
+
+.contenedor-cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  max-width: 100%;
+  margin: 0;
+  height: 114em; /* 1859px en figma -> 116em */
+
+  background: linear-gradient(to top, #dadada 98%, #f7f7f7 0);
+}
+
+.article-card {
+  height: 20.25em;
+  width: 95%;
+  background-color: white;
+  margin: 1.25em 0;
+
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  background: linear-gradient(
+    103deg,
+    rgba(255, 255, 255, 1) 38%,
+    rgba(168, 168, 168, 1) 70%,
+    rgba(99, 99, 99, 1) 100%
+  );
+
+  display: flex;
+  flex-direction: row;
+}
+
+.article-card-inverted {
+  height: 20.25em;
+  width: 95%;
+  background-color: white;
+  margin: 1.25em 0;
+
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  background: linear-gradient(
+    115deg,
+    rgba(99, 99, 99, 1) 0%,
+    rgba(168, 168, 168, 1) 24%,
+    rgba(255, 255, 255, 1) 54%
+  );
+
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/*La primera carta va un poco mas arriba*/
+.article-card:first-child {
+  margin: 0 0 1.25em 0;
+  background: white;
+}
+
+.contenedor-texto-card {
+  width: 50%;
+  padding-right: 5em;
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.5em;
+}
+
+.texto-card-titulo {
+  width: 80%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+}
+.texto-card-subtitulo {
+  width: 80%;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding-bottom: 0.4em;
+}
+.texto-card-cuerpo {
+  width: 80%;
+}
+
+.contenedor-texto-imagen {
+  width: 50%;
+  display: flex;
+}
+
+.fondo-blanco {
+  background-color: white;
+}
+
+.titulo-article {
+  font-size: 6.5rem;
+  font-weight: 500;
+  padding-top: 8vh;
+}
+
+.subtitulo-article {
+  font-size: 2rem;
+}
+
+.centro {
+  text-align: center;
+}
+
+/* ---- reset ---- */
+body {
+  margin: 0;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #f7f7f7; /* #dadada; */
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+}
+
+/* Chiquitin */
+@media only screen and (min-width: 1280px) {
+  .article-card {
+    width: 73em;
+  }
+
+  .article-card-inverted {
+    width: 73em;
+  }
+}
