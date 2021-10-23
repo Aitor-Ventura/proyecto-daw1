@@ -1,0 +1,73 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>G2babies - Creating user</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header"></div>
+
+        <!-- Breadcrumbs navigation -->
+        <div class="flex flex-row items-center mx-10 mt-5">
+            <a href="/index.html" class="text-sm text-gray-300 mr-1">Homepage</a>
+            <p class="text-sm text-gray-300 mr-1"> / </p>
+            <a href="/category.html" class="text-sm">Creating user</a>
+        </div>
+
+        <h1 class="text-4xl text-center font-bold mt-6">Fill the following fields</h1>
+
+        <!-- Registration form -->
+        <form class="grid grid-cols-2 gap-y-6 w-2/6 mt-10 mx-auto">
+            <div>
+                <label class="font-bold">User's name</label>
+                <input type="text" name="name" placeholder="Name" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>
+
+            <div>
+                <label class="font-bold">Phone number</label>
+                <input type="tel" name="phone" placeholder="Phone number" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>            
+
+            <div>
+                <label class="font-bold">Email address</label>
+                <input type="text" name="email" placeholder="Email address" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>
+            
+            <div>
+                <label class="font-bold">Town / City</label>
+                <input type="text" name="town" placeholder="Town or city" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>
+
+            <div>
+                <label class="font-bold">Password</label>
+                <input type="password" name="passwd" placeholder="Password" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>
+
+            <div>
+                <label class="font-bold">ZIP / Postal code</label>
+                <input type="text" name="zip" placeholder="Postal code or ZIP" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>
+
+            <div>
+                <label class="font-bold">Address</label>
+                <input type="text" name="address" placeholder="Address" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>
+
+            <div>
+                <label class="font-bold">State / Country</label>
+                <input type="text" name="state" placeholder="Choose a state or a country" class="rounded-md bg-gray-200 py-1 px-14 text-center block">
+            </div>
+
+            <input type="submit" value="Create" class="bg-indigo-600 text-white text-center border border-black border-opacity-30 rounded-lg py-1">
+        </form>
+        
+        <div class="footer"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".header").load("header.html")
+                $(".footer").load("footer.html")
+            })
+        </script>
+    </body>
+</html>
