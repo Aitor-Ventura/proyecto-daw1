@@ -150,3 +150,12 @@ body {
     width: 73em;
   }
 }
+
+/* Footer */
+
+.contenedor-footer {
+  padding-top: 20em;
+}
+
+.elemento-footer {
+}
