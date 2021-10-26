@@ -103,22 +103,10 @@
   display: flex;
 }
 
-.fondo-blanco {
-  background-color: white;
-}
-
 .titulo-article {
   font-size: 6.5rem;
   font-weight: 500;
   padding-top: 8vh;
-}
-
-.subtitulo-article {
-  font-size: 2rem;
-}
-
-.centro {
-  text-align: center;
 }
 
 /* ---- reset ---- */

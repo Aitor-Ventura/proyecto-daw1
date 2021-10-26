@@ -48,7 +48,7 @@
                                             </datalist>
                                         </div>
                                         <div class="flex items-center bg-gray-200 border-gray-300 border-2 rounded-md my-5 py-2 justify-center">
-                                            <input type="checkbox" class="ml-3" onchange="if(this.checked) {document.getElementById('newAddressCheckout').style.display=''} else {document.getElementById('newAddressCheckout').style.display='none'}">
+                                            <input type="checkbox" class="ml-3 cursor-pointer" onchange="if(this.checked) {document.getElementById('newAddressCheckout').style.display=''} else {document.getElementById('newAddressCheckout').style.display='none'}">
                                             <p class="mx-5">Ship to a different address?</p>
                                         </div>
                                     </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_fedex_shipment').checked='true'">
                             <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="shipment" id="checkout_fedex_shipment" value="fedex" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md">
+                                <input type="radio" name="shipment" id="checkout_fedex_shipment" value="fedex" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
                                 <span class="ml-5 font-bold">FedEx</span>
                                 <span class="ml-10 text-blue-600 font-bold"> +32 EUR</span>
                                 <span class="font-bold ml-5">Additional price</span>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_dhl_shipment').checked='true'">
                             <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="shipment" id="checkout_dhl_shipment" value="dhl" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md">
+                                <input type="radio" name="shipment" id="checkout_dhl_shipment" value="dhl" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
                                 <span class="ml-5 font-bold">DHL</span>
                                 <span class="ml-10 text-blue-600 font-bold"> +32 EUR</span>
                                 <span class="font-bold ml-5">Additional price</span>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_paypal_payment').checked='true'">
                             <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="payment" id="checkout_paypal_payment" value="paypal" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md">
+                                <input type="radio" name="payment" id="checkout_paypal_payment" value="paypal" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
                                 <span class="ml-5 font-bold">PayPal</span>
                             </div>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Logo PayPal" class="w-1/12 mr-3">
@@ -154,11 +154,11 @@
                         </div>
                         <div class="flex flex-col">
                             <div class="py-3 mt-5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
-                                <input type="checkbox" name="confirmation" value="marketing" id="checkout_confirmation_marketing" form="form-checkout" class="ml-3">
+                                <input type="checkbox" name="confirmation" value="marketing" id="checkout_confirmation_marketing" form="form-checkout" class="ml-3 cursor-pointer">
                                 <span class="ml-2.5">I agree with sending an Marketing and newsletter emails. No spam, promised!</span>
                             </div>
                             <div class="py-3 mt-2.5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
-                                <input type="checkbox" name="confirmation" value="policy" id="checkout_confirmation_policy" form="form-checkout" class="ml-3">
+                                <input type="checkbox" name="confirmation" value="policy" id="checkout_confirmation_policy" form="form-checkout" class="ml-3 cursor-pointer">
                                 <span class="ml-2.5">I agree with our <a href="article.html" class="underline">terms and conditions</a> and <a href="article.html" class="underline">privacy policy</a>.</span>
                             </div>
                         </div>
@@ -208,7 +208,7 @@
                         </div>
                         <div class="w-1/4 flex flex-col justify-between ml-5">
                             <div></div>
-                            <div><select name="units_product_1" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300" form="form-checkout">
+                            <div><select name="units_product_1" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
                                 <option value="1">x1 Uds</option>
                                 <option value="2">x2 Uds</option>
                                 <option value="3">x3 Uds</option>
@@ -227,7 +227,7 @@
                         <div class="w-1/4 flex flex-col justify-between">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" alt="Product image">
                             <div>
-                                <div class="flex flex-row">
+                                <div class="flex flex-row cursor-pointer">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
                                     <span class="text-gray-400 ml-2.5">Wishlist</span>
                                 </div>
@@ -257,7 +257,7 @@
                         </div>
                         <div class="w-1/4 flex flex-col justify-between ml-5">
                             <div></div>
-                            <div><select name="units_product_2" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300" form="form-checkout">
+                            <div><select name="units_product_2" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
                                 <option value="1">x1 Uds</option>
                                 <option value="2">x2 Uds</option>
                                 <option value="3">x3 Uds</option>
@@ -288,7 +288,7 @@
                     <div class="mt-5 w-full">
                         <form action="post" class="flex flex-row">
                             <input type="text" placeholder="Apply promo code" class="placeholder-gray-400 pl-5 w-3/4 border-t-2 border-l-2 border-b-2 border-gray-300 bg-gray-200 rounded-l-md">
-                            <input type="submit" value="Apply now" class="font-bold border-t-2 border-b-2 border-r-2 border-gray-300 bg-gray-200 rounded-r-md pr-5">
+                            <input type="submit" value="Apply now" class="font-bold border-t-2 border-b-2 border-r-2 border-gray-300 bg-gray-200 rounded-r-md pr-5 cursor-pointer">
                         </form>
                     </div>
                     <div class="flex flex-row justify-between">
