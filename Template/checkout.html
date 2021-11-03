@@ -11,304 +11,307 @@
             <div class="text-sm text-gray-400">
                 <p><a href=".">Homepage</a> / <a href="#" class="text-black">Checkout page</a></p>
             </div>
-            <div class="w-full flex flex-row">
-                <div class="flex flex-col w-full mr-5 mt-5">
-                    <!-- Step 1 -->
-                    <div>
+            <div class="md:mx-auto mx-5">
+                <div class="w-full flex flex-col md:flex-row">
+                    <div class="flex flex-col w-full md:mr-5 mt-5">
+                        <!-- Step 1 -->
                         <div>
-                            <h3 class="text-xl font-bold">Billing info</h3>
+                            <div>
+                                <h3 class="text-xl font-bold">Billing info</h3>
+                                <div class="flex flex-row justify-between">
+                                    <h4 class="text-sm text-gray-400">Please enter your billing info</h4>
+                                    <h4 class="text-sm text-gray-400">Step 1 of 5</h4>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <form action="post" class="flex flex-col" id="form-checkout">
+                                    <div class="flex flex-row">
+                                        <div class="flex flex-col w-1/2">
+                                            <div class="flex flex-col">
+                                                <p>First name</p>
+                                                <input type="text" name="firstname" placeholder="First name" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p>Email address</p>
+                                                <input type="text" name="email" placeholder="Email address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p>Address</p>
+                                                <input type="text" name="address" placeholder="Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p>State / Country</p>
+                                                <input type="text" name="country" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                                <datalist id="countryList">
+                                                    <option value="Country 1"></option>
+                                                    <option value="Country 2"></option>
+                                                    <option value="Country 3"></option>
+                                                    <option value="Country 4"></option>
+                                                </datalist>
+                                            </div>
+                                            <div class="flex items-center bg-gray-200 border-gray-300 border-2 rounded-md my-5 py-2 justify-center">
+                                                <input type="checkbox" class="ml-3 cursor-pointer" onchange="if(this.checked) {document.getElementById('newAddressCheckout').style.display=''} else {document.getElementById('newAddressCheckout').style.display='none'}">
+                                                <p class="mx-5">Ship to a different address?</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col mx-2.5 w-1/2">
+                                            <div class="flex flex-col">
+                                                <p>Last name</p>
+                                                <input type="text" placeholder="Last name" name="lastname" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p>Phone number</p>
+                                                <input type="text" placeholder="Phone number" name="number" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p>Town / City</p>
+                                                <input type="text" placeholder="Town or city" name="city" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p>ZIP / Postal code</p>
+                                                <input type="text" name="postcode" placeholder="ZIP / Postal code" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col mr-5" id="newAddressCheckout" style="display: none;">
+                                        <div class="w-full">
+                                            <p>New Address</p>
+                                            <input type="text" name="newAddress" placeholder="New Address" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        </div>
+                                        <div class="w-full">
+                                            <p>State / Country</p>
+                                            <input type="text" name="newState" list="countryList" placeholder="Choose a state or a country" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        </div>
+                                        <div class="w-full">
+                                            <p>Town or city</p>
+                                            <input type="text" name="newTown" placeholder="Town or City" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        </div>
+                                        <div class="w-full">
+                                            <p>ZIP / Postal code</p>
+                                            <input type="text" name="newPostcode" placeholder="ZIP / Postal code" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>   
+                        <!-- Step 2 -->
+                        <div class="md:mr-5 mt-5">
+                            <h3 class="text-xl font-bold">Billing method</h3>
                             <div class="flex flex-row justify-between">
-                                <h4 class="text-sm text-gray-400">Please enter your billing info</h4>
-                                <h4 class="text-sm text-gray-400">Step 1 of 5</h4>
+                                <h4 class="text-sm text-gray-400">Please enter your shipment method</h4>
+                                <h4 class="text-sm text-gray-400">Step 2 of 5</h4>
+                            </div>
+                            <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_fedex_shipment').checked='true'">
+                                <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
+                                    <input type="radio" name="shipment" id="checkout_fedex_shipment" value="fedex" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
+                                    <span class="ml-5 font-bold w-1/6 md:w-auto">FedEx</span>
+                                    <span class="ml-10 text-blue-600 font-bold w-1/6 md:w-auto"> +32 EUR</span>
+                                    <span class="font-bold ml-5 w-1/6 md:w-auto">Additional price</span>
+                                </div>
+                                <img src="https://logos-marcas.com/wp-content/uploads/2020/04/FedEx-Logo-650x366.png" alt="Logo fedex" class="w-1/12 mr-3">
+                            </div>
+                            <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_dhl_shipment').checked='true'">
+                                <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
+                                    <input type="radio" name="shipment" id="checkout_dhl_shipment" value="dhl" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
+                                    <span class="ml-5 font-bold w-1/6 md:w-auto">DHL</span>
+                                    <span class="ml-10 text-blue-600 font-bold w-1/6 md:w-auto"> +32 EUR</span>
+                                    <span class="font-bold ml-5 w-1/6 md:w-auto">Additional price</span>
+                                </div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/DHL_Logo.svg/2560px-DHL_Logo.svg.png" alt="Logo DHL" class="w-1/5">
                             </div>
                         </div>
-                        <div class="flex flex-col">
-                            <form action="post" class="flex flex-col" id="form-checkout">
-                                <div class="flex flex-row">
-                                    <div class="flex flex-col w-1/2">
-                                        <div class="flex flex-col">
-                                            <p>First name</p>
-                                            <input type="text" name="firstname" placeholder="First name" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <p>Email address</p>
-                                            <input type="text" name="email" placeholder="Email address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <p>Address</p>
-                                            <input type="text" name="address" placeholder="Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <p>State / Country</p>
-                                            <input type="text" name="country" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                            <datalist id="countryList">
-                                                <option value="Country 1"></option>
-                                                <option value="Country 2"></option>
-                                                <option value="Country 3"></option>
-                                                <option value="Country 4"></option>
-                                            </datalist>
-                                        </div>
-                                        <div class="flex items-center bg-gray-200 border-gray-300 border-2 rounded-md my-5 py-2 justify-center">
-                                            <input type="checkbox" class="ml-3 cursor-pointer" onchange="if(this.checked) {document.getElementById('newAddressCheckout').style.display=''} else {document.getElementById('newAddressCheckout').style.display='none'}">
-                                            <p class="mx-5">Ship to a different address?</p>
-                                        </div>
+                        <!-- Step 3 -->
+                        <div class="md:mr-5 mt-5">
+                            <h3 class="text-xl font-bold">Payment method</h3>
+                            <div class="flex flex-row justify-between">
+                                <h4 class="text-sm text-gray-400">Please enter your payment method</h4>
+                                <h4 class="text-sm text-gray-400">Step 3 of 5</h4>
+                            </div>
+                            <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_paypal_payment').checked='true'">
+                                <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
+                                    <input type="radio" name="payment" id="checkout_paypal_payment" value="paypal" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
+                                    <span class="ml-5 font-bold">PayPal</span>
+                                </div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Logo PayPal" class="w-1/12 mr-3">
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="md:mr-5 mt-5">
+                            <h3 class="text-xl font-bold">Additional information</h3>
+                            <div class="flex flex-row justify-between">
+                                <h4 class="text-sm text-gray-400">Need something else? We will make it for you!</h4>
+                                <h4 class="text-sm text-gray-400">Step 4 of 5</h4>
+                            </div>
+                            <div class="mt-5 flex flex-col">
+                                <h3 class="font-bold">Order notes</h3>
+                                <textarea name="ordernotes" form="form-checkout" id="checkout_order_notes" cols="30" rows="7" class="bg-gray-200 border-2 border-gray-300 rounded-lg mt-2 px-4 py-1.5" placeholder="Need a specific delivery day? Sending a gift? Let’s say ..."></textarea>
+                            </div>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="md:mr-5 mt-5">
+                            <h3 class="text-xl font-bold">Confirmation</h3>
+                            <div class="flex flex-row justify-between">
+                                <h4 class="text-sm text-gray-400">We are getting to the end. Just few clicks and your order is ready!</h4>
+                                <h4 class="text-sm text-gray-400">Step 5 of 5</h4>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="py-3 mt-5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
+                                    <input type="checkbox" name="confirmation" value="marketing" id="checkout_confirmation_marketing" form="form-checkout" class="ml-3 cursor-pointer">
+                                    <span class="ml-2.5">I agree with sending an Marketing and newsletter emails. No spam, promised!</span>
+                                </div>
+                                <div class="py-3 mt-2.5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
+                                    <input type="checkbox" name="confirmation" value="policy" id="checkout_confirmation_policy" form="form-checkout" class="ml-3 cursor-pointer">
+                                    <span class="ml-2.5">I agree with our <a href="article.html" class="underline">terms and conditions</a> and <a href="article.html" class="underline">privacy policy</a>.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Order completion button -->
+                        <div>
+                            
+                        </div>
+                    </div>
+                    <!-- Order summary -->
+                    <div class="flex flex-col rounded-md border-2 border-gray-300 md:mt-0 mt-10 md:w-2/5 md:mr-0 px-2.5 py-5 h-full">
+                        <h3 class="font-bold text-2xl">Order summary</h3>
+                        <h4 class="text-sm text-gray-400">Price can change depending on shipping method and taxes of your state.</h4>
+                        <!-- Product -->
+                        <div class="flex flex-row mt-5 border-b-2 border-gray-300 pb-5" id="checkout_product_1">
+                            <div class="w-1/4 flex flex-col justify-between">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" alt="Product image">
+                                <div>
+                                    <div class="flex flex-row cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
+                                        <span class="text-gray-400 ml-2.5">Wishlist</span>
                                     </div>
-                                    <div class="flex flex-col mx-2.5 w-1/2">
-                                        <div class="flex flex-col">
-                                            <p>Last name</p>
-                                            <input type="text" placeholder="Last name" name="lastname" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <p>Phone number</p>
-                                            <input type="text" placeholder="Phone number" name="number" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <p>Town / City</p>
-                                            <input type="text" placeholder="Town or city" name="city" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <p>ZIP / Postal code</p>
-                                            <input type="text" name="postcode" placeholder="ZIP / Postal code" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                        </div>
+                                    <div class="flex flex-row mt-1 cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+                                        <span class="text-gray-400 ml-2.5" onclick="document.getElementById('checkout_product_1').remove()">Remove</span>
                                     </div>
                                 </div>
-                                <div class="flex flex-col mr-5" id="newAddressCheckout" style="display: none;">
-                                    <div class="w-full">
-                                        <p>New Address</p>
-                                        <input type="text" name="newAddress" placeholder="New Address" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                
+                            </div>
+                            <div class="w-2/4 flex flex-col justify-between ml-5">
+                                <div class="flex flex-col">
+                                    <h1 class="font-bold text-xl">Product title</h1>
+                                    <div class="flex flex-row justify-between">
+                                        <span class="text-gray-400">Company:</span>
+                                        <span>Rito Games</span>
                                     </div>
-                                    <div class="w-full">
-                                        <p>State / Country</p>
-                                        <input type="text" name="newState" list="countryList" placeholder="Choose a state or a country" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                    </div>
-                                    <div class="w-full">
-                                        <p>Town or city</p>
-                                        <input type="text" name="newTown" placeholder="Town or City" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                    </div>
-                                    <div class="w-full">
-                                        <p>ZIP / Postal code</p>
-                                        <input type="text" name="newPostcode" placeholder="ZIP / Postal code" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                    <div class="flex flex-row justify-between">
+                                        <span class="text-gray-400">Quality:</span>
+                                        <span>New</span>
                                     </div>
                                 </div>
+                                <div>
+                                    <p class="text-2xl text-blue-600 font-bold">36.99 EUR</p>
+                                    <p class="text-xl line-through text-gray-400">48.56 EUR</p>
+                                </div>
+                            </div>
+                            <div class="w-1/4 flex flex-col justify-between ml-5">
+                                <div></div>
+                                <div><select name="units_product_1" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
+                                    <option value="1">x1 Uds</option>
+                                    <option value="2">x2 Uds</option>
+                                    <option value="3">x3 Uds</option>
+                                    <option value="4">x4 Uds</option>
+                                    <option value="5">x5 Uds</option>
+                                    <option value="6">x6 Uds</option>
+                                    <option value="7">x7 Uds</option>
+                                    <option value="8">x8 Uds</option>
+                                    <option value="9">x9 Uds</option>
+                                    <option value="10">x10 Uds</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <!-- Product -->
+                        <div class="flex flex-row mt-5 border-b-2 border-gray-300 pb-5" id="checkout_product_2">
+                            <div class="w-1/4 flex flex-col justify-between">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" alt="Product image">
+                                <div>
+                                    <div class="flex flex-row cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
+                                        <span class="text-gray-400 ml-2.5">Wishlist</span>
+                                    </div>
+                                    <div class="flex flex-row mt-1 cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+                                        <span class="text-gray-400 ml-2.5" onclick="document.getElementById('checkout_product_2').remove()">Remove</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="w-2/4 flex flex-col justify-between ml-5">
+                                <div class="flex flex-col">
+                                    <h1 class="font-bold text-xl">Product title</h1>
+                                    <div class="flex flex-row justify-between">
+                                        <span class="text-gray-400">Company:</span>
+                                        <span>Rito Games</span>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <span class="text-gray-400">Quality:</span>
+                                        <span>New</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-2xl text-blue-600 font-bold">36.99 EUR</p>
+                                    <p class="text-xl line-through text-gray-400">48.56 EUR</p>
+                                </div>
+                            </div>
+                            <div class="w-1/4 flex flex-col justify-between ml-5">
+                                <div></div>
+                                <div><select name="units_product_2" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
+                                    <option value="1">x1 Uds</option>
+                                    <option value="2">x2 Uds</option>
+                                    <option value="3">x3 Uds</option>
+                                    <option value="4">x4 Uds</option>
+                                    <option value="5">x5 Uds</option>
+                                    <option value="6">x6 Uds</option>
+                                    <option value="7">x7 Uds</option>
+                                    <option value="8">x8 Uds</option>
+                                    <option value="9">x9 Uds</option>
+                                    <option value="10">x10 Uds</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <div class="flex flex-row justify-between">
+                                <p class="font-bold">Subtotal</p>
+                                <p class="font-bold">73.98 EUR</p>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <p class="font-bold">Tax</p>
+                                <p class="font-bold">17% 16.53 EUR</p>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <p class="font-bold">Shipping</p>
+                                <p class="font-bold">0 EUR</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 w-full">
+                            <form action="post" class="flex flex-row">
+                                <input type="text" placeholder="Apply promo code" class="placeholder-gray-400 pl-5 w-3/4 border-t-2 border-l-2 border-b-2 border-gray-300 bg-gray-200 rounded-l-md">
+                                <input type="submit" value="Apply now" class="font-bold border-t-2 border-b-2 border-r-2 border-gray-300 bg-gray-200 rounded-r-md pr-5 cursor-pointer">
                             </form>
                         </div>
-                    </div>   
-                    <!-- Step 2 -->
-                    <div class="mr-5 mt-5">
-                        <h3 class="text-xl font-bold">Billing method</h3>
                         <div class="flex flex-row justify-between">
-                            <h4 class="text-sm text-gray-400">Please enter your shipment method</h4>
-                            <h4 class="text-sm text-gray-400">Step 2 of 5</h4>
-                        </div>
-                        <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_fedex_shipment').checked='true'">
-                            <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="shipment" id="checkout_fedex_shipment" value="fedex" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
-                                <span class="ml-5 font-bold">FedEx</span>
-                                <span class="ml-10 text-blue-600 font-bold"> +32 EUR</span>
-                                <span class="font-bold ml-5">Additional price</span>
+                            <div>
+                                <p class="font-bold">
+                                    Total Order
+                                </p>
+                                <p class="text-blue-600">
+                                    Guaranteed delivery day: November 12,2021
+                                </p>
                             </div>
-                            <img src="https://logos-marcas.com/wp-content/uploads/2020/04/FedEx-Logo-650x366.png" alt="Logo fedex" class="w-1/12 mr-3">
-                        </div>
-                        <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_dhl_shipment').checked='true'">
-                            <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="shipment" id="checkout_dhl_shipment" value="dhl" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
-                                <span class="ml-5 font-bold">DHL</span>
-                                <span class="ml-10 text-blue-600 font-bold"> +32 EUR</span>
-                                <span class="font-bold ml-5">Additional price</span>
-                            </div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/DHL_Logo.svg/2560px-DHL_Logo.svg.png" alt="Logo DHL" class="w-1/5">
-                        </div>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="mr-5 mt-5">
-                        <h3 class="text-xl font-bold">Payment method</h3>
-                        <div class="flex flex-row justify-between">
-                            <h4 class="text-sm text-gray-400">Please enter your payment method</h4>
-                            <h4 class="text-sm text-gray-400">Step 3 of 5</h4>
-                        </div>
-                        <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_paypal_payment').checked='true'">
-                            <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="payment" id="checkout_paypal_payment" value="paypal" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
-                                <span class="ml-5 font-bold">PayPal</span>
-                            </div>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Logo PayPal" class="w-1/12 mr-3">
-                        </div>
-                    </div>
-                    <!-- Step 4 -->
-                    <div class="mr-5 mt-5">
-                        <h3 class="text-xl font-bold">Additional information</h3>
-                        <div class="flex flex-row justify-between">
-                            <h4 class="text-sm text-gray-400">Need something else? We will make it for you!</h4>
-                            <h4 class="text-sm text-gray-400">Step 4 of 5</h4>
-                        </div>
-                        <div class="mt-5 flex flex-col">
-                            <h3 class="font-bold">Order notes</h3>
-                            <textarea name="ordernotes" form="form-checkout" id="checkout_order_notes" cols="30" rows="7" class="bg-gray-200 border-2 border-gray-300 rounded-lg mt-2 px-4 py-1.5" placeholder="Need a specific delivery day? Sending a gift? Let’s say ..."></textarea>
-                        </div>
-                    </div>
-                    <!-- Step 5 -->
-                    <div class="mr-5 mt-5">
-                        <h3 class="text-xl font-bold">Confirmation</h3>
-                        <div class="flex flex-row justify-between">
-                            <h4 class="text-sm text-gray-400">We are getting to the end. Just few clicks and your order is ready!</h4>
-                            <h4 class="text-sm text-gray-400">Step 5 of 5</h4>
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="py-3 mt-5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
-                                <input type="checkbox" name="confirmation" value="marketing" id="checkout_confirmation_marketing" form="form-checkout" class="ml-3 cursor-pointer">
-                                <span class="ml-2.5">I agree with sending an Marketing and newsletter emails. No spam, promised!</span>
-                            </div>
-                            <div class="py-3 mt-2.5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
-                                <input type="checkbox" name="confirmation" value="policy" id="checkout_confirmation_policy" form="form-checkout" class="ml-3 cursor-pointer">
-                                <span class="ml-2.5">I agree with our <a href="#" class="underline">terms and conditions</a> and <a href="#" class="underline">privacy policy</a>.</span>
+                            <div>
+                                <p class="font-bold text-blue-600 text-3xl text-right">89.84 EUR</p>
                             </div>
                         </div>
-                    </div>
-                    <!-- Order completion button -->
-                    <input type="submit" value="Complete your order" form="form-checkout" class="w-2/6 mt-10 py-2 bg-blue-600 text-white font-bold rounded-lg cursor-pointer">
-                    <div>
+                        
                         
                     </div>
                 </div>
-                <!-- Order summary -->
-                <div class="flex flex-col rounded-md border-2 border-gray-300 w-2/5 px-2.5 py-5 h-full">
-                    <h3 class="font-bold text-2xl">Order summary</h3>
-                    <h4 class="text-sm text-gray-400">Price can change depending on shipping method and taxes of your state.</h4>
-                    <!-- Product -->
-                    <div class="flex flex-row mt-5 border-b-2 border-gray-300 pb-5" id="checkout_product_1">
-                        <div class="w-1/4 flex flex-col justify-between">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" alt="Product image">
-                            <div>
-                                <div class="flex flex-row cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
-                                    <span class="text-gray-400 ml-2.5">Wishlist</span>
-                                </div>
-                                <div class="flex flex-row mt-1 cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
-                                    <span class="text-gray-400 ml-2.5" onclick="document.getElementById('checkout_product_1').remove()">Remove</span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="w-2/4 flex flex-col justify-between ml-5">
-                            <div class="flex flex-col">
-                                <h1 class="font-bold text-xl">Product title</h1>
-                                <div class="flex flex-row justify-between">
-                                    <span class="text-gray-400">Company:</span>
-                                    <span>Rito Games</span>
-                                </div>
-                                <div class="flex flex-row justify-between">
-                                    <span class="text-gray-400">Quality:</span>
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="text-2xl text-blue-600 font-bold">36.99 EUR</p>
-                                <p class="text-xl line-through text-gray-400">48.56 EUR</p>
-                            </div>
-                        </div>
-                        <div class="w-1/4 flex flex-col justify-between ml-5">
-                            <div></div>
-                            <div><select name="units_product_1" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
-                                <option value="1">x1 Uds</option>
-                                <option value="2">x2 Uds</option>
-                                <option value="3">x3 Uds</option>
-                                <option value="4">x4 Uds</option>
-                                <option value="5">x5 Uds</option>
-                                <option value="6">x6 Uds</option>
-                                <option value="7">x7 Uds</option>
-                                <option value="8">x8 Uds</option>
-                                <option value="9">x9 Uds</option>
-                                <option value="10">x10 Uds</option>
-                            </select></div>
-                        </div>
-                    </div>
-                    <!-- Product -->
-                    <div class="flex flex-row mt-5 border-b-2 border-gray-300 pb-5" id="checkout_product_2">
-                        <div class="w-1/4 flex flex-col justify-between">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" alt="Product image">
-                            <div>
-                                <div class="flex flex-row cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
-                                    <span class="text-gray-400 ml-2.5">Wishlist</span>
-                                </div>
-                                <div class="flex flex-row mt-1 cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
-                                    <span class="text-gray-400 ml-2.5" onclick="document.getElementById('checkout_product_2').remove()">Remove</span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="w-2/4 flex flex-col justify-between ml-5">
-                            <div class="flex flex-col">
-                                <h1 class="font-bold text-xl">Product title</h1>
-                                <div class="flex flex-row justify-between">
-                                    <span class="text-gray-400">Company:</span>
-                                    <span>Rito Games</span>
-                                </div>
-                                <div class="flex flex-row justify-between">
-                                    <span class="text-gray-400">Quality:</span>
-                                    <span>New</span>
-                                </div>
-                            </div>
-                            <div>
-                                <p class="text-2xl text-blue-600 font-bold">36.99 EUR</p>
-                                <p class="text-xl line-through text-gray-400">48.56 EUR</p>
-                            </div>
-                        </div>
-                        <div class="w-1/4 flex flex-col justify-between ml-5">
-                            <div></div>
-                            <div><select name="units_product_2" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
-                                <option value="1">x1 Uds</option>
-                                <option value="2">x2 Uds</option>
-                                <option value="3">x3 Uds</option>
-                                <option value="4">x4 Uds</option>
-                                <option value="5">x5 Uds</option>
-                                <option value="6">x6 Uds</option>
-                                <option value="7">x7 Uds</option>
-                                <option value="8">x8 Uds</option>
-                                <option value="9">x9 Uds</option>
-                                <option value="10">x10 Uds</option>
-                            </select></div>
-                        </div>
-                    </div>
-                    <div class="mt-10">
-                        <div class="flex flex-row justify-between">
-                            <p class="font-bold">Subtotal</p>
-                            <p class="font-bold">73.98 EUR</p>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <p class="font-bold">Tax</p>
-                            <p class="font-bold">17% 16.53 EUR</p>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <p class="font-bold">Shipping</p>
-                            <p class="font-bold">0 EUR</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 w-full">
-                        <form action="post" class="flex flex-row">
-                            <input type="text" placeholder="Apply promo code" class="placeholder-gray-400 pl-5 w-3/4 border-t-2 border-l-2 border-b-2 border-gray-300 bg-gray-200 rounded-l-md">
-                            <input type="submit" value="Apply now" class="font-bold border-t-2 border-b-2 border-r-2 border-gray-300 bg-gray-200 rounded-r-md pr-5 cursor-pointer">
-                        </form>
-                    </div>
-                    <div class="flex flex-row justify-between">
-                        <div>
-                            <p class="font-bold">
-                                Total Order
-                            </p>
-                            <p class="text-blue-600">
-                                Guaranteed delivery day: November 12,2021
-                            </p>
-                        </div>
-                        <div>
-                            <p class="font-bold text-blue-600 text-3xl text-right">89.84 EUR</p>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
+                <input type="submit" value="Complete your order" form="form-checkout" class="md:w-2/6 w-full mt-10 py-2 bg-blue-600 text-white font-bold rounded-lg cursor-pointer">
             </div>
+            
         </div>
         <div class="footer"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
