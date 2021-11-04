@@ -7,12 +7,12 @@
     </head>
     <body>
         <div class="header"></div>
-        <div class="flex flex-row">
-            <div class="flex flex-row justify-center w-2/5 py-20">
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:flex-nowrap">
+            <div class="flex flex-row justify-center sm:w-1/2 py-20">
                 <img src="./Images/AboutUs/PixelArt_Aitor.png" alt="Logo perfil" class="rounded-full bg-gray-200">
             </div>
-            <form class="flex flex-row w-3/5 py-28 ml-10 justify-items-center">
-                <div class="flex flex-col mr-5 justify-around">
+            <form class="flex flex-col sm:flex-row justify-center ml-5 py-18 md:w-1/2 lg:py-28">
+                <div class="flex flex-col mr-5 gap-y-2">
                     <label for="user_name" class="font-bold">
                         User's name
                     </label>
@@ -36,7 +36,7 @@
                         <option value="Country 4"></option>
                     </datalist>
                 </div>
-                <div class="flex flex-col ml-5 justify-around">
+                <div class="flex flex-col mr-5 gap-y-2">
                     <label for="user_phone" class="font-bold">
                         Phone number
                     </label>
@@ -49,7 +49,7 @@
                         ZIP / Postal code
                     </label>
                     <input type="text" name="postcode" placeholder="ZIP / Postal code" id="user_zip" class="rounded-md bg-gray-200 py-1 text-center" value="28921">
-                    <input type="submit" value="Submit changes" class="text-white text-xl rounded-md py-0.5 bg-indigo-600 cursor-pointer">
+                    <input type="submit" value="Submit changes" class="text-white text-xl rounded-md mt-8 py-0.5 bg-indigo-600 cursor-pointer">
                 </div>
             </form>
         </div>
