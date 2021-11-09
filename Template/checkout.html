@@ -23,24 +23,24 @@
                             </div>
                         </div>
                         <div class="flex flex-col">
-                            <form action="post" class="flex flex-col" id="form-checkout">
+                            <form action="#" method="post" class="flex flex-col" id="form-checkout">
                                 <div class="flex flex-row">
                                     <div class="flex flex-col w-1/2">
                                         <div class="flex flex-col">
                                             <p>First name</p>
-                                            <input type="text" name="firstname" placeholder="First name" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="text" name="firstname" placeholder="First name" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                         </div>
                                         <div class="flex flex-col">
                                             <p>Email address</p>
-                                            <input type="text" name="email" placeholder="Email address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="email" name="email" placeholder="Email address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                         </div>
                                         <div class="flex flex-col">
                                             <p>Address</p>
-                                            <input type="text" name="address" placeholder="Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="text" name="address" id="address" placeholder="Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                         </div>
                                         <div class="flex flex-col">
                                             <p>State / Country</p>
-                                            <input type="text" name="country" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="text" name="country" id="country" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                             <datalist id="countryList">
                                                 <option value="Country 1"></option>
                                                 <option value="Country 2"></option>
@@ -49,45 +49,45 @@
                                             </datalist>
                                         </div>
                                         <div class="flex items-center bg-gray-200 border-gray-300 border-2 rounded-md my-5 py-2 justify-center">
-                                            <input type="checkbox" class="ml-3 cursor-pointer" onchange="if(this.checked) {document.getElementById('newAddressCheckout').style.display=''} else {document.getElementById('newAddressCheckout').style.display='none'}">
+                                            <input type="checkbox" id="differentAddress" class="ml-3 cursor-pointer" onchange="billingInfoValidation()">
                                             <p class="mx-5">Ship to a different address?</p>
                                         </div>
                                     </div>
                                     <div class="flex flex-col mx-2.5 w-1/2">
                                         <div class="flex flex-col">
                                             <p>Last name</p>
-                                            <input type="text" placeholder="Last name" name="lastname" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="text" placeholder="Last name" name="lastname" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                         </div>
                                         <div class="flex flex-col">
                                             <p>Phone number</p>
-                                            <input type="text" placeholder="Phone number" name="number" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="tel" placeholder="Phone number" name="number" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                         </div>
                                         <div class="flex flex-col">
                                             <p>Town / City</p>
-                                            <input type="text" placeholder="Town or city" name="city" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="text" placeholder="Town or city" name="city" id="city" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                         </div>
                                         <div class="flex flex-col">
                                             <p>ZIP / Postal code</p>
-                                            <input type="text" name="postcode" placeholder="ZIP / Postal code" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="text" name="postcode" placeholder="ZIP / Postal code" id="postcode" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex flex-col mr-5" id="newAddressCheckout" style="display: none;">
                                     <div class="w-full">
                                         <p>New Address</p>
-                                        <input type="text" name="newAddress" placeholder="New Address" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        <input type="text" name="newAddress" id="newAddress" placeholder="New Address" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
                                     </div>
                                     <div class="w-full">
                                         <p>State / Country</p>
-                                        <input type="text" name="newState" list="countryList" placeholder="Choose a state or a country" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        <input type="text" name="newCountry" id="newCountry" list="countryList" placeholder="Choose a state or a country" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
                                     </div>
                                     <div class="w-full">
                                         <p>Town or city</p>
-                                        <input type="text" name="newTown" placeholder="Town or City" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        <input type="text" name="newCity" id="newCity" placeholder="Town or City" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
                                     </div>
                                     <div class="w-full">
                                         <p>ZIP / Postal code</p>
-                                        <input type="text" name="newPostcode" placeholder="ZIP / Postal code" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                        <input type="text" name="newPostcode" id="newPostcode" placeholder="ZIP / Postal code" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
                                     </div>
                                 </div>
                             </form>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_fedex_shipment').checked='true'">
                             <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="shipment" id="checkout_fedex_shipment" value="fedex" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
+                                <input type="radio" name="shipment" id="checkout_fedex_shipment" value="fedex" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer" required>
                                 <span class="ml-5 font-bold">FedEx</span>
                                 <span class="ml-10 text-blue-600 font-bold"> +32 EUR</span>
                                 <span class="font-bold ml-5">Additional price</span>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_dhl_shipment').checked='true'">
                             <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="shipment" id="checkout_dhl_shipment" value="dhl" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
+                                <input type="radio" name="shipment" id="checkout_dhl_shipment" value="dhl" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer" required>
                                 <span class="ml-5 font-bold">DHL</span>
                                 <span class="ml-10 text-blue-600 font-bold"> +32 EUR</span>
                                 <span class="font-bold ml-5">Additional price</span>
@@ -128,7 +128,7 @@
                         </div>
                         <div class="flex flex-row justify-between mt-5 items-center bg-gray-200 border-2 border-gray-300 rounded-md" onclick="document.getElementById('checkout_paypal_payment').checked='true'">
                             <div class="flex flex-row py-2 px-3 items-center" class="bg-gray-200">
-                                <input type="radio" name="payment" id="checkout_paypal_payment" value="paypal" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer">
+                                <input type="radio" name="payment" id="checkout_paypal_payment" value="paypal" form="form-checkout" class="border-l-2 border-gray-300 rounded-l-md cursor-pointer" required>
                                 <span class="ml-5 font-bold">PayPal</span>
                             </div>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="Logo PayPal" class="w-1/12 mr-3">
@@ -155,11 +155,11 @@
                         </div>
                         <div class="flex flex-col">
                             <div class="py-3 mt-5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
-                                <input type="checkbox" name="confirmation" value="marketing" id="checkout_confirmation_marketing" form="form-checkout" class="ml-3 cursor-pointer">
+                                <input type="checkbox" name="confirmation" value="marketing" id="checkout_confirmation_marketing" form="form-checkout" class="ml-3 cursor-pointer" required>
                                 <span class="ml-2.5">I agree with sending an Marketing and newsletter emails. No spam, promised!</span>
                             </div>
                             <div class="py-3 mt-2.5 flex flex-row items-center bg-gray-200 border-2 border-gray-300 rounded-md">
-                                <input type="checkbox" name="confirmation" value="policy" id="checkout_confirmation_policy" form="form-checkout" class="ml-3 cursor-pointer">
+                                <input type="checkbox" name="confirmation" value="policy" id="checkout_confirmation_policy" form="form-checkout" class="ml-3 cursor-pointer" required>
                                 <span class="ml-2.5">I agree with our <a href="#" class="underline">terms and conditions</a> and <a href="#" class="underline">privacy policy</a>.</span>
                             </div>
                         </div>
@@ -209,7 +209,7 @@
                         </div>
                         <div class="w-1/4 flex flex-col justify-between ml-5">
                             <div></div>
-                            <div><select name="units_product_1" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
+                            <div><select name="units_product_1" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer text-center" form="form-checkout">
                                 <option value="1">x1 Uds</option>
                                 <option value="2">x2 Uds</option>
                                 <option value="3">x3 Uds</option>
@@ -258,7 +258,7 @@
                         </div>
                         <div class="w-1/4 flex flex-col justify-between ml-5">
                             <div></div>
-                            <div><select name="units_product_2" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer" form="form-checkout">
+                            <div><select name="units_product_2" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer text-center" form="form-checkout">
                                 <option value="1">x1 Uds</option>
                                 <option value="2">x2 Uds</option>
                                 <option value="3">x3 Uds</option>
@@ -287,7 +287,7 @@
                         </div>
                     </div>
                     <div class="mt-5 w-full">
-                        <form action="post" class="flex flex-row">
+                        <form action="#" method="post" class="flex flex-row">
                             <input type="text" placeholder="Apply promo code" class="placeholder-gray-400 pl-5 w-3/4 border-t-2 border-l-2 border-b-2 border-gray-300 bg-gray-200 rounded-l-md">
                             <input type="submit" value="Apply now" class="font-bold border-t-2 border-b-2 border-r-2 border-gray-300 bg-gray-200 rounded-r-md pr-5 cursor-pointer">
                         </form>
@@ -312,6 +312,7 @@
         </div>
         <div class="footer"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts/scripts.js"></script>
         <script>
             $(function() {
                 $(".header").load("header.html")
