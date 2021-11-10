@@ -84,3 +84,19 @@ function billingInfoValidation() {
         postcode.style.color = "black"
     }
 }
+
+function toggleWishlist(id) {
+    var noWishlist = $('#'.concat(id)).children('.no_wishlist')
+    var wishlist = $('#'.concat(id)).children('.wishlist')
+    if (wishlist.css('visibility') == 'hidden') {
+        wishlist.css('visibility', '')
+        wishlist.css('display', '')
+        noWishlist.css('visibility', 'hidden')
+        noWishlist.css('display', 'none')
+    } else {
+        noWishlist.css('visibility', '')
+        noWishlist.css('display', '')
+        wishlist.css('visibility', 'hidden')
+        wishlist.css('display', 'none')
+    }
+}
