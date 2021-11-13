@@ -1,0 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../article.css";
+
+/* Para poder usar los nuevos estilos
+   usa el comando:
+   npm run css-compile */

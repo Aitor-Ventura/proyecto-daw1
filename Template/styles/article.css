@@ -1,0 +1,70 @@
+@layer components {
+  .contenedor-head {
+    @apply max-w-full m-0 flex items-center flex-wrap flex-col text-5xl;
+    padding: 0 0 10vh 0;
+    height: 70vh;
+  }
+
+  .contenedor-cards {
+    @apply flex items-center flex-col max-w-full m-0;
+    background: linear-gradient(to top, #dadada 97%, rgba(0, 0, 0, 0) 0);
+  }
+
+  #particles-js {
+    @apply absolute w-full h-screen bg-gray-100 bg-no-repeat bg-cover ml-auto mr-auto;
+    z-index: -1;
+  }
+
+  .article-card-base {
+    @apply bg-white rounded flex my-5 last:mt-5 last:mb-10 xl:max-w-6xl;
+    height: 20.25em;
+    width: 95%;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    background: blue;
+  }
+
+  .article-card {
+    @apply article-card-base flex-row;
+    background: linear-gradient(
+      103deg,
+      rgba(255, 255, 255, 1) 38%,
+      rgba(168, 168, 168, 1) 70%,
+      rgba(99, 99, 99, 1) 100%
+    );
+  }
+
+  .article-card-inverted {
+    @apply article-card-base flex-row-reverse;
+    background: linear-gradient(
+      115deg,
+      rgba(99, 99, 99, 1) 0%,
+      rgba(168, 168, 168, 1) 24%,
+      rgba(255, 255, 255, 1) 54%
+    );
+  }
+
+  .contenedor-texto-card {
+    @apply w-6/12 flex flex-col ml-14 pr-20;
+  }
+
+  .texto-card-titulo {
+    @apply w-full text-2xl font-bold pt-10 pb-4;
+  }
+
+  .texto-card-subtitulo {
+    @apply w-full font-medium text-xl pb-2;
+  }
+
+  .texto-card-cuerpo {
+    @apply w-4/5;
+  }
+
+  .contenedor-texto-imagen {
+    @apply w-6/12 flex;
+  }
+
+  .titulo-article {
+    @apply text-8xl font-medium pt-20 pb-4 text-center;
+    font-weight: 500;
+  }
+}

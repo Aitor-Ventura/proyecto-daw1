@@ -3,7 +3,14 @@ module.exports = {
   purge: ["./Template/*.html"], // Quita lo que no usamos
   darkMode: "class", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        "8xl": ["6.5rem", { lineHeight: "1" }],
+      },
+      screens: {
+        "3xl": "1600px",
+      },
+    },
   },
   variants: {
     extend: {},
