@@ -3,6 +3,11 @@
 @import "tailwindcss/utilities";
 @import "../article.css";
 
-/* Para poder usar los nuevos estilos
+/* 
+   Añade al final los ficheros css 
+   que quieras importar. 
+
+   Para poder usar los nuevos estilos
    usa el comando:
-   npm run css-compile */
+   npm run css-compile
+*/
