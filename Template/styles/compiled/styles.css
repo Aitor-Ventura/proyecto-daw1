@@ -646,13 +646,10 @@ video {
     height: 20.25em;
     width: 95%;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-    background: blue;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     display: flex;
     border-radius: 0.25rem;
-    --tw-bg-opacity: 1;
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   }
 .article-card:last-child {
 	margin-top: 1.25rem;
@@ -677,13 +674,10 @@ video {
     height: 20.25em;
     width: 95%;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-    background: blue;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     display: flex;
     border-radius: 0.25rem;
-    --tw-bg-opacity: 1;
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   }
 .article-card-inverted:last-child {
 	margin-top: 1.25rem;
@@ -1382,9 +1376,14 @@ video {
 	--tw-placeholder-opacity: 1;
 	color: rgba(107, 114, 128, var(--tw-placeholder-opacity));
 }
-/* Para poder usar los nuevos estilos
+/* 
+   Añade al final los ficheros css 
+   que quieras importar. 
+
+   Para poder usar los nuevos estilos
    usa el comando:
-   npm run css-compile */
+   npm run css-compile
+*/
 @media (min-width: 640px) {
 
 	.sm\:mx-auto {

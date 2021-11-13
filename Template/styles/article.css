@@ -1,4 +1,5 @@
 @layer components {
+
   .contenedor-head {
     @apply max-w-full m-0 flex items-center flex-wrap flex-col text-5xl;
     padding: 0 0 10vh 0;
@@ -16,11 +17,10 @@
   }
 
   .article-card-base {
-    @apply bg-white rounded flex my-5 last:mt-5 last:mb-10 xl:max-w-6xl;
+    @apply rounded flex my-5 last:mt-5 last:mb-10 xl:max-w-6xl;
     height: 20.25em;
     width: 95%;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-    background: blue;
   }
 
   .article-card {
@@ -67,4 +67,5 @@
     @apply text-8xl font-medium pt-20 pb-4 text-center;
     font-weight: 500;
   }
+
 }
