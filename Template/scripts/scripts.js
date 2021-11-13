@@ -100,3 +100,15 @@ function toggleWishlist(id) {
         wishlist.css('display', 'none')
     }
 }
+
+/**
+ * dark mode?
+ */
+const checkbox = document.querySelecotr("#checkbox");
+const html = document.querySelector("html");
+const toggleDarkMode = function() {
+    checkbox.checked ? html.classList.add("dark") : html.classList.remove("dark");
+}
+
+toggleDarkMode();
+checkbox.addEventListener("click", toggleDarkMode);
