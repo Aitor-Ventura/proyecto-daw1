@@ -1,0 +1,51 @@
+@layer components {
+    .nav-main {
+        @apply flex flex-col items-center justify-center pt-5 px-10 flex-wrap;
+    }
+
+    /* Esta sintaxis diche que nav-content esta dentro de nav-main */
+    .nav-main .nav-content {
+        @apply flex flex-col md:flex-row w-full justify-between pb-5 flex-wrap;
+    }
+
+    .nav-content .nav-left {
+        @apply flex flex-row justify-between w-full md:w-3/6 lg:w-2/6;
+    }
+    
+    .nav-content .nav-right {
+        @apply flex flex-row justify-between w-full md:w-2/6 lg:w-1/6 md:mt-0 mt-10;
+    }
+
+    .nav-search {
+        @apply w-full flex flex-row justify-between flex-wrap pt-5 border-t-2 border-gray-100;
+    }
+
+    .nav-search .nav-search-box {
+        @apply flex flex-row sm:justify-center sm:mx-auto ml-0;
+    }
+
+    .nav-search .nav-search-box .nav-search-input {
+        @apply py-2 sm:w-80 w-60 bg-gray-200 text-center rounded-l-lg;
+    }
+
+    .nav-search .nav-search-box .nav-search-button {
+        @apply bg-gray-200 rounded-r-lg pr-2.5;
+    }
+
+    .nav-category {
+        @apply pb-3 w-full bg-gray-200 justify-around flex flex-row flex-wrap px-5 items-center;
+    }
+
+    .nav-category .category-element {
+
+        @apply flex flex-col items-center pt-3;
+    }
+
+    .nav-category .category-element .nav-subcategory {
+        @apply absolute mt-6 px-1 py-1 border-2 border-black rounded-lg flex flex-col bg-gray-300 items-center justify-center text-indigo-600;
+    }
+
+    .nav-category .category-element .category-button {
+        @apply flex flex-row mx-5 items-center;
+    }
+}
