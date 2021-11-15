@@ -2,7 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "../article.css";
-@import "../header.css"
+@import "../header.css";
+@import "../footer.css";
 
 /* 
    Añade al final los ficheros css 
