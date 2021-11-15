@@ -17,6 +17,7 @@
     "css-compile": "postcss ./Template/styles/compiled/main.css -o ./Template/styles/compiled/styles.css --watch"
   },
   "dependencies": {
+    "postcss-cli": "^9.0.2",
     "postcss-import": "^14.0.2"
   }
 }
