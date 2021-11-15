@@ -4,16 +4,31 @@
         <nav class="nav-main">
             <div class="nav-content">
                 <div class="nav-left">
-                    <a href="mailto:info@g2babies.com" class="text-indigo-600">Contact us</a>
-                    <p>+34 666 666 666</p>
-                    <p>info@g2babies.com</p>
+                    <a href="mailto:info@g2babies.com" class="px-4 text-indigo-600">Contact us</a>
+                    <div class="px-4">+34 666 666 666</div>
+                    <div class="px-4">info@g2babies.com</div>
                 </div>
                 <div class="nav-right">
-                    <a href="article-about-us.html" class="text-indigo-600">About Us</a>
-                    <a href="article-careers.html" class="text-indigo-600">Careers</a>
+                    <!-- darkmode?-->
+                    <div class="px-4">
+                        <div class="flex justify-end items-center space-x-2 mx-auto relative">
+                            <div class="font-extralight">Light</div>
+                            <div>
+                                <input type="checkbox" name="" id="checkbox" class="hidden"/>
+                                <label for="checkbox" class="cursor-pointer">
+                                    <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p2">
+                                        <div class="w-4 h-4 bg-white rounded-full shadow"></div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="font-semibold">Dark</div>
+                        </div>
+                    </div>
+                    <!---->
+                    <a href="article-about-us.html" class="px-4 text-indigo-600">About Us</a>
+                    <a href="article-careers.html" class="px-4 text-indigo-600">Careers</a>
                 </div>
             </div>
-
             <div class="nav-search">
                 <form class="nav-search-box" action="search.html">
                     <input type="text" class="nav-search-input" placeholder="Search for a product or a category">
