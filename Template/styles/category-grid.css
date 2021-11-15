@@ -1,0 +1,101 @@
+@layer components {
+    .title-grid {
+        @apply flex flex-row justify-between pt-8;
+    }
+
+    .title-grid-items {
+        @apply flex flex-row justify-around w-2/6;
+    }
+
+    .title-grid-items-grid-view {
+        @apply flex flex-row items-center text-indigo-600 cursor-pointer;
+    }
+
+    .title-grid-items-list-view {
+        @apply flex flex-row items-center cursor-pointer;
+    }
+
+    .title-grid-items-products {
+        @apply flex flex-row items-center;
+    }
+
+    .title-grid-items-products-numbers {
+        @apply rounded-lg bg-gray-200 flex flex-col justify-center px-2 text-indigo-600 font-medium;
+    }
+
+    .products-panel {
+        @apply flex flex-row mt-16;
+    }
+
+    .products-panel-subcategories-panel {
+        @apply w-2/6 flex flex-col;
+    }
+
+    .products-panel-subcategories-panel-subcategories-list {
+        @apply flex flex-col justify-between;
+    }
+
+    .products-panel-subcategories-panel-subcategories-list-subcategory {
+        @apply flex flex-row justify-between items-center w-full my-2;
+    }
+
+    .products-panel-subcategories-panel-subcategories-list-subcategory-number {
+        @apply rounded-lg bg-gray-200 flex flex-col justify-center px-2 text-indigo-600 font-medium;
+    }
+
+    .products-panel-subcategories-panel-prices-panel {
+        @apply w-full flex flex-col;
+    }
+
+    .products-panel-subcategories-panel-prices-panel-minmax-title {
+        @apply font-bold text-lg my-4;
+    }
+
+    .products-panel-subcategories-panel-prices-panel-minmax-boxes-panel {
+        @apply flex flex-row justify-between items-center;
+    }
+
+    .products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel {
+        @apply flex flex-col w-1/3 justify-center;
+    }
+
+    .products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel-minmax {
+        @apply font-bold text-sm mt-8;
+    }
+
+    .products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel-minmax-input {
+        @apply py-1 border-2 bg-gray-200 rounded-md border-gray-300;
+    }
+
+    .products-panel-subcategories-panel-buttons-panel {
+        @apply flex flex-row mt-10 justify-between;
+    }
+
+    .products-panel-subcategories-panel-buttons-panel-apply {
+        @apply px-4 py-2 rounded-lg text-white bg-indigo-600 border-black border-2 font-bold;
+    }
+
+    .products-panel-subcategories-panel-buttons-panel-reset {
+        @apply px-4 py-2 rounded-lg text-gray-400 font-bold;
+    }
+
+    .products-panel-subcategories-panel-buttons-panel-center {
+        @apply flex flex-row justify-around;
+    }
+
+    .show-more-products-button {
+        @apply px-2 py-2 rounded-lg text-white bg-indigo-600 border-black border-2 font-bold;
+    }
+
+    .show-more-products-button-center {
+        @apply flex flex-row justify-around;
+    }
+
+    .product-numbers {
+        @apply flex flex-row justify-center items-center;
+    }
+
+    .product-numbers-numbers {
+        @apply rounded-lg bg-gray-200 flex flex-col justify-center px-2 text-indigo-600 font-medium;
+    }
+}

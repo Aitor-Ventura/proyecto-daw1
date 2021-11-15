@@ -105,10 +105,7 @@ function toggleWishlist(id) {
  * dark mode?
  */
 const checkbox = document.querySelector("#checkbox");
-/**
- * por la cara esto no lo pilla una vez abres la página por primera vez, pero lo añades tú por tu cuenta en consola y funciona perfect. wtf
- */
-const html = document.querySelector("html");
+const html = document.querySelector("#html");
 const toggleDarkMode = function() {
     checkbox.checked ? html.classList.add("dark") : html.classList.remove("dark");
 }
