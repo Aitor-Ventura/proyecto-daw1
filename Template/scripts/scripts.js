@@ -118,6 +118,10 @@ const toggleDarkMode = function() {
     } 
 }
 const checkDarkMode = function () {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 48d252f (feat: Started building dark mode)
     const checkbox = document.getElementById('checkbox');
     if (sessionStorage.getItem("darkMode") == "true") {
         html.classList.add("dark")
@@ -125,5 +129,9 @@ const checkDarkMode = function () {
         console.log(checkbox.checked)
     } else {
         html.classList.remove("dark");
+<<<<<<< HEAD
+=======
+        checkbox.checked = false
+>>>>>>> 48d252f (feat: Started building dark mode)
     }
 }
