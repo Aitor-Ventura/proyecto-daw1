@@ -1,10 +1,10 @@
 @layer components {
     .nav-main {
-        @apply flex flex-col items-center justify-center items-center pt-5 px-10 flex-wrap text-xl;
+        @apply flex flex-col items-center justify-center pt-5 px-10 flex-wrap text-xl;
     }
 
     /* Esta sintaxis diche que nav-content esta dentro de nav-main */
-    .nav-main .nav-content {
+    .nav-content {
         @apply flex flex-row w-full pb-5 whitespace-nowrap;
     }
 
@@ -17,7 +17,7 @@
     }
 
     .nav-search-box {
-        @apply flex flex-row sm:justify-center sm:mx-auto ml-0;
+        @apply flex flex-row content-center justify-center sm:mx-auto ml-0;
     }
 
     .nav-search-input {
@@ -25,8 +25,17 @@
     }
 
     .nav-element {
+        @apply flex items-center;
+    }
+
+    .nav-text {
         @apply px-4 text-indigo-600;
     }
+
+    .nav-image {
+        @apply h-9;
+    }
+
 
     .nav-search-box .nav-search-button {
         @apply bg-gray-200 rounded-r-lg pr-2.5;
