@@ -1,19 +1,11 @@
 @layer components {
     .nav-main {
-        @apply flex flex-col items-center justify-center pt-5 px-10 flex-wrap;
+        @apply flex flex-col items-center justify-center items-center pt-5 px-10 flex-wrap text-xl;
     }
 
     /* Esta sintaxis diche que nav-content esta dentro de nav-main */
     .nav-main .nav-content {
-        @apply flex flex-col w-full pb-5 flex-wrap justify-between whitespace-nowrap md:flex-row md:justify-center;
-    }
-
-    .nav-main .nav-content .nav-left {
-        @apply flex flex-row w-5/12 sm:w-6/12;
-    }
-    
-    .nav-main .nav-content .nav-right {
-        @apply flex flex-row-reverse w-5/12 sm:w-6/12;
+        @apply flex flex-row w-full pb-5 whitespace-nowrap;
     }
 
     .nav-main-element{
@@ -24,15 +16,19 @@
         @apply w-full flex flex-row justify-between flex-wrap pt-5 border-t-2 border-gray-100;
     }
 
-    .nav-search .nav-search-box {
+    .nav-search-box {
         @apply flex flex-row sm:justify-center sm:mx-auto ml-0;
     }
 
-    .nav-search .nav-search-box .nav-search-input {
+    .nav-search-input {
         @apply py-2 sm:w-80 w-60 bg-gray-200 text-center rounded-l-lg;
     }
 
-    .nav-search .nav-search-box .nav-search-button {
+    .nav-element {
+        @apply px-4 text-indigo-600;
+    }
+
+    .nav-search-box .nav-search-button {
         @apply bg-gray-200 rounded-r-lg pr-2.5;
     }
 
@@ -52,4 +48,43 @@
     .nav-category .category-element .category-button {
         @apply flex flex-row mx-5 items-center;
     }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

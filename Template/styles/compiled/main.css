@@ -9,6 +9,16 @@
 @import "../login.css";
 @import "../user.css";
 
+
+@layer components {
+
+   body {
+      font-family: arial, sans-serif; 
+   }
+
+}
+
+
 /* 
    Añade al final los ficheros css 
    que quieras importar. 
