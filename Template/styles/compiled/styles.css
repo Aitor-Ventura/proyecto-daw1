@@ -705,7 +705,6 @@ video {
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
-	align-items: center;
 	justify-content: center;
 	padding-left: 2.5rem;
 	padding-right: 2.5rem;
@@ -714,7 +713,7 @@ video {
 	line-height: 1.75rem;
 }
 /* Esta sintaxis diche que nav-content esta dentro de nav-main */
-.nav-main .nav-content {
+.nav-content {
 	display: flex;
 	width: 100%;
 	flex-direction: row;
@@ -725,16 +724,14 @@ video {
 	margin-left: 0px;
 	display: flex;
 	flex-direction: row;
+	align-content: center;
+	justify-content: center;
 }
 @media (min-width: 640px) {
 
 	.nav-search-box {
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.nav-search-box {
-		justify-content: center;
 	}
 }
 .nav-search-input {
@@ -752,6 +749,19 @@ video {
 	.nav-search-input {
 		width: 20rem;
 	}
+}
+.nav-element {
+	display: flex;
+	align-items: center;
+}
+.nav-text {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	--tw-text-opacity: 1;
+	color: rgba(79, 70, 229, var(--tw-text-opacity));
+}
+.nav-image {
+	height: 2.25rem;
 }
 .nav-search-box .nav-search-button {
 	border-top-right-radius: 0.5rem;
@@ -1728,6 +1738,11 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
+<<<<<<< HEAD
+body {
+      font-family: arial, sans-serif; 
+   }
+=======
 .breadcrumbs {
 	margin-left: 2.5rem;
 	margin-right: 2.5rem;
@@ -2706,6 +2721,17 @@ body {
 }
 @media (min-width: 1024px) {
 
+<<<<<<< HEAD
+	.lg\:flex {
+		display: flex;
+	}
+
+	.lg\:hidden {
+		display: none;
+	}
+
+=======
+>>>>>>> ddd4d9eda5f674628d1cbb48805c90067302cda2
 	.lg\:w-3\/5 {
 		width: 60%;
 	}
@@ -2720,5 +2746,41 @@ body {
 
 	.lg\:justify-start {
 		justify-content: flex-start;
+	}
+
+	.lg\:gap-x-6 {
+		-moz-column-gap: 1.5rem;
+		     column-gap: 1.5rem;
+	}
+
+	.lg\:pr-24 {
+		padding-right: 6rem;
+	}
+
+	.lg\:pr-12 {
+		padding-right: 3rem;
+	}
+
+	.lg\:text-left {
+		text-align: left;
+	}
+}
+@media (min-width: 1280px) {
+
+	.xl\:hidden {
+		display: none;
+	}
+
+	.xl\:gap-x-12 {
+		-moz-column-gap: 3rem;
+		     column-gap: 3rem;
+	}
+
+	.xl\:pr-48 {
+		padding-right: 12rem;
+	}
+
+	.xl\:pr-24 {
+		padding-right: 6rem;
 	}
 }
