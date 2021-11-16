@@ -109,7 +109,7 @@ const html = document.querySelector("html");
 
 const toggleDarkMode = function() {
     const checkbox = document.getElementById('checkbox');
-    if (checkbox.checked){
+    if (sessionStorage.getItem("darkMode") == "false"){
         html.classList.add("dark")
         sessionStorage.setItem("darkMode", "true")
     } else {
@@ -118,11 +118,8 @@ const toggleDarkMode = function() {
     } 
 }
 const checkDarkMode = function () {
-    const checkbox = document.getElementById('checkbox');
     if (sessionStorage.getItem("darkMode") == "true") {
         html.classList.add("dark")
-        $(checkbox).prop('checked', 'true')
-        console.log(checkbox.checked)
     } else {
         html.classList.remove("dark");
     }
