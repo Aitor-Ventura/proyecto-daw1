@@ -104,11 +104,34 @@ function toggleWishlist(id) {
 /**
  * dark mode?
  */
-const checkbox = document.querySelector("#checkbox");
-const html = document.querySelector("#html");
-const toggleDarkMode = function() {
-    checkbox.checked ? html.classList.add("dark") : html.classList.remove("dark");
-}
 
-toggleDarkMode();
-checkbox.addEventListener("click", toggleDarkMode);
+const html = document.querySelector("html");
+
+const toggleDarkMode = function() {
+    const checkbox = document.getElementById('checkbox');
+    if (checkbox.checked){
+        html.classList.add("dark")
+        sessionStorage.setItem("darkMode", "true")
+    } else {
+        html.classList.remove("dark");
+        sessionStorage.setItem("darkMode","false");
+    } 
+}
+const checkDarkMode = function () {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 48d252f (feat: Started building dark mode)
+    const checkbox = document.getElementById('checkbox');
+    if (sessionStorage.getItem("darkMode") == "true") {
+        html.classList.add("dark")
+        $(checkbox).prop('checked', 'true')
+        console.log(checkbox.checked)
+    } else {
+        html.classList.remove("dark");
+<<<<<<< HEAD
+=======
+        checkbox.checked = false
+>>>>>>> 48d252f (feat: Started building dark mode)
+    }
+}

@@ -7,8 +7,8 @@
             rel="stylesheet"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./scripts/scripts.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="scripts/scripts.js"></script>
         <script>
             $(function() {
                 $(".header").load("header.html")
@@ -16,7 +16,7 @@
             })
         </script>
     </head>
-    <body>
+    <body onload="checkDarkMode()" class="dark:bg-gray-800 dark:text-gray-200">
         <div class="header"></div>
         <div class="px-8 pt-4">
             <div class="text-sm text-gray-400">
