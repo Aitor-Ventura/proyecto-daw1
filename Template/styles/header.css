@@ -42,11 +42,7 @@
     }
 
     .nav-category {
-<<<<<<< HEAD
         @apply pb-3 w-full bg-gray-200 justify-around flex flex-row flex-wrap px-5 items-center dark:bg-indigo-900;
-=======
-        @apply pb-3 w-full bg-gray-200 justify-around flex flex-row flex-wrap px-5 items-center dark:bg-blue-900;
->>>>>>> 48d252f (feat: Started building dark mode)
     }
 
     .nav-category .category-element {
