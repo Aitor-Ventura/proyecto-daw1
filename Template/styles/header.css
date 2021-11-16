@@ -41,7 +41,7 @@
     }
 
     .nav-category {
-        @apply pb-3 w-full bg-gray-200 justify-around flex flex-row flex-wrap px-5 items-center;
+        @apply pb-3 w-full bg-gray-200 justify-around flex flex-row flex-wrap px-5 items-center dark:bg-indigo-900;
     }
 
     .category-element {

@@ -1,0 +1,15 @@
+{
+    "product": {
+        "images": [],
+        "category": "String",
+        "stock": "String",
+        "company": "String",
+        "quality": "String",
+        "delivery": "String",
+        "deliveryArea": "String",
+        "price": 1,
+        "prevPrice": 1,
+        "origins": "String",
+        "productSpecifications": []
+    }
+}
