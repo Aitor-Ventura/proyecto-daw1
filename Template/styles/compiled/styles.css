@@ -793,7 +793,7 @@ video {
 }
 .dark .nav-category {
 	--tw-bg-opacity: 1;
-	background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
+	background-color: rgba(49, 46, 129, var(--tw-bg-opacity));
 }
 .nav-category .category-element {
 	display: flex;
