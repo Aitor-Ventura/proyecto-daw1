@@ -118,7 +118,6 @@ const toggleDarkMode = function() {
     } 
 }
 const checkDarkMode = function () {
-    
     const checkbox = document.getElementById('checkbox');
     if (sessionStorage.getItem("darkMode") == "true") {
         html.classList.add("dark")
@@ -126,6 +125,5 @@ const checkDarkMode = function () {
         console.log(checkbox.checked)
     } else {
         html.classList.remove("dark");
-        checkbox.checked = false
     }
 }
