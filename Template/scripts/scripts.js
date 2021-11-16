@@ -127,3 +127,5 @@ const checkDarkMode = function () {
         html.classList.remove("dark");
     }
 }
+
+checkDarkMode()
