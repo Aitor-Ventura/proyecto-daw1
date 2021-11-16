@@ -1413,11 +1413,6 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
-<<<<<<< HEAD
-body {
-      font-family: arial, sans-serif; 
-   }
-=======
 .banners-panel {
 	margin-left: 1.25rem;
 	margin-right: 1.25rem;
@@ -2122,6 +2117,9 @@ body {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
+body {
+      font-family: arial, sans-serif; 
+   }
 .relative {
 	position: relative;
 }
