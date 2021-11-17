@@ -720,16 +720,6 @@ video {
 	white-space: nowrap;
 	padding-bottom: 1.25rem;
 }
-.nav-search {
-	display: flex;
-	width: 100%;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	border-top-width: 2px;
-	--tw-border-opacity: 1;
-	border-color: rgba(243, 244, 246, var(--tw-border-opacity));
-}
 .nav-search-box {
 	position: relative;
 	display: flex;
