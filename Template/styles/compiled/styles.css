@@ -2227,6 +2227,9 @@ body {
 .mt-12 {
 	margin-top: 3rem;
 }
+.mr-2 {
+	margin-right: 0.5rem;
+}
 .block {
 	display: block;
 }
@@ -2540,6 +2543,12 @@ body {
 .font-medium {
 	font-weight: 500;
 }
+.font-extralight {
+	font-weight: 200;
+}
+.font-semibold {
+	font-weight: 600;
+}
 .italic {
 	font-style: italic;
 }
@@ -2769,5 +2778,11 @@ body {
 
 	.lg\:justify-start {
 		justify-content: flex-start;
+	}
+}
+@media (min-width: 1280px) {
+
+	.xl\:hidden {
+		display: none;
 	}
 }
