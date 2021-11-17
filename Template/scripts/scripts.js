@@ -170,5 +170,5 @@ const loadNavBarContents = async function() {
         })
     })
     console.log(document.querySelector('.nav-category'))
-    document.querySelector('.nav-category').innerHTML(htmlContents)
+    document.querySelector('.nav-category').innerHTML = htmlContents
 }
