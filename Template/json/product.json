@@ -1,15 +1,100 @@
 {
-    "product": {
-        "images": [],
-        "category": "String",
-        "stock": "String",
-        "company": "String",
-        "quality": "String",
-        "delivery": "String",
-        "deliveryArea": "String",
-        "price": 1,
-        "prevPrice": 1,
-        "origins": "String",
-        "productSpecifications": []
+    "products": {
+        "disney": {
+            "Aladin": {
+                "id": 1,
+                "images": [],
+                "category": "Disney",
+                "stock": "In Stock",
+                "company": "Wal Disney Pikxahs",
+                "quality": "New",
+                "delivery": "in 2 days",
+                "deliveryArea": "Spain",
+                "price": 19.00,
+                "prevPrice": 18.00,
+                "origins": "String",
+                "productSpecifications": []
+            }
+        },
+        "anime_manga": {
+            "Narruto_Narruto": {
+                "id": 2,
+                "images": [],
+                "category": "Anime and Manga",
+                "stock": "In Stock",
+                "company": "Pierot",
+                "quality": "New",
+                "delivery": "in 2 days",
+                "deliveryArea": "Spain",
+                "price": 40.25,
+                "prevPrice": 59.12,
+                "origins": "String",
+                "productSpecifications": []
+            }
+        },
+        "movies": {
+            "Fas an Furius": {
+                "id": 3,
+                "images": [],
+                "category": "Movies",
+                "stock": "In Stock",
+                "company": "Pierot",
+                "quality": "New",
+                "delivery": "in 2 days",
+                "deliveryArea": "Spain",
+                "price": 69.69,
+                "prevPrice": 96.96,
+                "origins": "String",
+                "productSpecifications": []
+            }
+        },
+        "dc_comics": {
+            "Supermen": {
+                "id": 4,
+                "images": [],
+                "category": "DC Comics",
+                "stock": "In Stock",
+                "company": "Warnar Bros",
+                "quality": "New",
+                "delivery": "in 2 days",
+                "deliveryArea": "Spain",
+                "price": 50.00,
+                "prevPrice": 51.00,
+                "origins": "String",
+                "productSpecifications": []
+            }
+        },
+        "marvel_comics": {
+            "Black Panzah": {
+                "id": 5,
+                "images": [],
+                "category": "Marvel Comics",
+                "stock": "In Stock",
+                "company": "Marvel Studio",
+                "quality": "New",
+                "delivery": "in 2 days",
+                "deliveryArea": "Spain",
+                "price": 139.30,
+                "prevPrice": 170.00,
+                "origins": "String",
+                "productSpecifications": []
+            }
+        },
+        "model_kits": {
+            "Meccano": {
+                "id": 6,
+                "images": [],
+                "category": "Model Kits",
+                "stock": "In Stock",
+                "company": "Meccano",
+                "quality": "New",
+                "delivery": "in 5 days",
+                "deliveryArea": "Spain",
+                "price": 27.03,
+                "prevPrice": 27.05,
+                "origins": "String",
+                "productSpecifications": []
+            }
+        }
     }
 }
