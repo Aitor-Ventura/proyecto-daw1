@@ -12,8 +12,17 @@ function billingInfoValidation() {
     var newCountry = document.getElementById("newCountry")
     var newCity = document.getElementById("newCity")
     var newPostcode = document.getElementById("newPostcode")
+    document.getElementById("differentAddress").checked == true ? document.getElementById("differentAddress").checked = false : document.getElementById("differentAddress").checked = true
 
     if(document.getElementById("differentAddress").checked == true) {
+        document.querySelector('#arrow-down-checkout').classList.add('visible')
+        document.querySelector('#arrow-down-checkout').classList.add('block')
+        document.querySelector('#arrow-down-checkout').classList.remove('invisible')
+        document.querySelector('#arrow-down-checkout').classList.remove('hidden')
+        document.querySelector('#arrow-right-checkout').classList.remove('visible')
+        document.querySelector('#arrow-right-checkout').classList.remove('block')
+        document.querySelector('#arrow-right-checkout').classList.add('invisible')
+        document.querySelector('#arrow-right-checkout').classList.add('hidden')
         newAddressCheckout.style.display = ""
 
         /* Atributos no requeridos */
@@ -50,6 +59,14 @@ function billingInfoValidation() {
         
 
     } else {
+        document.querySelector('#arrow-down-checkout').classList.remove('visible')
+        document.querySelector('#arrow-down-checkout').classList.remove('block')
+        document.querySelector('#arrow-down-checkout').classList.add('invisible')
+        document.querySelector('#arrow-down-checkout').classList.add('hidden')
+        document.querySelector('#arrow-right-checkout').classList.add('visible')
+        document.querySelector('#arrow-right-checkout').classList.add('block')
+        document.querySelector('#arrow-right-checkout').classList.remove('invisible')
+        document.querySelector('#arrow-right-checkout').classList.remove('hidden')
         newAddressCheckout.style.display = "none"
 
         /* Atributos requeridos */
