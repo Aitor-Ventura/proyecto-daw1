@@ -40,16 +40,20 @@
                                         <div class="flex flex-col w-1/2">
                                             <div class="flex flex-col">
                                                 <p>First name</p>
-                                                <input type="text" name="firstname" placeholder="First name" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>                                            </div>
+                                                <input type="text" name="firstname" placeholder="First name" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required>
+                                            </div>
                                             <div class="flex flex-col">
                                                 <p>Email address</p>
-                                                <input type="email" name="email" placeholder="Email address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>                                            </div>
+                                                <input type="email" name="email" placeholder="Email address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required>
+                                            </div>
                                             <div class="flex flex-col">
                                                 <p>Address</p>
-                                                <input type="text" name="address" id="address" placeholder="Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>                                            </div>
+                                                <input type="text" name="address" id="address" placeholder="Address" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required>
+                                            </div>
                                             <div class="flex flex-col">
                                                 <p>State / Country</p>
-                                                <input type="text" name="country" id="country" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>                                                <datalist id="countryList">
+                                                <input type="text" name="country" id="country" list="countryList" placeholder="Choose a state or a country" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required>
+                                                <datalist id="countryList">
                                                     <option value="Country 1"></option>
                                                     <option value="Country 2"></option>
                                                     <option value="Country 3"></option>
@@ -66,35 +70,38 @@
                                         <div class="flex flex-col mx-2.5 w-1/2">
                                             <div class="flex flex-col">
                                                 <p>Last name</p>
-                                                <input type="text" placeholder="Last name" name="lastname" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
+                                                <input type="text" placeholder="Last name" name="lastname" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required>
                                             </div>
                                             <div class="flex flex-col">
                                                 <p>Phone number</p>
-                                                <input type="tel" placeholder="Phone number" name="number" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>                                            </div>
+                                                <input type="tel" placeholder="Phone number" name="number" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required>
+                                            </div>
                                             <div class="flex flex-col">
                                                 <p>Town / City</p>
-                                                <input type="text" placeholder="Town or city" name="city" id="city" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required>
+                                                <input type="text" placeholder="Town or city" name="city" id="city" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required>
                                             </div>
                                             <div class="flex flex-col">
                                                 <p>ZIP / Postal code</p>
-                                                <input type="text" name="postcode" placeholder="ZIP / Postal code" id="postcode" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5" required> 
+                                                <input type="text" name="postcode" placeholder="ZIP / Postal code" id="postcode" class="border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black" required> 
                                             </div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col mr-5" id="newAddressCheckout" style="display: none;">
                                         <div class="w-full">
-                                            <p>New Address</p>
-                                            <input type="text" name="newAddress" id="newAddress" placeholder="New Address" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
-                                            <div class="w-full">
+                                        <p>New Address</p>
+                                        <input type="text" name="newAddress" id="newAddress" placeholder="New Address" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black">
+                                        <div class="w-full">
                                             <p>State / Country</p>
-                                            <input type="text" name="newCountry" id="newCountry" list="countryList" placeholder="Choose a state or a country" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">
+                                            <input type="text" name="newCountry" id="newCountry" list="countryList" placeholder="Choose a state or a country" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black">
                                         </div>
                                         <div class="w-full">
                                             <p>Town or city</p>
-                                            <input type="text" name="newCity" id="newCity" placeholder="Town or City" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">                                        </div>
+                                            <input type="text" name="newCity" id="newCity" placeholder="Town or City" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black">
+                                        </div>
                                         <div class="w-full">
                                             <p>ZIP / Postal code</p>
-                                            <input type="text" name="newPostcode" id="newPostcode" placeholder="ZIP / Postal code" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5">                                        </div>
+                                            <input type="text" name="newPostcode" id="newPostcode" placeholder="ZIP / Postal code" class="w-full border-2 border-black rounded-md bg-gray-200 py-2 pl-5 dark:text-black">
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -149,7 +156,7 @@
                             </div>
                             <div class="mt-5 flex flex-col">
                                 <h3 class="font-bold">Order notes</h3>
-                                <textarea name="ordernotes" form="form-checkout" id="checkout_order_notes" cols="30" rows="7" class="bg-gray-200 border-2 border-gray-300 rounded-lg mt-2 px-4 py-1.5" placeholder="Need a specific delivery day? Sending a gift? Let’s say ..."></textarea>
+                                <textarea name="ordernotes" form="form-checkout" id="checkout_order_notes" cols="30" rows="7" class="bg-gray-200 border-2 border-gray-300 rounded-lg mt-2 px-4 py-1.5 dark:text-black" placeholder="Need a specific delivery day? Sending a gift? Let’s say ..."></textarea>
                             </div>
                         </div>
                         <!-- Step 5 -->
@@ -291,7 +298,7 @@
                         </div>
                     </div>
                     <form action="#" method="post" class="mt-5 w-full flex flex-row">
-                        <input type="text" placeholder="Apply promo code" class="placeholder-gray-400 pl-5 w-full border-t-2 border-l-2 border-b-2 border-gray-300 bg-gray-200 rounded-l-md">
+                        <input type="text" placeholder="Apply promo code" class="placeholder-gray-400 pl-5 w-full border-t-2 border-l-2 border-b-2 border-gray-300 bg-gray-200 rounded-l-md dark:text-black">
                         <input type="submit" value="Apply now" class="font-bold border-t-2 border-b-2 border-r-2 border-gray-300 bg-gray-200 rounded-r-md pr-5 cursor-pointer dark:text-black">
                     </form>
                     <div class="flex flex-row justify-between">

@@ -1,7 +1,9 @@
 function billingInfoValidation() {
-
     /* Asignación de variables */
     var newAddressCheckout = document.getElementById("newAddressCheckout")
+    var checkboxDifferentAddress = document.getElementById("differentAddress")
+    var arrowDownCheckout = document.querySelector('#arrow-down-checkout')
+    var arrowRightCheckout = document.querySelector('#arrow-right-checkout')
 
     var address = document.getElementById("address")
     var country = document.getElementById("country")
@@ -12,17 +14,18 @@ function billingInfoValidation() {
     var newCountry = document.getElementById("newCountry")
     var newCity = document.getElementById("newCity")
     var newPostcode = document.getElementById("newPostcode")
-    document.getElementById("differentAddress").checked == true ? document.getElementById("differentAddress").checked = false : document.getElementById("differentAddress").checked = true
 
-    if(document.getElementById("differentAddress").checked == true) {
-        document.querySelector('#arrow-down-checkout').classList.add('visible')
-        document.querySelector('#arrow-down-checkout').classList.add('block')
-        document.querySelector('#arrow-down-checkout').classList.remove('invisible')
-        document.querySelector('#arrow-down-checkout').classList.remove('hidden')
-        document.querySelector('#arrow-right-checkout').classList.remove('visible')
-        document.querySelector('#arrow-right-checkout').classList.remove('block')
-        document.querySelector('#arrow-right-checkout').classList.add('invisible')
-        document.querySelector('#arrow-right-checkout').classList.add('hidden')
+    checkboxDifferentAddress.checked == true ? checkboxDifferentAddress.checked = false : checkboxDifferentAddress.checked = true
+
+    if(checkboxDifferentAddress.checked == true) {
+        arrowDownCheckout.classList.add('visible')
+        arrowDownCheckout.classList.add('block')
+        arrowDownCheckout.classList.remove('invisible')
+        arrowDownCheckout.classList.remove('hidden')
+        arrowRightCheckout.classList.remove('visible')
+        arrowRightCheckout.classList.remove('block')
+        arrowRightCheckout.classList.add('invisible')
+        arrowRightCheckout.classList.add('hidden')
         newAddressCheckout.style.display = ""
 
         /* Atributos no requeridos */
@@ -46,27 +49,29 @@ function billingInfoValidation() {
         /* Estilo de los atributos no editables */
         address.style.fontStyle = "italic"
         address.style.color = "gray"
-
+        address.style.cursor = "not-allowed"
+        
         country.style.fontStyle = "italic"
         country.style.color = "gray"
-
+        country.style.cursor = "not-allowed"
+        
         city.style.fontStyle = "italic"
         city.style.color = "gray"
-
+        city.style.cursor = "not-allowed"
+        
         postcode.style.fontStyle = "italic"
         postcode.style.color = "gray"
-
-        
+        postcode.style.cursor = "not-allowed"
 
     } else {
-        document.querySelector('#arrow-down-checkout').classList.remove('visible')
-        document.querySelector('#arrow-down-checkout').classList.remove('block')
-        document.querySelector('#arrow-down-checkout').classList.add('invisible')
-        document.querySelector('#arrow-down-checkout').classList.add('hidden')
-        document.querySelector('#arrow-right-checkout').classList.add('visible')
-        document.querySelector('#arrow-right-checkout').classList.add('block')
-        document.querySelector('#arrow-right-checkout').classList.remove('invisible')
-        document.querySelector('#arrow-right-checkout').classList.remove('hidden')
+        arrowDownCheckout.classList.remove('visible')
+        arrowDownCheckout.classList.remove('block')
+        arrowDownCheckout.classList.add('invisible')
+        arrowDownCheckout.classList.add('hidden')
+        arrowRightCheckout.classList.add('visible')
+        arrowRightCheckout.classList.add('block')
+        arrowRightCheckout.classList.remove('invisible')
+        arrowRightCheckout.classList.remove('hidden')
         newAddressCheckout.style.display = "none"
 
         /* Atributos requeridos */
@@ -118,10 +123,6 @@ function toggleWishlist(id) {
     }
 }
 
-/**
- * dark mode?
- */
-
 const html = document.querySelector("html");
 
 const toggleDarkMode = function() {
@@ -134,6 +135,7 @@ const toggleDarkMode = function() {
         sessionStorage.setItem("darkMode","false");
     } 
 }
+
 const checkDarkMode = function () {
     if (sessionStorage.getItem("darkMode") == "true") {
         html.classList.add("dark")
