@@ -53,6 +53,51 @@
             "description": "Propiedad pública. Responsive orientado a objetos (mujeres). Multiparadigma.",
             "attributes": ["Red neuronal en Keras TF"],
             "id": 5
+        },
+        "Narruto": {
+            "name":"Naruto Rasengan Chidori Prolongado 3.0 Sharingan Rinnegan 7.0 owo",
+            "picture":"https://i.pinimg.com/736x/87/0a/0a/870a0a2419b716983645d7488ae38ad1.jpg",
+            "price":"10",
+            "oldPrice":"12",
+            "description":"Nuestra más preciada figura de la colección de figuras Narruto.",
+            "attributes":["Cigarro"],
+            "id":6
+        },
+        "Lufi": {
+            "name":"Lufi The Pirate King UwU",
+            "picture":"https://i.pinimg.com/736x/b3/e8/fe/b3e8fe86639f1b32b080ba3bde4debb5--monkey-d-luffy-chibi.jpg",
+            "price":"30",
+            "oldPrice":"35",
+            "description":"Nuestra más preciada figura de la colección de figuras Guan Pis.",
+            "attributes":["Capa"],
+            "id":7
+        },
+        "Ari": {
+            "name":"Ari Ecchi no H! Voluminous Chest Size",
+            "picture":"https://pbs.twimg.com/profile_images/1338487306362249216/S0M5K7yq.jpg",
+            "price":"30",
+            "oldPrice":"35",
+            "description":"Nuestra más preciada figura de la colección de figuras Ditto 2.",
+            "attributes":["No clothing"],
+            "id":8
+        },
+        "Gooffi": {
+            "name":"Gooffi looking for friend",
+            "picture":"https://i.redd.it/h6nnp3l54az41.jpg",
+            "price":"1",
+            "oldPrice":"2",
+            "description":"Nuestra más preciada figura de la colección de figuras Pato Donal.",
+            "attributes":["Jeringuilla"],
+            "id":9
+        },
+        "Lyche": {
+            "name":"Lyche Player Figurine TOP 10 Ranking",
+            "picture":"http://i.imgur.com/liFs4.png",
+            "price":"1",
+            "oldPrice":"2",
+            "description":"Nuestra más preciada figura de la colección de figuras Ligoleyen.",
+            "attributes":["Jeringuilla"],
+            "id":9
         }
     }
 }
