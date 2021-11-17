@@ -5,7 +5,7 @@
 
     /* Esta sintaxis diche que nav-content esta dentro de nav-main */
     .nav-content {
-        @apply flex flex-row w-full pb-5 whitespace-nowrap;
+        @apply flex flex-row justify-center w-full pb-5 whitespace-nowrap;
     }
 
     .nav-main-element{
@@ -17,7 +17,7 @@
     }
 
     .nav-search-box {
-        @apply flex flex-row content-center justify-center relative;
+        @apply flex flex-row justify-center relative;
     }
 
     .nav-search-input {
@@ -33,7 +33,7 @@
     }
 
     .nav-text {
-        @apply pl-2 text-indigo-600;
+        @apply pl-2 dark:text-gray-100 text-black hidden xl:visible xl:block;
     }
 
     .nav-image {

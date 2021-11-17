@@ -717,6 +717,7 @@ video {
 	display: flex;
 	width: 100%;
 	flex-direction: row;
+	justify-content: center;
 	white-space: nowrap;
 	padding-bottom: 1.25rem;
 }
@@ -724,7 +725,6 @@ video {
 	position: relative;
 	display: flex;
 	flex-direction: row;
-	align-content: center;
 	justify-content: center;
 }
 .nav-search-input {
@@ -757,9 +757,24 @@ video {
 	padding-right: 1rem;
 }
 .nav-text {
+	display: none;
 	padding-left: 0.5rem;
 	--tw-text-opacity: 1;
-	color: rgba(79, 70, 229, var(--tw-text-opacity));
+	color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+.dark .nav-text {
+	--tw-text-opacity: 1;
+	color: rgba(243, 244, 246, var(--tw-text-opacity));
+}
+@media (min-width: 1280px) {
+
+	.nav-text {
+		visibility: visible;
+	}
+
+	.nav-text {
+		display: block;
+	}
 }
 .nav-category {
 	display: flex;
@@ -2098,6 +2113,18 @@ video {
 body {
       font-family: arial, sans-serif; 
    }
+.dark-icon {
+	visibility: hidden;
+	display: none;
+}
+.dark .dark-icon {
+	visibility: visible;
+	display: block;
+}
+.dark .normal-icon {
+	visibility: hidden;
+	display: none;
+}
 .invisible {
 	visibility: hidden;
 }
@@ -2191,9 +2218,6 @@ body {
 .mt-1 {
 	margin-top: 0.25rem;
 }
-.mr-2 {
-	margin-right: 0.5rem;
-}
 .mb-2\.5 {
 	margin-bottom: 0.625rem;
 }
@@ -2229,9 +2253,6 @@ body {
 }
 .h-4 {
 	height: 1rem;
-}
-.h-screen {
-	height: 100vh;
 }
 .w-2\/6 {
 	width: 33.333333%;
@@ -2271,9 +2292,6 @@ body {
 }
 .w-2\/4 {
 	width: 50%;
-}
-.w-3\/4 {
-	width: 75%;
 }
 .w-9 {
 	width: 2.25rem;
@@ -2406,10 +2424,6 @@ body {
 	--tw-bg-opacity: 1;
 	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
-.object-fill {
-	-o-object-fit: fill;
-	   object-fit: fill;
-}
 .object-center {
 	-o-object-position: center;
 	   object-position: center;
@@ -2526,12 +2540,6 @@ body {
 .font-medium {
 	font-weight: 500;
 }
-.font-extralight {
-	font-weight: 200;
-}
-.font-semibold {
-	font-weight: 600;
-}
 .italic {
 	font-style: italic;
 }
@@ -2619,6 +2627,7 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+/* Variables globales */
 /* 
    Añade al final los ficheros css 
    que quieras importar. 
@@ -2658,37 +2667,17 @@ body {
 	--tw-bg-opacity: 1;
 	background-color: rgba(49, 46, 129, var(--tw-bg-opacity));
 }
-.dark .dark\:bg-gray-400 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
-}
-.dark .dark\:bg-gray-200 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-}
-.dark .dark\:text-gray-200 {
+.dark .dark\:text-black {
 	--tw-text-opacity: 1;
-	color: rgba(229, 231, 235, var(--tw-text-opacity));
+	color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 .dark .dark\:text-white {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
-.dark .dark\:text-gray-700 {
+.dark .dark\:text-gray-200 {
 	--tw-text-opacity: 1;
-	color: rgba(55, 65, 81, var(--tw-text-opacity));
-}
-.dark .dark\:text-gray-400 {
-	--tw-text-opacity: 1;
-	color: rgba(156, 163, 175, var(--tw-text-opacity));
-}
-.dark .dark\:text-gray-500 {
-	--tw-text-opacity: 1;
-	color: rgba(107, 114, 128, var(--tw-text-opacity));
-}
-.dark .dark\:text-black {
-	--tw-text-opacity: 1;
-	color: rgba(0, 0, 0, var(--tw-text-opacity));
+	color: rgba(229, 231, 235, var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
 
@@ -2762,6 +2751,10 @@ body {
 }
 @media (min-width: 1024px) {
 
+	.lg\:hidden {
+		display: none;
+	}
+
 	.lg\:w-3\/5 {
 		width: 60%;
 	}
@@ -2776,11 +2769,5 @@ body {
 
 	.lg\:justify-start {
 		justify-content: flex-start;
-	}
-}
-@media (min-width: 1280px) {
-
-	.xl\:hidden {
-		display: none;
 	}
 }

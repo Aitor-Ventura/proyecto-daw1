@@ -11,11 +11,19 @@
 @import "../index.css";
 @import "../product.css";
 
-
+/* Variables globales */
 @layer components {
 
    body {
       font-family: arial, sans-serif; 
+   }
+
+   .dark-icon {
+      @apply invisible hidden dark:visible dark:block;
+   }
+
+   .normal-icon {
+      @apply dark:invisible dark:hidden;
    }
 
 }
