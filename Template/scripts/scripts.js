@@ -149,3 +149,26 @@ const checkDarkMode = function () {
 }
 
 checkDarkMode()
+
+const loadNavBarContents = async function() {
+    var htmlContents = ""
+    await $.getJSON("./json/categories.json", function(json){
+        Object.entries(json.categories).forEach((entry) => {
+            const [key, value] = entry
+            htmlContents += `<div class="category-element" onmouseenter='document.getElementById("navCat${key}").style.display=""' onmouseleave='document.getElementById("navCat${key}").style.display="none"'>
+            <div class="category-button">
+                <a href="category.html">${value.name}</a>
+                <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
+            </div>
+            <div class="nav-subcategory" style="display: none;" id="navCat${key}">`
+            Object.entries(value.subcategories).forEach((entry) => {
+                const [key,value] = entry
+                htmlContents += `<a href="category.html">${value}</a>`
+            })
+            htmlContents += `</div>
+            </div>`
+        })
+        return htmlContents
+    })
+    await document.querySelector('.nav-category').innerHTML(htmlContents)
+}
