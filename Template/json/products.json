@@ -1,0 +1,58 @@
+{
+    "products": {
+        "AntonioOcon": {
+            "name": "Antonio Ocón",
+            "picture": "https://online.ulpgc.es/sites/default/files/documentos/antonio-ocon.jpg",
+            "price": "1024",
+            "oldPrice": "3512",
+            "description": "Verdadero informático. Ciberanalista, cis hétero, profesional en SHA-512. ¿Crees que estás seguro? ¡JA! No es así. ¿Qué significa televisión? Si compras cosas de China eres imbécil.",
+            "attributes": ["Gorgeous", "Hecatómbico"],
+            "id": 0
+        },
+        "RiforfoRex": {
+            "name": "Riforfo Rex",
+            "picture": "https://2.bp.blogspot.com/--yxGq-sTuy4/WFWXWhk9hHI/AAAAAAAACM4/sQJpaTFkYtEFemvatYiyvWbewYeluSDmACLcB/s1600/soloriforfo.jpg",
+            "price": "1",
+            "oldPrice": "1.1",
+            "description": "Soy un enchufado.",
+            "attributes": ["MUDAMUDAMUDAMUDA"],
+            "id": 1
+        },
+        "RiforfoRexBook": {
+            "name": "Tormenta Solar",
+            "picture": "https://www.aciprensa.com/imagespp/IglesiaCatolica_030921.jpg",
+            "price": "300",
+            "oldPrice": "301",
+            "description": "And Jesus one day, split the oceans in two. [Jesiaha - 13.24]. Para analfabetos.",
+            "attributes": ["Peso ligero"],
+            "id": 2
+        },
+        "AnaMariaPlacido": {
+            "name": "Ana Maria Placido",
+            "picture": "https://www.dis.ulpgc.es/profesorado/fotos/aplacido.jpg",
+            "price": "100",
+            "oldPrice": "150",
+            "description": "TÚ",
+            "attributes": ["Plácida"],
+            "id": 3
+        },
+        "JohnCharles": {
+            "name": "Juan Carlos Rodriguez",
+            "picture": "https://i1.rgstatic.net/ii/profile.image/278645802323974-1443445744452_Q512/Juan-Rodriguez-Del-Pino.jpg",
+            "price": "0.5",
+            "oldPrice": "0.6",
+            "description": "Jeje, asta la procsimaaa. Se desea construir un sistema de gestión de acceso de los clientes a las cajas de un gran hipermercado. Se tiene una cola única y varias cajas que procesan la compra de los clientes llegados desde la cola única. Las cajas deben dar cuenta a la contabilidad de la operación de venta. En este sistema se han identificado las siguientes clases: Cliente, Cola, Caja y Contabilidad. Se desea simular la llegada aleatoria de clientes al sistema formado por: una cola, tres cajas y una contabilidad. Un programa principal se encargará de crear y arrancar estos elementos y añadir con una cadencia aleatoria un nuevo cliente a la cola. La simulación consistirá en añadir 50 clientes.",
+            "attributes": ["Inteligente"],
+            "id": 4
+        },
+        "AlexandruTlf": {
+            "name": "Teléfono de Alexandru",
+            "picture": "https://images.ctfassets.net/wcfotm6rrl7u/1cr3KVWAlSXXLt1VwhlVIb/5b10efae1ba3edbc769232cfea35c237/nokia-110-black-front-int.png?f=left&fit=pad&q=88",
+            "price": "120",
+            "oldPrice": "125",
+            "description": "Propiedad pública. Responsive orientado a objetos (mujeres). Multiparadigma.",
+            "attributes": ["Red neuronal en Keras TF"],
+            "id": 5
+        }
+    }
+}
