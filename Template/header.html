@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
     <header>
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        </div>
         <nav class="nav-main">
-            <div class="nav-content">
+            <div id="nav-content">
                 <!-- Icons: 36x2px -->
-                <div class="nav-element lg:hidden">
+                <div class="nav-element lg:hidden cursor-pointer" onclick="openNav()">
                     <!-- Hamborguesa Normal -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 normal-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -19,8 +23,8 @@
                     <line x1="4" y1="6" x2="20" y2="6"/>
                     <line x1="4" y1="12" x2="20" y2="12"/>
                     <line x1="4" y1="18" x2="20" y2="18"/>
-                </svg>
-            </div>
+                    </svg>
+                </div>
 
                 <a class="nav-element" href="mailto:info@g2babies.com">
                     <!-- Mail Normal -->
@@ -40,7 +44,15 @@
                 </a>
 
                 <a class="nav-element" href="tel:666666666">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Phone normal -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call normal-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                    <path d="M15 7a2 2 0 0 1 2 2" />
+                    <path d="M15 3a6 6 0 0 1 6 6" />
+                    </svg>
+                    <!-- Phone dark -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call dark-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
                     <path d="M15 7a2 2 0 0 1 2 2" />
@@ -49,17 +61,17 @@
                     <div class="nav-text">+34 666 666 666</div>
                 </a>
 
-            <form action="search.html">
-                <div class="nav-search-box px-4">
-                    <button class="nav-search-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="none" d="M0 0h24v24H0z"/>
-                            <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/>
-                        </svg>
-                    </button>
-                    <input type="text" class="nav-search-input dark:text-black" placeholder="Search for a product or a category">  
-                </div>
-            </form>
+                <form action="search.html">
+                    <div class="nav-search-box px-4">
+                        <button class="nav-search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/>
+                            </svg>
+                        </button>
+                        <input type="text" class="nav-search-input" placeholder="Search for a product or a category">  
+                    </div>
+                </form>
             
 
                 <a href="login.html" class="nav-element">
@@ -100,9 +112,8 @@
                     <div class="nav-text ">Cart</div>
                 </a>
                 
-                <!-- darkmode?-->
-                <div class="px-4 nav-element">
-                    <div class="flex justify-end items-center space-x-2 mx-auto relative" onclick="toggleDarkMode()">
+                <div class="nav-element cursor-pointer">
+                    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
                         <!-- Sun dark mode-->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun dark-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,10 +148,9 @@
 
                     </div>
                 </div>
-                <!---->
 
             </div>
-        <figure class="pb-5">
+        <figure class="pb-5 mt-24">
             <img src="./Images/logo_darkmode.png" alt="Logo g2babies" class="lg:w-4/12 md:w-5/12 w-6/12 mx-auto object-center cursor-pointer invisible hidden dark:visible dark:block" onclick="window.location.href='index.html'">
             <img src="./Images/logo.png" alt="Logo g2babies" class="lg:w-4/12 md:w-5/12 w-6/12 mx-auto object-center cursor-pointer dark:invisible dark:hidden" onclick="window.location.href='index.html'">
         </figure>
@@ -233,5 +243,15 @@
             </div>
         </div>
     </nav>
+    
+    <script>
+    function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+    </script>
 </header>
 

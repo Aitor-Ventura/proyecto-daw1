@@ -9,6 +9,7 @@ module.exports = {
       },
       screens: {
         "3xl": "1600px",
+        'lg': '1080px',
       },
     },
   },

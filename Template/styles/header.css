@@ -1,11 +1,12 @@
 @layer components {
     .nav-main {
-        @apply flex flex-col items-center justify-center pt-5 px-10 flex-wrap text-xl;
+        @apply flex flex-col items-center justify-center flex-wrap text-xl;
     }
 
-    /* Esta sintaxis diche que nav-content esta dentro de nav-main */
-    .nav-content {
-        @apply flex flex-row justify-center w-full pb-5 whitespace-nowrap;
+    #nav-content {
+        @apply flex flex-row justify-center w-full py-5 px-10 whitespace-nowrap bg-white drop-shadow-md dark:bg-gray-900;
+        position: fixed;
+        top: 0;
     }
 
     .nav-main-element{
@@ -29,7 +30,7 @@
     }
 
     .nav-element {
-        @apply flex items-center px-4;
+        @apply flex items-center mx-4;
     }
 
     .nav-text {
@@ -41,7 +42,7 @@
     }
 
     .nav-category {
-        @apply pb-3 w-full bg-gray-200 justify-around flex flex-row flex-wrap px-5 items-center dark:bg-indigo-900;
+        @apply pb-3 w-full bg-gray-200 justify-around flex-row flex-wrap px-4 items-center dark:bg-gray-800 hidden lg:flex ;
     }
 
     .category-element {
@@ -55,19 +56,23 @@
     .category-button {
         @apply flex flex-row mx-5 items-center;
     }
-}
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+    .dark-mode-toggle {
+        @apply flex justify-end items-center space-x-2 mx-auto relative;
+    }
+
+    .sidenav {
+        @apply shadow-md bg-gray-50;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
 }
 
 .sidenav a {
