@@ -95,15 +95,19 @@ function billingInfoValidation() {
         /* Estilo de los atributos no editables */
         address.style.fontStyle = "normal"
         address.style.color = "black"
-
+        address.style.cursor = "initial"
+        
         country.style.fontStyle = "normal"
         country.style.color = "black"
-
+        country.style.cursor = "initial"
+        
         city.style.fontStyle = "normal"
         city.style.color = "black"
-
+        city.style.cursor = "initial"
+        
         postcode.style.fontStyle = "normal"
         postcode.style.color = "black"
+        postcode.style.cursor = "initial"
     }
 }
 
