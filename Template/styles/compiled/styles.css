@@ -2223,10 +2223,6 @@ body {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 }
-.my-10 {
-	margin-top: 2.5rem;
-	margin-bottom: 2.5rem;
-}
 .mx-5 {
 	margin-left: 1.25rem;
 	margin-right: 1.25rem;
@@ -2242,6 +2238,10 @@ body {
 .mx-0 {
 	margin-left: 0px;
 	margin-right: 0px;
+}
+.my-10 {
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
 }
 .mb-2 {
 	margin-bottom: 0.5rem;
@@ -2282,6 +2282,9 @@ body {
 .ml-2 {
 	margin-left: 0.5rem;
 }
+.mt-12 {
+	margin-top: 3rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -2309,14 +2312,8 @@ body {
 .mb-2\.5 {
 	margin-bottom: 0.625rem;
 }
-.mt-12 {
-	margin-top: 3rem;
-}
 .mt-16 {
 	margin-top: 4rem;
-}
-.mb-10 {
-	margin-bottom: 2.5rem;
 }
 .block {
 	display: block;
@@ -2368,9 +2365,6 @@ body {
 .w-4\/6 {
 	width: 66.666667%;
 }
-.w-1\/4 {
-	width: 25%;
-}
 .w-1\/2 {
 	width: 50%;
 }
@@ -2379,6 +2373,9 @@ body {
 }
 .w-1\/5 {
 	width: 20%;
+}
+.w-1\/4 {
+	width: 25%;
 }
 .w-2\/4 {
 	width: 50%;
@@ -2442,12 +2439,6 @@ body {
 }
 .justify-around {
 	justify-content: space-around;
-}
-.gap-4 {
-	gap: 1rem;
-}
-.gap-6 {
-	gap: 1.5rem;
 }
 .gap-12 {
 	gap: 3rem;
