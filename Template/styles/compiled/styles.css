@@ -2088,7 +2088,7 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(107, 114, 128, var(--tw-text-opacity));
 }
-.buy-panel {
+.buy-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
