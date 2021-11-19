@@ -1,12 +1,12 @@
 @layer components {
 
-  .contenedor-head {
+  .container-head {
     @apply max-w-full m-0 flex items-center flex-wrap flex-col text-5xl;
     padding: 0 0 10vh 0;
     height: 70vh;
   }
 
-  .contenedor-cards {
+  .container-cards {
     @apply flex items-center flex-col max-w-full m-0;
     background: linear-gradient(to top, #dadada 97%, rgba(0, 0, 0, 0) 0);
   }
@@ -43,23 +43,23 @@
     );
   }
 
-  .contenedor-texto-card {
+  .container-text-card {
     @apply w-6/12 flex flex-col ml-14 pr-20;
   }
 
-  .texto-card-titulo {
+  .text-card-titulo {
     @apply w-full text-2xl font-bold pt-10 pb-4;
   }
 
-  .texto-card-subtitulo {
+  .text-card-subtitulo {
     @apply w-full font-medium text-xl pb-2;
   }
 
-  .texto-card-cuerpo {
+  .text-card-cuerpo {
     @apply w-4/5;
   }
 
-  .contenedor-texto-imagen {
+  .container-text-image {
     @apply w-6/12 flex;
   }
 
