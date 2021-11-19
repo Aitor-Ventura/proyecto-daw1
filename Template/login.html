@@ -10,22 +10,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="./scripts/scripts.js" defer></script>
     </head>
+
     <body class="dark:bg-gray-800 dark:text-gray-200" >
         <div class="header mb-5"></div>
+
         <!--Content-->
         <h1 class="login-title">Please login to continue</h1>
-        <form action="#" method="POST" class="login-form-panel" style="background-image: url('./Images/Backgrounds/pikachu.png');">
-            <div class="login-form-email">
+        <form action="#" method="POST" class="login-form" style="background-image: url('./Images/Backgrounds/pikachu.png');">
+            <div class="login-form-field">
                 <label for="login-email" class="login-form-text">Email: </label>
-                <input type="email" class="login-form-input-text dark:text-black" placeholder="Email" required>
+                <input type="email" class="login-input" placeholder="Email" required>
             </div>
-            <div class="flex flex-col mt-2 justify-between w-full px-6">
+
+            <div class="login-form-field">
                 <label for="login-password" class="login-form-text">Password: </label>
-                <input type="password" class="login-form-input-text dark:text-black" placeholder="Password" required>
+                <input type="password" class="login-input" placeholder="Password" required>
             </div>
-            <button type="button" onclick="document.location.href='user.html'" class="login-form-login-button">Login</button>
+
+            <button type="button" onclick="document.location.href='user.html'" class="login-form-button">Login</button>
             <button type="button" onclick="document.location.href='create_user.html'" class="login-form-register">Don't have an account yet? Register now</button>
         </form>
+        
         <div class="footer"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
