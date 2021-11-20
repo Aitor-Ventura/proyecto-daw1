@@ -971,6 +971,10 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(79, 70, 229, var(--tw-text-opacity));
 }
+.dark .grid-view-text {
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
+}
 @media (min-width: 640px) {
 
 	.grid-view-text {
@@ -1497,6 +1501,10 @@ video {
 	margin-left: 0.25rem;
 	--tw-text-opacity: 1;
 	color: rgba(79, 70, 229, var(--tw-text-opacity));
+}
+.dark .category-panel-head-grid-items-view-listviewtext {
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
 

@@ -22,7 +22,7 @@
     }
 
     .grid-view-text {
-        @apply text-indigo-600 sm:mr-0 invisible lg:visible mb-2 lg:mb-0 ml-1 lg:mr-4;
+        @apply text-indigo-600 sm:mr-0 invisible lg:visible mb-2 lg:mb-0 ml-1 lg:mr-4 dark:text-purple-400;
     }
 
     .dark-grid-icon {
