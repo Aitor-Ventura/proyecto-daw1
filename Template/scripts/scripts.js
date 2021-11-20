@@ -172,7 +172,7 @@ const loadNavBarContents = async function() {
     document.querySelector('.nav-category').innerHTML = htmlContents
 }
 
-const loadProductList = async function () {
+const loadProductListNormalCategory = async function () {
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
         Object.entries(json.products).forEach((entry) => {
@@ -185,7 +185,7 @@ const loadProductList = async function () {
 
                 <div class="category-panel-products-panel-innerproducts-panel-productentry-panel">
                     <h4 class="category-panel-products-panel-innerproducts-panel-productentry-panel-title">${value.name}</h4>
-                    <p class="category-panel-products-panel-innerproducts-panel-productentry-panel-description">${value.description.substr(0,15)}...</p>
+                    <p class="category-panel-products-panel-innerproducts-panel-productentry-panel-description">${value.description.substr(0,45)}...</p>
                     <div class="category-panel-products-panel-innerproducts-panel-productentry-panel-grid">
                         <div class="category-panel-products-panel-innerproducts-panel-productentry-panel-grid-column">
                             <p>Quality: </p>
@@ -236,4 +236,67 @@ const loadProductList = async function () {
     document.querySelector('.category-panel-products-panel-innerproducts-panel').innerHTML = htmlContents
 }
 
-loadProductList()
+const loadProductListGridCategory = async function () {
+    var htmlContents = ""
+    await $.getJSON("./json/products.json", function(json){
+        Object.entries(json.products).forEach((entry) => {
+            const [key, value] = entry
+            htmlContents +=`
+            <a href="product.html" class="specific-product-entry">
+                <div>
+                    <div class="image-container">
+                        <img src="${value.picture[0]}" class="product-image" width="240" height="240" alt="Product Image"> 
+                    </div>                        
+                    <div>
+                        <h2 class="product-title">${value.name}</h2>
+                        <h4 class="product-description">${value.description.substr(0,45)}...</h4>
+                    </div>
+                    <div class="buy-panel">
+                        <div class="product-cost-container">
+                            <p class="cost">${value.price} EUR</p>
+                            <p class="previous-cost" id="discount-prod-3">${value.oldPrice} EUR</p>
+                        </div>
+                        <button class="buy-now-button">Buy now</button>
+                    </div>
+                </div>
+            </a>
+            `
+        })
+    })
+    document.querySelector('.product-entries-panel').innerHTML = htmlContents
+}
+
+const loadBestSellingIndex = async function() {
+    var htmlContents = ""
+    await $.getJSON("./json/products.json", function(json){
+        Object.entries(json.products).forEach((entry) => {
+            const [key, value] = entry
+            if (value.bestSeller) {
+                htmlContents +=`
+                    <a href="product.html" class="bestselling-product">
+                        <div class="bestselling-product-image-container">
+                            <img src="${value.picture[0]}" class="bestselling-product-image" width="240" height="240" alt="Product Image"> 
+                        </div>                        
+                        <div>
+                            <h2 class="bestselling-product-title">${value.name}</h2>
+                            <h4 class="bestselling-product-description">${value.description.substr(0,45)}...</h4>
+                        </div>
+                        <div class="buy-container">
+                            <div class="cost-panel">
+                                <p class="cost">${value.price} EUR</p>
+                                <p class="previous-cost" id="discount-prod-3">${value.oldPrice} EUR</p>
+                            </div>
+                            <button class="buynow-button">Buy now</button>
+                        </div>
+                    </a>
+                `
+            }
+        })
+    })
+    document.querySelector('.bestselling-product-card').innerHTML = htmlContents
+}
+
+if (this.location.href.includes('category.html')) loadProductListNormalCategory()
+if (this.location.href.includes('category_grid.html')) loadProductListGridCategory()
+if (this.location.href.includes('index.html')) loadBestSellingIndex()
+
