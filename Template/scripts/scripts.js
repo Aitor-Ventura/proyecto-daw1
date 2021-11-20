@@ -131,12 +131,12 @@ const html = document.querySelector("html");
 
 const toggleDarkMode = function() {
     const checkbox = document.getElementById('checkbox');
-    if (sessionStorage.getItem("darkMode") == "false"){
-        html.classList.add("dark")
-        sessionStorage.setItem("darkMode", "true")
-    } else {
+    if (sessionStorage.getItem("darkMode") == "true"){
         html.classList.remove("dark");
         sessionStorage.setItem("darkMode","false");
+    } else {
+        html.classList.add("dark")
+        sessionStorage.setItem("darkMode", "true")
     } 
 }
 
