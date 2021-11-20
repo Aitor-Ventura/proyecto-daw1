@@ -13,7 +13,7 @@
     }
 
     .banners-subfocus {
-        @apply font-bold text-indigo-600 mb-4;
+        @apply font-bold text-indigo-600 mb-4 dark:text-purple-400;
     }
 
     .banners-heading {
@@ -21,11 +21,11 @@
     }
 
     .banners-showarticle {
-        @apply font-bold text-2xl border-indigo-600 border-2 rounded-lg px-5 py-2 mt-32 mb-10;
+        @apply font-bold text-2xl border-indigo-600 border-2 rounded-lg px-5 py-2 mt-32 mb-10 dark:border-purple-400;
     }
 
     .banner-showarticle-icon {
-        @apply text-indigo-600 font-bold;
+        @apply text-indigo-600 font-bold dark:text-purple-400;
     }
 
     /* Left "best selling products" area */
@@ -46,7 +46,7 @@
     }
 
     .bestselling-link {
-        @apply md:text-indigo-600 md:mt-1 md:underline md:ml-0 ml-2 md:border-0 border-black border-2 rounded-md md:bg-transparent bg-indigo-600 text-white md:py-0 py-2 md:px-0 px-10 mt-4 w-full md:text-left text-center md:w-auto;
+        @apply md:text-indigo-600 dark:text-purple-400 md:mt-1 md:underline md:ml-0 ml-2 md:border-0 border-black border-2 rounded-md md:bg-transparent bg-indigo-600 text-white md:py-0 py-2 md:px-0 px-10 mt-4 w-full md:text-left text-center md:w-auto;
     }
 
     .bestselling-product-panel {

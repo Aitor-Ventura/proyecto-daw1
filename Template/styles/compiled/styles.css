@@ -908,6 +908,10 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(79, 70, 229, var(--tw-text-opacity));
 }
+.dark .footer .footer-element .element-content .content-text {
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
+}
 .main-container {
 	padding-left: 2rem;
 	padding-right: 2rem;
@@ -1280,7 +1284,7 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(107, 114, 128, var(--tw-text-opacity));
 }
-.buy-panel {
+.buy-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -2475,6 +2479,10 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(79, 70, 229, var(--tw-text-opacity));
 }
+.dark .banners-subfocus {
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
+}
 .banners-heading {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
@@ -2495,10 +2503,18 @@ video {
 	line-height: 2rem;
 	font-weight: 700;
 }
+.dark .banners-showarticle {
+	--tw-border-opacity: 1;
+	border-color: rgba(167, 139, 250, var(--tw-border-opacity));
+}
 .banner-showarticle-icon {
 	font-weight: 700;
 	--tw-text-opacity: 1;
 	color: rgba(79, 70, 229, var(--tw-text-opacity));
+}
+.dark .banner-showarticle-icon {
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
 }
 /* Left "best selling products" area */
 .products-panel {
@@ -2586,6 +2602,10 @@ video {
 	text-align: center;
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.dark .bestselling-link {
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
 }
 @media (min-width: 768px) {
 
@@ -2811,7 +2831,7 @@ video {
 		width: 40%;
 	}
 }
-.product-image {
+.product-image-div {
 	margin-bottom: 2rem;
 	height: 24rem;
 	width: auto;
@@ -3632,6 +3652,10 @@ body {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
+.text-red-700 {
+	--tw-text-opacity: 1;
+	color: rgba(185, 28, 28, var(--tw-text-opacity));
+}
 .text-blue-500 {
 	--tw-text-opacity: 1;
 	color: rgba(59, 130, 246, var(--tw-text-opacity));
@@ -3739,6 +3763,10 @@ body {
 .dark .dark\:text-gray-200 {
 	--tw-text-opacity: 1;
 	color: rgba(229, 231, 235, var(--tw-text-opacity));
+}
+.dark .dark\:text-purple-400 {
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
 
