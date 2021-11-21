@@ -1,0 +1,70 @@
+{
+    "categories": {
+        "disney":{
+            "id":1,
+            "name":"Disney",
+            "product_ids":[],   
+            "subcategories": {
+                "sub_1":"Subcategory 1",
+                "sub_2":"Subcategory 2",
+                "sub_3":"Subcategory 3",
+                "sub_4":"Subcategory 4"
+            }
+        },
+        "anime_manga":{
+            "id":2,
+            "name":"Anime and Manga",
+            "product_ids":[],   
+            "subcategories": {
+                "sub_1":"Subcategory 1",
+                "sub_2":"Subcategory 2",
+                "sub_3":"Subcategory 3",
+                "sub_4":"Subcategory 4"
+            }
+        },
+        "movies":{
+            "id":4,
+            "name":"Movies",
+            "product_ids":[],   
+            "subcategories": {
+                "sub_1":"Subcategory 1",
+                "sub_2":"Subcategory 2",
+                "sub_3":"Subcategory 3",
+                "sub_4":"Subcategory 4"
+            }
+        },
+        "dc_comics":{
+            "id":5,
+            "name":"DC Comics",
+            "product_ids":[],   
+            "subcategories": {
+                "sub_1":"Subcategory 1",
+                "sub_2":"Subcategory 2",
+                "sub_3":"Subcategory 3",
+                "sub_4":"Subcategory 4"
+            }
+        },
+        "marvel_comics":{
+            "id":6,
+            "name":"Marvel Comics",
+            "product_ids":[],   
+            "subcategories": {
+                "sub_1":"Subcategory 1",
+                "sub_2":"Subcategory 2",
+                "sub_3":"Subcategory 3",
+                "sub_4":"Subcategory 4"
+            }
+        },
+        "model_kits":{
+            "id":7,
+            "name":"Model Kits",
+            "product_ids":[],   
+            "subcategories": {
+                "sub_1":"Subcategory 1",
+                "sub_2":"Subcategory 2",
+                "sub_3":"Subcategory 3",
+                "sub_4":"Subcategory 4"
+            }
+        }
+    }
+}
