@@ -59,7 +59,7 @@
     }
 
     .bestselling-product {
-        @apply w-full h-full border-2 rounded-md border-gray-200 dark:bg-gray-800 dark:hover:bg-gray-750 dark:border-0 flex flex-col px-5 py-5 mx-5 md:mt-0 mt-2;
+        @apply w-full h-full border-2 rounded-md border-gray-200 dark:bg-gray-800 dark:hover:bg-gray-750 dark:border-0 flex flex-col px-5 py-5 mx-5 md:mt-0 mt-2 justify-between;
     }
 
     .bestselling-product-image-container {
@@ -79,7 +79,7 @@
     }
 
     .buy-container {
-        @apply h-full flex flex-row justify-between;
+        @apply flex flex-row justify-between;
     }
 
     .cost-panel {
