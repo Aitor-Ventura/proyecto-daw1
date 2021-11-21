@@ -23,7 +23,7 @@
     }
 
     .nav-search-input {
-        @apply py-2 hidden sm:flex w-80 sm:bg-gray-200 text-center rounded-r-lg;
+        @apply py-2 hidden sm:flex w-80 sm:bg-gray-200 text-center rounded-r-lg dark:text-black;
     }
 
     .nav-search-button {

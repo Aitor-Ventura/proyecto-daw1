@@ -601,6 +601,9 @@ video {
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	text-align: center;
+}.dark .nav-search-input{
+	--tw-text-opacity: 1;
+	color: rgba(0, 0, 0, var(--tw-text-opacity));
 }@media (min-width: 680px){.nav-search-input{
 		display: flex;
 	}.nav-search-input{
