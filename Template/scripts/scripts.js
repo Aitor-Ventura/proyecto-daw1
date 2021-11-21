@@ -251,13 +251,13 @@ const loadProductListGridCategory = async function () {
                         <h2 class="product-title">${value.name}</h2>
                         <h4 class="product-description">${value.description.substr(0,45)}...</h4>
                     </div>
-                    <div class="buy-panel">
-                        <div class="product-cost-container">
-                            <p class="cost">${value.price} EUR</p>
-                            <p class="previous-cost" id="discount-prod-3">${value.oldPrice} EUR</p>
-                        </div>
-                        <button class="buy-now-button">Buy now</button>
+                </div>
+                <div class="buy-panel">
+                    <div class="product-cost-container">
+                        <p class="cost">${value.price} EUR</p>
+                        <p class="previous-cost" id="discount-prod-3">${value.oldPrice} EUR</p>
                     </div>
+                    <button class="buy-now-button">Buy now</button>
                 </div>
             </a>
             `

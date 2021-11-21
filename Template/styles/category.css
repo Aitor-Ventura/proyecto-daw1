@@ -131,7 +131,7 @@
 }
 
 .category-panel-products-panel-innerproducts-panel-productentry-image {
-    @apply w-auto flex flex-col items-stretch md:w-1/4;
+    @apply w-auto flex flex-col items-stretch md:w-1/4 md:ml-2;
 }
 
 .category-panel-products-panel-innerproducts-panel-productentry-panel {
