@@ -16,7 +16,7 @@
     }
 
     .search-panel-head-grid {
-        @apply flex flex-row justify-between pt-8;
+        @apply pt-8 md:flex flex-row justify-between;
     }
 
     .search-panel-head-grid-title {
@@ -24,15 +24,15 @@
     }
 
     .search-panel-head-grid-items {
-        @apply flex flex-row justify-around w-2/6;
+        @apply flex flex-col w-auto md:flex-row justify-around;
     }
 
     .search-panel-head-grid-items-view {
-        @apply flex flex-row items-center cursor-pointer;
+        @apply place-self-center cursor-pointer md:flex flex-row lg:items-center;
     }
 
     .search-panel-head-grid-items-products {
-        @apply flex flex-row items-center;
+        @apply place-self-center md:flex flex-row lg:items-center;
     }
 
     .search-panel-head-grid-items-products-number {
@@ -40,15 +40,15 @@
     }
 
     .search-panel-head-grid-items-viewtext {
-        @apply ml-1;
+        @apply invisible sm:mr-0 lg:visible mb-2 lg:mb-0 ml-1 lg:mr-4;
     }
 
     .search-panel-result-panel {
-        @apply flex flex-row mt-16;
+        @apply lg:flex flex-row mt-4 md:mt-8 lg:mt-16;
     }
     
     .search-panel-result-panel-prices-panel {
-        @apply w-1/6 flex flex-col;
+        @apply mb-8 lg:w-2/6 flex flex-col;
     }
 
     .search-panel-result-panel-prices-panel-subpanel {
@@ -56,7 +56,7 @@
     }
 
     .search-panel-result-panel-prices-panel-subpanel-title {
-        @apply font-bold text-lg my-4;
+        @apply font-bold text-lg text-center my-4 lg:text-left;
     }
 
     .search-panel-result-panel-prices-panel-subpanel-minmax-panel {
@@ -72,7 +72,7 @@
     }
 
     .search-panel-result-panel-prices-panel-subpanel-minmax-panel-text {
-        @apply font-bold text-sm mt-8;
+        @apply font-bold text-sm text-center mt-8 lg:text-left;
     }
 
     .search-panel-result-panel-prices-panel-subpanel-minmax-panel-input {
@@ -96,15 +96,15 @@
     }
 
     .search-panel-result-panel-products-panel {
-        @apply w-5/6 pl-10;
+        @apply w-auto lg:pl-10 lg:w-4/6;
     }
 
     .search-panel-result-panel-products-panel-productentry {
-        @apply rounded-md border-gray-200 border-2 flex flex-row py-5 mb-5;
+        @apply flex flex-col rounded-md border-gray-200 border-2 py-5 mb-5 md:flex md:flex-row;
     }
 
     .search-panel-result-panel-products-panel-productentry-imgpanel {
-        @apply w-1/4 flex flex-col items-stretch;
+        @apply w-auto flex flex-col items-stretch md:w-1/4;
     }
 
     .search-panel-result-panel-products-panel-productentry-imgpanel-img {
@@ -112,43 +112,43 @@
     }
 
     .search-panel-result-panel-products-panel-productentry-panel {
-        @apply w-2/5 flex flex-col items-stretch ml-5;
+        @apply w-auto ml-0 flex flex-col items-stretch md:mt-5 md:w-2/5 md:ml-5;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-title {
-        @apply font-bold text-lg;
+        @apply font-bold text-xl text-center sm:text-3xl md:text-left md:text-lg;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-description {
-        @apply text-sm text-gray-500;
+        @apply text-sm text-gray-500 text-center md:text-left;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-grid {
-        @apply flex flex-row justify-around w-4/5 mt-5 flex-wrap;
+        @apply mx-auto grid grid-cols-2 md:flex flex-row justify-around w-4/5 mt-5 flex-wrap md:mx-0;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-grid-column {
-        @apply w-1/2;
+        @apply m-auto md:w-1/2;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-rightside-panel {
-        @apply w-1/4 flex flex-col ml-5;
+        @apply flex flex-col ml-0 md:w-1/4 md:ml-5;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-rightside-panel-oldprice {
-        @apply text-sm line-through text-gray-400;
+        @apply line-through text-gray-400 text-center sm:text-lg md:text-left md:text-sm;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel {
-        @apply flex flex-col mt-4;
+        @apply flex flex-col mt-4 mx-2 sm:mx-6 md:mx-0;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-shippingtext {
-        @apply font-bold text-gray-400 text-sm;
+        @apply font-bold text-gray-400 text-sm text-center md:text-left;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-deliverytext {
-        @apply text-gray-400 text-sm;
+        @apply text-gray-400 text-sm text-center md:text-left;
     }
 
     .search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-apply {
