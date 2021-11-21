@@ -12,7 +12,7 @@
   }
 
   #particles-js {
-    @apply absolute w-full h-screen bg-gray-100 bg-no-repeat bg-cover ml-auto mr-auto;
+    @apply absolute w-full h-screen bg-gray-100 dark:bg-gray-600 bg-no-repeat bg-cover ml-auto mr-auto;
     z-index: -1;
   }
 
@@ -64,8 +64,12 @@
   }
 
   .titulo-article {
-    @apply text-8xl font-medium pt-20 pb-4 text-center;
+    @apply text-8xl font-medium pt-20 pb-4 text-center dark:text-gray-100;
     font-weight: 500;
+  }
+
+  .subtitulo-article {
+    @apply text-center text-3xl dark:text-gray-100;
   }
 
 }

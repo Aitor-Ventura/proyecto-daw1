@@ -5,10 +5,10 @@
             "name":"Disney",
             "product_ids":[],   
             "subcategories": {
-                "sub_1":"Subcategory 1",
-                "sub_2":"Subcategory 2",
-                "sub_3":"Subcategory 3",
-                "sub_4":"Subcategory 4"
+                "sub_1":"Villains",
+                "sub_2":"Heroes",
+                "sub_3":"Pixar",
+                "sub_4":"Princesses"
             }
         },
         "anime_manga":{
@@ -16,10 +16,10 @@
             "name":"Anime and Manga",
             "product_ids":[],   
             "subcategories": {
-                "sub_1":"Subcategory 1",
-                "sub_2":"Subcategory 2",
-                "sub_3":"Subcategory 3",
-                "sub_4":"Subcategory 4"
+                "sub_1":"UwU Lulushu",
+                "sub_2":"OWO i have to take a shower",
+                "sub_3":"HighSchool DxD",
+                "sub_4":"Death Note"
             }
         },
         "movies":{
@@ -27,10 +27,10 @@
             "name":"Movies",
             "product_ids":[],   
             "subcategories": {
-                "sub_1":"Subcategory 1",
-                "sub_2":"Subcategory 2",
-                "sub_3":"Subcategory 3",
-                "sub_4":"Subcategory 4"
+                "sub_1":"Thriller",
+                "sub_2":"Clowns",
+                "sub_3":"Special 4 Girls",
+                "sub_4":"Special 4 Boys"
             }
         },
         "dc_comics":{
