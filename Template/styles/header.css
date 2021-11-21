@@ -43,7 +43,7 @@
     }
 
     .nav-category {
-        @apply w-full bg-gray-200 justify-around flex-row flex-wrap px-4 dark:bg-gray-800 hidden lg:flex ;
+        @apply w-full bg-gray-200 justify-around flex-row flex-wrap px-4 dark:bg-gray-700 hidden lg:flex ;
     }
 
     .category-element {
