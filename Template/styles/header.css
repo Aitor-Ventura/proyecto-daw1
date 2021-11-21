@@ -1,3 +1,5 @@
+@import 'animate.css';
+@layer components {
     .nav-main {
         @apply flex flex-col items-center justify-center flex-wrap text-xl;
     }
@@ -41,7 +43,7 @@
     }
 
     .nav-category {
-        @apply w-full bg-gray-200 justify-around flex-row flex-wrap px-4 items-center dark:bg-gray-800 hidden lg:flex ;
+        @apply w-full bg-gray-200 justify-around flex-row flex-wrap px-4 dark:bg-gray-800 hidden lg:flex ;
     }
 
     .category-element {
@@ -57,7 +59,7 @@
     }
 
     .category-button {
-        @apply flex flex-row mx-5 items-center;
+        @apply flex flex-row mx-5 items-center flex-wrap;
     }
 
     .dark-mode-toggle {
@@ -103,6 +105,8 @@
         @apply w-80 text-center mt-14 py-2 whitespace-nowrap text-xl self-center bg-gray-200 rounded-lg;
         
     }
+
+}
 
 .close-button {
     position: absolute;
