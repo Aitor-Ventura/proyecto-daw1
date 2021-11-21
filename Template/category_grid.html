@@ -1,289 +1,320 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>G2babies - Videogames</title>
-        <link
-            href="styles/compiled/styles.css"
-            rel="stylesheet"
-        />
+        <link href="styles/compiled/styles.css" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="./scripts/scripts.js" defer></script>
     </head>
     <body class="dark:bg-gray-800 dark:text-gray-200" >
         <div class="header"></div>
-        <div class="px-8 pt-4">
+
+        <div class="main-container">
+            <!-- Breadcrumbs navigation -->
             <div class="text-sm text-gray-400">
                 <p><a href=".">Homepage</a> / <a href="#" class="dark:text-white">Videogames</a></p>
             </div>
+
+            <!-- View selector and category name -->
             <div class="title-grid">
+                <div class="pb-4">
+                    <h2 class="title-category">Videogames</h2>
+                </div>
+
+                <div class="view-selector">
+                    <div class="grid-view">
+                        <svg fill="indigo" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                            <path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/>
+                        </svg>
+                        <p class="grid-view-text">Grid view</p>
+                    </div>
+
+                    <div class="list-view" onclick="window.location.href='category.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white" class="dark-grid-icon">
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                            <path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="light-grid-icon">
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                            <path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/>
+                        </svg>
+                        <p class="invisible sm:mr-0 lg:visible mb-2 lg:mb-0 ml-1 lg:mr-4">List view</p>
+                    </div>
+
+                    <div class="product-counter">
+                        <p class="products-numbers">117</p>
+                        <p class="products-numbers-text">Products</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products_panel">
+                <!-- Subcategories -->
+                <div class="subcategories-panel">
+                    <div>
+                        <h3 class="product-title text-center lg:text-left">Subcategories</h3>
+                        <div class="subcategories-list">
+                            <div class="specific-subcategory">
+                                <p class="text-sm">Subcategory name</p>
+                                <p class="products-subcategory-number">320</p>
+                            </div>
+
+                            <div class="specific-subcategory">
+                                <p class="text-sm">Subcategory name</p>
+                                <p class="products-subcategory-number">112</p>
+                            </div>
+
+                            <div class="specific-subcategory">
+                                <p class="text-sm">Subcategory name</p>
+                                <p class="products-subcategory-number">32</p>
+                            </div>
+
+                            <div class="specific-subcategory">
+                                <p class="text-sm">Subcategory name</p>
+                                <p class="products-subcategory-number">48</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price selector -->
+                    <div class="price-selector-panel">
+                        <div>
+                            <h3 class="minmax-title">Minimum price</h3>
+                            <input type="range" min="1" max="1000" value="0" class="price-range" id="myRange">
+                        </div>
+
+                        <div>
+                            <h3 class="minmax-title">Maximum price</h3>
+                            <input type="range" min="1" max="1000" value="1000" class="price-range" id="myRange">
+                        </div>
+
+                        <div class="minmax-boxes-panel">
+                            <div class="minmax-box">
+                                <p class="minmax-text">Min</p>
+                                <input type="text" placeholder="0" class="minmax-input">
+                            </div>
+
+                            <div class="minmax-box">
+                                <p class="minmax-text">Max</p>
+                                <input type="text" placeholder="1000" class="minmax-input">
+                            </div>
+                        </div>
+                        
+                        <div class="price-selector-buttons-panel">
+                            <button class="apply-button">Apply</button>
+                            <button class="reset-button">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product entries -->
+                <div class="product-entries-panel">
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">1.48 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-1"></p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>                        
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">0.28 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-2">48.56 EUR</p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>                        
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">1.12 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-3">48.56 EUR</p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+                
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">1.48 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-1"></p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>                        
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">0.28 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-2">48.56 EUR</p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>                        
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">1.12 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-3">48.56 EUR</p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+                
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">1.48 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-1"></p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>                        
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">0.28 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-2">48.56 EUR</p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="product.html" class="specific-product-entry">
+                        <div>
+                            <div class="image-container">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
+                            </div>                        
+                            <div>
+                                <h2 class="product-title">Product title</h2>
+                                <h4 class="product-description">Space for a small product description</h4>
+                            </div>
+                            <div class="buy-container">
+                                <div class="product-cost-container">
+                                    <p class="cost">1.12 EUR</p>
+                                    <p class="previous-cost" id="discount-prod-3">48.56 EUR</p>
+                                </div>
+                                <button class="buy-now-button">Buy now</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End of product entries -->
+            </div>
+
+            <div class="show-more-products-panel">
+                <div class="page-counter">
+                    <p class="text-sm text-gray-400">Page:</p>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="" class="text-indigo-600 dark:text-purple-400">3</a>
+                    <a href="">4</a>
+                </div>
+
                 <div>
-                    <h2 class="font-bold text-3xl">Videogames</h2>
+                    <button class="show-more-products-button">
+                        <div class="show-more-products-button-center">
+                            <p>Show more products</p>
+                            <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z"/>
+                                <path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"/>
+                            </svg>
+                        </div>
+                    </button>
                 </div>
-                <div class="title-grid-items">
-                    <div class="title-grid-items-grid-view">
-                        <svg fill="indigo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/></svg>
-                        <p class="ml-1">Grid view</p>
-                    </div>
-                    <div class="title-grid-items-list-view" onclick="window.location.href='category.html'">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white" class="hidden invisible dark:visible dark:block"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="dark:hidden dark:invisible"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/></svg>
-                        <p class="ml-1">List view</p>
-                    </div>
-                    <div class="title-grid-items-products">
-                        <p class="title-grid-items-products-numbers">117</p>
-                        <p class="ml-1">Products</p>
-                    </div>
+
+                <div class="missing-products">
+                    <p class="missing-products-numbers">48</p>
+                    <p class="text-gray-400 ml-2">Products</p>
                 </div>
-            </div>
-        <div class="products-panel">
-            <div class="products-panel-subcategories-panel">
-                <div>
-                    <h3 class="font-bold text-lg">Subcategories</h3>
-                    <div class="products-panel-subcategories-panel-subcategories-list">
-                        <div class="products-panel-subcategories-panel-subcategories-list-subcategory">
-                            <p class="text-sm">Subcategory name</p>
-                            <p class="products-panel-subcategories-panel-subcategories-list-subcategory-number">320</p>
-                        </div>
-                        <div class="products-panel-subcategories-panel-subcategories-list-subcategory">
-                            <p class="text-sm">Subcategory name</p>
-                            <p class="products-panel-subcategories-panel-subcategories-list-subcategory-number">112</p>
-                        </div>
-                        <div class="products-panel-subcategories-panel-subcategories-list-subcategory">
-                            <p class="text-sm">Subcategory name</p>
-                            <p class="products-panel-subcategories-panel-subcategories-list-subcategory-number">32</p>
-                        </div>
-                        <div class="products-panel-subcategories-panel-subcategories-list-subcategory">
-                            <p class="text-sm">Subcategory name</p>
-                            <p class="products-panel-subcategories-panel-subcategories-list-subcategory-number">48</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="products-panel-subcategories-panel-prices-panel">
-                    <div>
-                        <h3 class="products-panel-subcategories-panel-prices-panel-minmax-title">Minimum price</h3>
-                        <div class="w-full">
-                            <input type="range" min="1" max="1000" value="0" class="w-full cursor-pointer" id="myRange">
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="products-panel-subcategories-panel-prices-panel-minmax-title">Maximum price</h3>
-                        <div>
-                            <input type="range" min="1" max="1000" value="1000" class="w-full cursor-pointer" id="myRange">
-                        </div>
-                    </div>
-                    <div class="products-panel-subcategories-panel-prices-panel-minmax-boxes-panel">
-                        <div class="products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel">
-                            <p class="products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel-minmax">Min</p>
-                            <input type="text" placeholder="0" class="products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel-minmax-input dark:text-black text-center">
-                        </div>
-                        <div class="products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel">
-                            <p class="products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel-minmax">Max</p>
-                            <input type="text" placeholder="1000" class="products-panel-subcategories-panel-prices-panel-minmax-boxes-panel-subpanel-minmax-input dark:text-black text-center">
-                        </div>
-                    </div>
-                    <div class="products-panel-subcategories-panel-buttons-panel">
-                        <button class="products-panel-subcategories-panel-buttons-panel-apply">
-                            <div class="products-panel-subcategories-panel-buttons-panel-center">
-                                <p>Apply</p>
-                            </div>
-                        </button>
-                        <button class="products-panel-subcategories-panel-buttons-panel-reset">
-                            <div class="products-panel-subcategories-panel-buttons-panel-center">
-                                <p>Reset</p>
-                            </div>
-                        </button>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Product entries -->
-            <div class="w-4/6 pl-10">
-                <div class="flex flex-row w-full my-10 flex-wrap justify-around">
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">1.48 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-1"></p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>                        
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">0.28 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-2">48.56 EUR</p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>                        
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">1.12 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-3">48.56 EUR</p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                </div>
-                <div class="flex flex-row w-full my-10 justify-around">
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">1.48 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-1"></p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>                        
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">0.28 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-2">48.56 EUR</p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>                        
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">1.12 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-3">48.56 EUR</p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                </div>
-                <div class="flex flex-row w-full my-10 justify-around">
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">1.48 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-1"></p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>                        
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">0.28 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-2">48.56 EUR</p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                    <a href="product.html" class="w-1/4 border-2 rounded-md border-grey-200 flex flex-col px-5 py-5">
-                    <div>
-                        <div class="w-full flex flex-row justify-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="flex flex-row justify-start items-start rounded-md" width="240" height="240" alt="Product Image"> 
-                        </div>                        
-                        <div>
-                            <h2 class="font-bold text-lg">Product title</h2>
-                            <h4 class="text-sm text-gray-500 mb-5">Space for a small product description</h4>
-                        </div>
-                        <div class="flex flex-row justify-between">
-                            <div class="flex flex-col">
-                                <p class="font-bold text-xl">1.12 EUR</p>
-                                <p class="text-sm line-through text-gray-400" id="discount-prod-3">48.56 EUR</p>
-                            </div>
-                            <button class="border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600">Buy now</button>
-                        </div>
-                    </div></a>
-                </div>
-            </div>
-            <!-- End of product entries -->
-        </div>
-        <div class="flex flex-row justify-between">
-            <div class="flex flex-row justify-between w-1/12 items-center">
-                <p class="text-sm text-gray-400">Page:</p>
-                <a href="">1</a>
-                <a href="">2</a>
-                <a href="" class="text-indigo-600">3</a>
-                <a href="">4</a>
-            </div>
-            <div>
-                <button class="show-more-products-button">
-                    <div class="show-more-products-button-center">
-                        <p>Show more products</p>
-                        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"/></svg>
-                    </div>
-                </button>
-            </div>
-            <div class="product-numbers">
-                <p class="product-numbers-numbers">48</p>
-                <p class="text-gray-400 ml-2">Products</p>
             </div>
         </div>
-    </div>
+
         <div class="footer"></div>
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(function() {

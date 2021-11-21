@@ -20,7 +20,7 @@
     }
 
     .user-panel-form-column-input {
-        @apply rounded-md bg-gray-200 py-1 text-center;
+        @apply rounded-md bg-gray-200 py-1 text-center dark:text-black;
     }
 
     .user-panel-form-submit {
