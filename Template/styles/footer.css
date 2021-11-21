@@ -1,4 +1,4 @@
-
+@layer components {
     .footer-container {
         @apply grid grid-cols-2 text-center sm:flex sm:flex-row sm:justify-around py-14 sm:text-left ;
     }
@@ -19,3 +19,4 @@
         @apply text-indigo-600 mt-2 dark:text-purple-400;
 
     }
+}

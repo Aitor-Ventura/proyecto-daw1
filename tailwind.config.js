@@ -1,7 +1,7 @@
 module.exports = {
   mode: "jit", // Build más rápido
   purge: {
-    content: ["./Template/*.html", "./scripts/*.js"] // Quita lo que no usamos
+    content: ["./Template/*.html", "./Template/scripts/*.js"], // Quita lo que no usamos
   },
   darkMode: "class", // or 'media' or 'class'
   theme: {
@@ -11,9 +11,9 @@ module.exports = {
       },
       screens: {
         "3xl": "1600px",
-        'lg': '1080px',
-        'tl': '888px',
-        'sm': '680px',
+        lg: "1080px",
+        tl: "888px",
+        sm: "680px",
       },
       colors: {
         // Material palette.
@@ -29,11 +29,18 @@ module.exports = {
         "material-900": "#212121",
 
         // Colores más oscuros para el dark mode.
-        "gray-750":"#263242",
-        "gray-850":"#192338",
-        "gray-950":"#0c111c",
-        "gray-1000":"#0b101a"
-      }
+        "gray-750": "#263242",
+        "gray-850": "#192338",
+        "gray-950": "#0c111c",
+        "gray-1000": "#0b101a",
+      },
+      minWidth: {
+        0: "0",
+        "1/4": "25%",
+        "1/2": "50%",
+        "3/4": "75%",
+        full: "100%",
+      },
     },
   },
   variants: [],
