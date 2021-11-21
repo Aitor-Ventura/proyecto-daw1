@@ -27,6 +27,7 @@ module.exports = {
         "material-900": "#212121",
 
         // Colores más oscuros para el dark mode.
+        "gray-750":"#263242",
         "gray-850":"#192338",
         "gray-950":"#0c111c",
         "gray-1000":"#0b101a"
