@@ -11,6 +11,7 @@
 @import "../user.css";
 @import "../index.css";
 @import "../product.css";
+@import "../search.css";
 
 /* Variables globales */
 @layer components {
