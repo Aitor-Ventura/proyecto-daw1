@@ -2,8 +2,35 @@
 <html lang="en" class="dark">
     <header>
         <div id="sidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
+            <a href="javascript:void(0)" class="close-button" onclick="closeNav()">&times;</a>
+            <div class="sidenav-element-title">
+                Semen de vacafalo 1
+            </div>
+            <div class="sidenav-element">
+                Amplio dato
+            </div>
+            <div class="sidenav-element">
+                Mollera
+            </div>
+            <div class="sidenav-element">
+                Ampluger
+            </div>
+            <div class="sidenav-element-title">
+                Categories
+            </div>
+            <div class="sidenav-element">
+                Disney
+            </div>
+            <div class="sidenav-element">
+                Otro
+            </div>
+            <div class="sidenav-element">
+                Otro más
+            </div>
+        </div>
+        <div id="mobile-search-screen"> 
+            <a href="javascript:void(0)" class="close-button" onclick="closeMobileSearch()">&times;</a>
+            <input type="text" class="mobile-search-input searchInput" placeholder="Search for a product or a category">  
         </div>
         <nav class="nav-main">
             <div id="nav-content">
@@ -18,7 +45,7 @@
                     </svg>
 
                     <!-- Hamborguesa Dark -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 dark-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 dark-icon " width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="6" x2="20" y2="6"/>
                     <line x1="4" y1="12" x2="20" y2="12"/>
@@ -26,7 +53,7 @@
                     </svg>
                 </div>
 
-                <a class="nav-element" href="mailto:info@g2babies.com">
+                <a class="nav-element hidden tl:flex" href="mailto:info@g2babies.com">
                     <!-- Mail Normal -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail normal-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -43,7 +70,7 @@
                     <div class="nav-text">info@g2babies.com</div>
                 </a>
 
-                <a class="nav-element" href="tel:666666666">
+                <a class="nav-element hidden tl:flex" href="tel:666666666">
                     <!-- Phone normal -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call normal-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -61,20 +88,34 @@
                     <div class="nav-text">+34 666 666 666</div>
                 </a>
 
-                <form action="search.html">
-                    <div class="nav-search-box px-4">
-                        <button class="nav-search-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="none" d="M0 0h24v24H0z"/>
-                                <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/>
-                            </svg>
-                        </button>
-                        <input type="text" class="nav-search-input" placeholder="Search for a product or a category">  
-                    </div>
-                </form>
+                <div class="nav-search-box px-4">
+                    <button class="nav-search-button" onclick="readNavSearch()">
+                        <!-- Search normal | tablet + -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="hidden sm:flex" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"/>
+                            <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/>
+                        </svg>
+                        <!-- Search normal | movil + normal -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search flex dark:hidden sm:hidden" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                        </svg>
+
+                        <!-- Search dark | movil + dark -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search hidden dark:flex sm:dark:hidden" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                        </svg>
+
+                        
+                    </button>
+                    <input type="text" class="nav-search-input searchInput" placeholder="Search for a product or a category">  
+                </div>
             
 
-                <a href="login.html" class="nav-element">
+                <a href="login.html" class="nav-element hidden tl:flex">
                     <!-- Normal Login -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user normal-icon" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -151,7 +192,7 @@
 
             </div>
         <figure class="pb-5 mt-24">
-            <img src="./Images/logo_darkmode.png" alt="Logo g2babies" class="lg:w-4/12 md:w-5/12 w-6/12 mx-auto object-center cursor-pointer invisible hidden dark:visible dark:block" onclick="window.location.href='index.html'">
+            <img src="./Images/logo_darkmode.png" alt="Logo g2babies" class="lg:w-4/12 md:w-5/12 w-6/12 mx-auto object-center cursor-pointer invisible hidden dark:visible dark:flex" onclick="window.location.href='index.html'">
             <img src="./Images/logo.png" alt="Logo g2babies" class="lg:w-4/12 md:w-5/12 w-6/12 mx-auto object-center cursor-pointer dark:invisible dark:hidden" onclick="window.location.href='index.html'">
         </figure>
     </nav>
@@ -160,74 +201,47 @@
         <div class="category-element" onmouseenter='document.getElementById("navCatDisney").style.display=""' onmouseleave='document.getElementById("navCatDisney").style.display="none"'>
             <div class="category-button">
                 <a href="category.html">Disney</a>
-                <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="6 9 12 15 18 9" />
+                </svg>
             </div>
-            <div class="nav-subcategory" style="display: none;" id="navCatDisney">
-                <a href="category.html">Subcategory 1</a>                
-                <a href="category.html">Subcategory 2</a>
-                <a href="category.html">Subcategory 3</a>
-                <a href="category.html">Subcategory 4</a>
-            </div>
+
         </div>
         <div class="category-element" onmouseenter='document.getElementById("navCatAnime").style.display=""' onmouseleave='document.getElementById("navCatAnime").style.display="none"'>
             <div class="category-button">
                 <a href="category.html">Anime and Manga</a>
                 <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
             </div>
-            <div class="nav-subcategory" style="display: none;" id="navCatAnime">
-                <a href="category.html">Subcategory 1</a>                
-                <a href="category.html">Subcategory 2</a>
-                <a href="category.html">Subcategory 3</a>
-                <a href="category.html">Subcategory 4</a>
-            </div>
+
         </div>
         <div class="category-element" onmouseenter='document.getElementById("navCatVideogames").style.display=""' onmouseleave='document.getElementById("navCatVideogames").style.display="none"'>
             <div class="category-button">
                 <a href="category.html">Videogames</a>
                 <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
             </div>
-            <div class="nav-subcategory" style="display: none;" id="navCatVideogames">
-                <a href="category.html">Subcategory 1</a>
-                <a href="category.html">Subcategory 2</a>
-                <a href="category.html">Subcategory 3</a>
-                <a href="category.html">Subcategory 4</a>
-            </div>
+
         </div>
         <div class="category-element" onmouseenter='document.getElementById("navCatMovies").style.display=""' onmouseleave='document.getElementById("navCatMovies").style.display="none"'>
             <div class="category-button">
                 <a href="category.html">Movies</a>
                 <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
             </div>
-            <div class="nav-subcategory" style="display: none;" id="navCatMovies">
-                <a href="category.html">Subcategory 1</a>
-                <a href="category.html">Subcategory 2</a>
-                <a href="category.html">Subcategory 3</a>
-                <a href="category.html">Subcategory 4</a>
-            </div>
+
         </div>
         <div class="category-element" onmouseenter='document.getElementById("navCatDCComics").style.display=""' onmouseleave='document.getElementById("navCatDCComics").style.display="none"'>
             <div class="category-button">
                 <a href="category.html">DC Comics</a>
                 <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
             </div>
-            <div class="nav-subcategory" style="display: none;" id="navCatDCComics">
-                <a href="category.html">Subcategory 1</a>
-                <a href="category.html">Subcategory 2</a>
-                <a href="category.html">Subcategory 3</a>
-                <a href="category.html">Subcategory 4</a>
-            </div>
+ 
         </div>
         <div class="category-element" onmouseenter='document.getElementById("navCatMarvelComics").style.display=""' onmouseleave='document.getElementById("navCatMarvelComics").style.display="none"'>
             <div class="category-button">
                 <a href="category.html">Marvel Comics</a>
                 <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
             </div>
-            <div class="nav-subcategory" style="display: none;" id="navCatMarvelComics">
-                <a href="category.html">Subcategory 1</a>
-                <a href="category.html">Subcategory 2</a>
-                <a href="category.html">Subcategory 3</a>
-                <a href="category.html">Subcategory 4</a>
-            </div>
+            
         </div>
         
         <div class="category-element" onmouseenter='document.getElementById("navCatModelKits").style.display=""' onmouseleave='document.getElementById("navCatModelKits").style.display="none"'>
@@ -235,23 +249,126 @@
                 <a href="category.html">Model Kits</a>
                 <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
             </div>
-            <div class="nav-subcategory" style="display: none;" id="navCatModelKits">
+            
+        </div>
+    </nav>
+
+    <nav class="nav-category" id="aux">
+
+            <div class="nav-subcategory-element" style="display: none;" id="navCatDisney">
+                <a href="category.html">Subcategory 1</a>                
+                <a href="category.html">Subcategory 2</a>
+                <a href="category.html">Subcategory 3</a>
+                <a href="category.html">Subcategory 4</a>
+            </div>
+
+            <div class="nav-subcategory" style="display: none;" id="navCatAnime">
+                <a href="category.html">Subcategory 1</a>                
+                <a href="category.html">Subcategory 2</a>
+                <a href="category.html">Subcategory 3</a>
+                <a href="category.html">Subcategory 4</a>
+            </div>
+
+            <div class="nav-subcategory" style="display: none;" id="navCatVideogames">
                 <a href="category.html">Subcategory 1</a>
                 <a href="category.html">Subcategory 2</a>
                 <a href="category.html">Subcategory 3</a>
                 <a href="category.html">Subcategory 4</a>
             </div>
+
+            <div class="nav-subcategory" style="display: none;" id="navCatMovies">
+                <a href="category.html">Subcategory 1</a>
+                <a href="category.html">Subcategory 2</a>
+                <a href="category.html">Subcategory 3</a>
+                <a href="category.html">Subcategory 4</a>
+            </div>
+
+           <div class="nav-subcategory" style="display: none;" id="navCatDCComics">
+                <a href="category.html">Subcategory 1</a>
+                <a href="category.html">Subcategory 2</a>
+                <a href="category.html">Subcategory 3</a>
+                <a href="category.html">Subcategory 4</a>
+            </div>
+
+        <div class="nav-subcategory" style="display: none;" id="navCatMarvelComics">
+                <a href="category.html">Subcategory 1</a>
+                <a href="category.html">Subcategory 2</a>
+                <a href="category.html">Subcategory 3</a>
+                <a href="category.html">Subcategory 4</a>
+            </div>
+
+
+        <div class="nav-subcategory" style="display: none;" id="navCatModelKits">
+            <a href="category.html">Subcategory 1</a>
+            <a href="category.html">Subcategory 2</a>
+            <a href="category.html">Subcategory 3</a>
+            <a href="category.html">Subcategory 4</a>
         </div>
+
     </nav>
     
     <script>
+
+    var a = false;
     function openNav() {
-        document.getElementById("sidenav").style.width = "250px";
+        document.getElementById("sidenav").style.display = "flex";
+        
+        if (document.documentElement.clientWidth <= 680 ) {
+             // Movil
+            document.getElementById("sidenav").style.width = "100%";
+        } else if (document.documentElement.clientWidth <= 1080) {
+            // tamaño < PC
+            document.getElementById("sidenav").style.width = "50%";
+        }
     }
 
     function closeNav() {
+        document.getElementById("sidenav").style.display = "none";
         document.getElementById("sidenav").style.width = "0";
     }
+
+    // Se reajusta el tamaño de la sidebar. 
+    // Cuando pones la ventana pequeña -> abres sidbar -> agrandas pantallas -> queda horrible
+    window.onresize = function(event) {
+        if (document.getElementById("sidenav").style.display == "none") {
+            return;
+        }
+        if (document.documentElement.clientWidth <= 680 ) {
+             // Movil
+            document.getElementById("sidenav").style.width = "100%";
+        } else if (document.documentElement.clientWidth <= 1080) {
+            // Móvil < tamaño < PC
+            document.getElementById("sidenav").style.width = "50%";
+            closeMobileSearch();
+        } else {
+            // PC          
+            closeNav();
+        }
+    };
+
+    function readNavSearch() {
+        if (document.documentElement.clientWidth <= 680 ) {
+            // Movil: Abres ventana adaptada para el teclado del movil
+            document.getElementById("mobile-search-screen").style.width = "100%";
+            document.getElementById("mobile-search-screen").style.display = "flex";
+        } else {
+           window.location.replace("search.html");
+        }
+    }
+
+    function closeMobileSearch () {
+        document.getElementById("mobile-search-screen").style.display = "none";
+        document.getElementById("mobile-search-screen").style.width = "0";
+    }
+
+
+    // Lee si le das a enter en cualquier input
+    $('.searchInput').on("keyup", function(e) {
+        if (e.keyCode == 13) {
+            window.location.replace("search.html");
+        }
+    });
+    
     </script>
 </header>
 

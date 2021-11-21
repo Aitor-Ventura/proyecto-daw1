@@ -19,7 +19,7 @@
    }
 
    .dark-icon {
-      @apply invisible hidden w-0 dark:visible dark:block dark:w-auto;
+      @apply invisible hidden w-0 dark:visible dark:flex dark:w-auto;
    }
 
    .normal-icon {

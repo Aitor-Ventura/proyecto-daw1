@@ -1,10 +1,12 @@
+
+@import 'animate.css';
 @layer components {
     .nav-main {
         @apply flex flex-col items-center justify-center flex-wrap text-xl;
     }
 
     #nav-content {
-        @apply flex flex-row justify-center w-full py-5 px-10 whitespace-nowrap bg-white drop-shadow-md dark:bg-gray-900;
+        @apply flex flex-row justify-center w-full py-5 px-10 whitespace-nowrap bg-white drop-shadow-md dark:bg-gray-1000;
         position: fixed;
         top: 0;
     }
@@ -22,11 +24,11 @@
     }
 
     .nav-search-input {
-        @apply py-2 sm:w-80 w-60 bg-gray-200 text-center rounded-r-lg;
+        @apply py-2 hidden sm:flex w-80 sm:bg-gray-200 text-center rounded-r-lg;
     }
 
     .nav-search-button {
-        @apply bg-gray-200 rounded-l-lg pl-2.5;
+        @apply sm:bg-gray-200 rounded-l-lg pl-2.5;
     }
 
     .nav-element {
@@ -34,7 +36,7 @@
     }
 
     .nav-text {
-        @apply pl-2 dark:text-gray-100 text-black hidden xl:visible xl:block;
+        @apply pl-2 dark:text-gray-100 text-black hidden xl:visible xl:flex;
     }
 
     .nav-image {
@@ -42,15 +44,19 @@
     }
 
     .nav-category {
-        @apply pb-3 w-full bg-gray-200 justify-around flex-row flex-wrap px-4 items-center dark:bg-gray-800 hidden lg:flex ;
+        @apply w-full bg-gray-200 justify-around flex-row flex-wrap px-4 items-center dark:bg-gray-800 hidden lg:flex ;
     }
 
     .category-element {
-        @apply flex flex-col items-center pt-3;
+        @apply flex flex-col items-center py-3;
+    }
+
+    .nav-subcategory-element {
+        @apply w-full mt-6 px-1 py-1 border-2 border-black rounded-lg flex flex-col bg-gray-300 items-center justify-center text-indigo-600;
     }
 
     .nav-subcategory {
-        @apply absolute mt-6 px-1 py-1 border-2 border-black rounded-lg flex flex-col bg-gray-300 items-center justify-center text-indigo-600;
+        @apply w-full bg-gray-200 justify-around flex-col flex-wrap px-4 items-center hidden lg:flex;
     }
 
     .category-button {
@@ -61,8 +67,8 @@
         @apply flex justify-end items-center space-x-2 mx-auto relative;
     }
 
-    .sidenav {
-        @apply shadow-md bg-gray-50;
+    #sidenav {
+        @apply hidden w-full shadow-md sm:w-6/12 md:hidden bg-gray-50 flex-col dark:bg-gray-1000; 
         height: 100%;
         width: 0;
         position: fixed;
@@ -70,33 +76,43 @@
         top: 0;
         left: 0;
         overflow-x: hidden;
-        transition: 0.5s;
         padding-top: 60px;
     }
+
+    .sidenav-element{
+        @apply mx-8 py-2 whitespace-nowrap text-xl last:border-b-0 hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer;
+        border-bottom: 1.8px solid #e4e6e7;
+        animation: backInRight;
+        animation-duration: 0.7s; 
+    }
+
+    .sidenav-element-title {
+        @apply mx-8 py-2 mt-4 whitespace-nowrap text-2xl font-bold ;
+        border-bottom: 2px solid #e4e6e7;
+        animation: fadeInDown;
+        animation-duration: 1s; 
+    }
+
+    #mobile-search-screen {
+        @apply hidden w-full h-full bg-white bg-opacity-70 flex-col;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        position: fixed;
+    }
+
+    .mobile-search-input {
+        @apply w-80 text-center mt-14 py-2 whitespace-nowrap text-xl self-center bg-gray-200 rounded-lg;
+        
+    }
+
 }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
