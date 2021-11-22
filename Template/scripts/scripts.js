@@ -156,13 +156,14 @@ checkDarkMode()
 
 // Carga de los contenidos de la barra de navegación
 const loadNavBarContents = async function() {
-    var htmlContents = "";
+    var categoryContents = "";
+    var subcategoryContents = "";
     await $.getJSON("./json/categories.json", function(json){
         Object.entries(json.categories).forEach((entry) => {
             const [key, value] = entry
-            htmlContents += `
+            categoryContents += `
             <div class="category-element" 
-            onmouseenter='document.getElementById("navCat${key}").style.display=""' 
+            onmouseenter='document.getElementById("navCat${key}").style.display="flex"' 
             onmouseleave='document.getElementById("navCat${key}").style.display="none"'
             >
                 <div class="category-button">
@@ -176,16 +177,18 @@ const loadNavBarContents = async function() {
                         <polyline points="6 9 12 15 18 9" />
                     </svg>
                 </div>
-            </div>`
-            /* <div class="nav-subcategory" style="display: none;" id="navCat${key}">`
+            </div>`;
+            subcategoryContents += `<div class="nav-subcategory-element" style="display: none;" id="navCat${key}"
+                                         onmouseenter='document.getElementById("navCat${key}").style.display="flex"' >`
             Object.entries(value.subcategories).forEach((entry) => {
-                const [key,value] = entry
-                htmlContents += `<a href="category.html">${value}</a>`
-            })
-            htmlContents += `</div>` */
-        })
-    })
-    document.querySelector('.nav-category').innerHTML = htmlContents
+                const [key,value] = entry;
+                subcategoryContents += `<a href="category.html">${value}</a>`;
+             });
+             subcategoryContents += `</div>`;
+        });
+    });
+    document.querySelector('.nav-category').innerHTML = categoryContents;
+    document.querySelector('.nav-subcategory').innerHTML = subcategoryContents;
 }
 
 // Carga de la barra de navegación en la hamburguesa
@@ -260,6 +263,8 @@ const loadSideBarContents = async function() {
     document.querySelector('#sidenav').innerHTML = htmlContents;
 }
 
+
+
 const loadSideBarIcons = function() {
     return `<!-- Normal + -->
     <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -283,6 +288,79 @@ const toggleSideBarCategory = function(key) {
     }
     
 };
+
+// Carga de la barra de navegación del cart
+const loadCartContents = async function() {
+    var htmlContents = `
+            <a href="javascript:void(0)" class="close-button" onclick="closeNav()">&times;</a>
+            <div class="sidenav-element-title">
+                <a href=login.html> Sign in </a>
+            </div>
+            <div class="sidenav-element-title">
+                Contact Us
+            </div>
+            <!-- Mail -->
+            <div class="sidenav-element">
+                <div>info@g2babies.com</div>
+                <!-- Mail Normal -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <polyline points="3 7 12 13 21 7" />
+                </svg>
+                <!-- Mail Dark -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <polyline points="3 7 12 13 21 7" />
+                </svg>
+            </div>
+
+            <!-- Phone -->
+            <div class="sidenav-element">
+                <div> +34 666 666 666 </div>
+                <!-- Phone Normal -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+                </svg>
+
+                <!-- Phone Dark -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+                </svg>
+            </div>
+            <div class="sidenav-element-title">
+                Categories
+            </div>`;
+    await $.getJSON("./json/categories.json", function(json){
+        Object.entries(json.categories).forEach((entry) => {
+            const [key, value] = entry
+            htmlContents += `
+            <div class="sidenav-element" 
+            onclick='toggleSideBarCategory("${key}")' 
+            >
+                <div> ${value.name} </div>` +
+                loadSideBarIcons() +
+            `</div>
+            <div class="sidenav-subcategory-container" style="display: none;" id="sideBarCat${key}">`
+            Object.entries(value.subcategories).forEach((entry) => {
+                const [key,value] = entry
+                htmlContents += `<a class="sidenav-subcategory-element" href="category.html">${value}</a>`
+            })
+            htmlContents += `</div>`;
+            
+        })
+    })
+    htmlContents += `<div> <br><br><br><br><br><br><br><br> </div>`;
+    document.querySelector('#sidenav').innerHTML = htmlContents;
+}
+
 
 // Carga de los productos en list view ("category.html")
 const loadProductListNormalCategory = async function () {

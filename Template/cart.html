@@ -11,6 +11,11 @@
     </head>
     <body>
         <div class="header"></div>
+
+        <body class="dark:bg-gray-900 dark:text-gray-300">
+        </body>
+
+
         <div class="footer"></div>
 
         <!-- Este fichero HTML será desarrollado en el sprint correspondiente a jQuery -->
@@ -19,8 +24,9 @@
         <script>
             $(document).ready(function() {
                 $(".header").load("header.html", function() {
-          loadNavBarContents();
-        })
+                    loadNavBarContents();
+                    loadSideBarContents();
+                })
                 $(".footer").load("footer.html")
             })
         </script>
