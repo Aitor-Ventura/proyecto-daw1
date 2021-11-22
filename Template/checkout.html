@@ -13,8 +13,9 @@
         <script>
             $(function() {
                 $(".header").load("header.html", function() {
-          loadNavBarContents();
-        })
+                    loadNavBarContents();
+                    loadSideBarContents();
+                });
                 $(".footer").load("footer.html")
             })
         </script>
