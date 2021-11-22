@@ -194,65 +194,6 @@
 
     <nav class="nav-category"></nav>
 
-    <script>
-      var a = false;
-      function openNav() {
-        document.getElementById("sidenav").style.display = "flex";
-
-        if (document.documentElement.clientWidth <= 680) {
-          // Movil
-          document.getElementById("sidenav").style.width = "100%";
-        } else if (document.documentElement.clientWidth <= 1080) {
-          // tamaño < PC
-          document.getElementById("sidenav").style.width = "50%";
-        }
-      }
-
-      function closeNav() {
-        document.getElementById("sidenav").style.display = "none";
-        document.getElementById("sidenav").style.width = "0";
-      }
-
-      // Se reajusta el tamaño de la sidebar.
-      // Cuando pones la ventana pequeña -> abres sidbar -> agrandas pantallas -> queda horrible
-      window.onresize = function (event) {
-        if (document.getElementById("sidenav").style.display == "none") {
-          return;
-        }
-        if (document.documentElement.clientWidth <= 680) {
-          // Movil
-          document.getElementById("sidenav").style.width = "100%";
-        } else if (document.documentElement.clientWidth <= 1080) {
-          // Móvil < tamaño < PC
-          document.getElementById("sidenav").style.width = "50%";
-          closeMobileSearch();
-        } else {
-          // PC
-          closeNav();
-        }
-      };
-
-      function readNavSearch() {
-        if (document.documentElement.clientWidth <= 680) {
-          // Movil: Abres ventana adaptada para el teclado del movil
-          document.getElementById("mobile-search-screen").style.width = "100%";
-          document.getElementById("mobile-search-screen").style.display = "flex";
-        } else {
-          window.location.replace("search.html");
-        }
-      }
-
-      function closeMobileSearch() {
-        document.getElementById("mobile-search-screen").style.display = "none";
-        document.getElementById("mobile-search-screen").style.width = "0";
-      }
-
-      // Lee si le das a enter en cualquier input
-      $(".searchInput").on("keyup", function (e) {
-        if (e.keyCode == 13) {
-          window.location.replace("search.html");
-        }
-      });
-    </script>
+    <script src="./scripts/scripts.js" defer></script>
   </header>
 </html>

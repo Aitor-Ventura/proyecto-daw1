@@ -1,3 +1,4 @@
+/* Funciones de validación de formulario */
 function billingInfoValidation() {
     /* Asignación de variables */
     var newAddressCheckout = document.getElementById("newAddressCheckout")
@@ -127,6 +128,7 @@ function toggleWishlist(id) {
     }
 }
 
+/* Funciones para modo oscuro */
 const html = document.querySelector("html");
 
 const toggleDarkMode = function() {
@@ -150,6 +152,9 @@ const checkDarkMode = function () {
 
 checkDarkMode()
 
+/* Funciones para la carga de contenido mediante JSON */
+
+// Carga de los contenidos de la barra de navegación
 const loadNavBarContents = async function() {
     var htmlContents = "";
     await $.getJSON("./json/categories.json", function(json){
@@ -183,6 +188,7 @@ const loadNavBarContents = async function() {
     document.querySelector('.nav-category').innerHTML = htmlContents
 }
 
+// Carga de la barra de navegación en la hamburguesa
 const loadSideBarContents = async function() {
     var htmlContents = `
             <a href="javascript:void(0)" class="close-button" onclick="closeNav()">&times;</a>
@@ -278,6 +284,7 @@ const toggleSideBarCategory = function(key) {
     
 };
 
+// Carga de los productos en list view ("category.html")
 const loadProductListNormalCategory = async function () {
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
@@ -342,6 +349,7 @@ const loadProductListNormalCategory = async function () {
     document.querySelector('.category-panel-products-panel-innerproducts-panel').innerHTML = htmlContents
 }
 
+// Carga de los productos en grid view ("category_grid.html")
 const loadProductListGridCategory = async function () {
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
@@ -372,6 +380,7 @@ const loadProductListGridCategory = async function () {
     document.querySelector('.product-entries-panel').innerHTML = htmlContents
 }
 
+// Carga de los productos mejores vendidos
 const loadBestSellingIndex = async function() {
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
@@ -402,6 +411,7 @@ const loadBestSellingIndex = async function() {
     document.querySelector('.bestselling-product-card').innerHTML = htmlContents
 }
 
+// Carga de los productos en list view ("search.html")
 const loadSearchProductListNormalCategory = async function () {
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
@@ -466,4 +476,63 @@ if (this.location.href.includes('category_grid.html')) loadProductListGridCatego
 if (this.location.href.includes('search.html')) loadSearchProductListNormalCategory()
 if (this.location.href.includes('search_grid.html')) loadProductListGridCategory()
 if (this.location.href.includes('index.html')) loadBestSellingIndex()
+
+/* Funciones de header */
+function openNav() {
+  document.getElementById("sidenav").style.display = "flex";
+
+  if (document.documentElement.clientWidth <= 680) {
+    // Movil
+    document.getElementById("sidenav").style.width = "100%";
+  } else if (document.documentElement.clientWidth <= 1080) {
+    // tamaño < PC
+    document.getElementById("sidenav").style.width = "50%";
+  }
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.display = "none";
+  document.getElementById("sidenav").style.width = "0";
+}
+
+// Se reajusta el tamaño de la sidebar.
+// Cuando pones la ventana pequeña -> abres sidbar -> agrandas pantallas -> queda horrible
+window.onresize = function (event) {
+  if (document.getElementById("sidenav").style.display == "none") {
+    return;
+  }
+  if (document.documentElement.clientWidth <= 680) {
+    // Movil
+    document.getElementById("sidenav").style.width = "100%";
+  } else if (document.documentElement.clientWidth <= 1080) {
+    // Móvil < tamaño < PC
+    document.getElementById("sidenav").style.width = "50%";
+    closeMobileSearch();
+  } else {
+    // PC
+    closeNav();
+  }
+};
+
+function readNavSearch() {
+  if (document.documentElement.clientWidth <= 680) {
+    // Movil: Abres ventana adaptada para el teclado del movil
+    document.getElementById("mobile-search-screen").style.width = "100%";
+    document.getElementById("mobile-search-screen").style.display = "flex";
+  } else {
+    window.location.replace("search.html");
+  }
+}
+
+function closeMobileSearch() {
+  document.getElementById("mobile-search-screen").style.display = "none";
+  document.getElementById("mobile-search-screen").style.width = "0";
+}
+
+// Lee si le das a enter en cualquier input
+$(".searchInput").on("keyup", function (e) {
+  if (e.keyCode == 13) {
+    window.location.replace("search.html");
+  }
+});
 
