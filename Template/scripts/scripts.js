@@ -358,7 +358,7 @@ const loadProductListGridCategory = async function () {
                         <h4 class="product-description">${value.description.substr(0,45)}...</h4>
                     </div>
                 </div>
-                <div class="buy-panel">
+                <div class="buy-container">
                     <div class="product-cost-container">
                         <p class="cost">${value.price} EUR</p>
                         <p class="previous-cost" id="discount-prod-3">${value.oldPrice} EUR</p>

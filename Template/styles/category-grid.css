@@ -127,15 +127,15 @@
     }
 
     .product-title {
-        @apply font-bold text-lg;
+        @apply font-bold text-lg mt-4;
     }
 
     .product-description {
         @apply text-sm text-gray-500 mb-5;
     }
 
-    .buy-panel {
-        @apply flex flex-row justify-between mt-4;
+    .buy-container {
+        @apply flex flex-row mt-4;
     }
 
     .product-cost-container {

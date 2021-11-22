@@ -1,14 +1,15 @@
 {
     "products": {
-        "AlexandruTlf": {
-            "name": "Teléfono de Alexandru",
-            "picture": ["https://images.ctfassets.net/wcfotm6rrl7u/1cr3KVWAlSXXLt1VwhlVIb/5b10efae1ba3edbc769232cfea35c237/nokia-110-black-front-int.png?f=left&fit=pad&q=88"],
+        "Ñami": {
+            "name": "Ñami Figure",
+            "category": "Anime and Manga",
+            "picture": ["https://cdn.shopify.com/s/files/1/1374/2665/products/9_-_-_-__01_35_1024x1024.jpg?v=1569217923"],
             "price": "120",
             "oldPrice": "125",
-            "description": "Propiedad pública. Responsive orientado al trabajo :(. Multiparadigma.",
-            "attributes": ["Red neuronal en Keras TF"],
+            "description": "La gata ladrona",
+            "attributes": ["???"],
             "quality": "Old",
-            "company": "Alexnadru SL",
+            "company": "Juan Pis",
             "delivery": "Spain only",
             "delivery_time": 30,
             "stock": 37,
@@ -17,7 +18,8 @@
         },
         "Narruto": {
             "name":"Naruto Rasengan Chidori Prolongado 3.0 Sharingan Rinnegan 7.0 owo",
-            "picture":["https://i.pinimg.com/736x/87/0a/0a/870a0a2419b716983645d7488ae38ad1.jpg"],
+            "category": "Anime and Manga",
+            "picture":["http://www.kanpekisetto.com/295540-thickbox_default/naruto-shippuden-serie-gem-figura-pvc-uzumaki-naruto-rikudo-sennin-mode-24-cm-damaged-packag.jpg"],
             "price":"10",
             "oldPrice":"12",
             "description":"Nuestra más preciada figura de la colección de figuras Narruto.",
@@ -32,7 +34,8 @@
         },
         "Lufi": {
             "name":"Lufi The Pirate King UwU",
-            "picture":["https://i.pinimg.com/736x/b3/e8/fe/b3e8fe86639f1b32b080ba3bde4debb5--monkey-d-luffy-chibi.jpg"],
+            "category": "Anime and Manga",
+            "picture":["https://wholesale.ultratc.com/images/detailed/89/BP17201__2_.jpg"],
             "price":"30",
             "oldPrice":"35",
             "description":"Nuestra más preciada figura de la colección de figuras Guan Pis.",
@@ -46,8 +49,9 @@
             "id":7
         },
         "Ari": {
-            "name":"Ari Ecchi no H! Voluminous Chest Size",
-            "picture":["https://pbs.twimg.com/profile_images/1338487306362249216/S0M5K7yq.jpg"],
+            "name":"Ari Broken Champion Edition",
+            "category": "Videogames",
+            "picture":["https://cdn.vox-cdn.com/thumbor/OZwLLZgsHdOwYcnHR9cGPQRDKXo=/0x0:1137x640/1200x800/filters:focal(748x43:928x223)/cdn.vox-cdn.com/uploads/chorus_image/image/58881727/DXTclc9VMAAwqsU.0.jpg"],
             "price":"30",
             "oldPrice":"35",
             "description":"Nuestra más preciada figura de la colección de figuras Ditto 2.",
@@ -62,7 +66,8 @@
         },
         "Gooffi": {
             "name":"Gooffi looking for friend",
-            "picture":["https://i.redd.it/h6nnp3l54az41.jpg"],
+            "category": "Disney",
+            "picture":["https://i.pinimg.com/originals/cb/1d/2d/cb1d2d628aa0af990ac65b1a4ef436a2.jpg"],
             "price":"1",
             "oldPrice":"2",
             "description":"Nuestra más preciada figura de la colección de figuras Pato Donal.",
@@ -75,9 +80,10 @@
             "bestSeller": false,
             "id":9
         },
-        "Lyche": {
-            "name":"Lyche Player Figurine TOP 10 Ranking",
-            "picture":["http://i.imgur.com/liFs4.png"],
+        "Ryze": {
+            "name":"Ryze Player Figurine TOP 10 Ranking",
+            "category": "Videogames",
+            "picture":["https://i.pinimg.com/originals/3f/e0/47/3fe0473c501276e88e70eeb8cabccf2e.jpg"],
             "price":"1",
             "oldPrice":"2",
             "description":"Nuestra más preciada figura de la colección de figuras Ligoleyen.",
@@ -88,7 +94,7 @@
             "delivery_time": 30,
             "stock": 37,
             "bestSeller": true,
-            "id":9
+            "id":10
         }
     }
 }
