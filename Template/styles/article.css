@@ -7,7 +7,7 @@
   }
 
   .container-cards {
-    @apply flex items-center flex-col max-w-full m-0 dark:bg-gradient-to-b from-gray-800 to-gray-700;
+    @apply flex items-center flex-col max-w-full m-0 dark:bg-gradient-to-b from-gray-900 to-gray-700;
     background: linear-gradient(to top, #dadada 97%, rgba(0, 0, 0, 0) 0);
   }
 
