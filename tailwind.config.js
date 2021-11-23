@@ -33,6 +33,9 @@ module.exports = {
         "gray-850": "#192338",
         "gray-950": "#0c111c",
         "gray-1000": "#0b101a",
+
+        "purple-1000": "#38156e",
+        "purple-1100":"#2b1054",
       },
       minWidth: {
         0: "0",
