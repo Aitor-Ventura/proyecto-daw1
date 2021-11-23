@@ -286,79 +286,6 @@ const toggleSideBarCategory = function(key) {
     
 };
 
-// Carga de la barra de navegación del cart
-const loadCartContents = async function() {
-    var htmlContents = `
-            <a href="javascript:void(0)" class="close-button" onclick="closeNav()">&times;</a>
-            <div class="sidenav-element-title">
-                <a href=login.html> Sign in </a>
-            </div>
-            <div class="sidenav-element-title">
-                Contact Us
-            </div>
-            <!-- Mail -->
-            <div class="sidenav-element">
-                <div>info@g2babies.com</div>
-                <!-- Mail Normal -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <polyline points="3 7 12 13 21 7" />
-                </svg>
-                <!-- Mail Dark -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <polyline points="3 7 12 13 21 7" />
-                </svg>
-            </div>
-
-            <!-- Phone -->
-            <div class="sidenav-element">
-                <div> +34 666 666 666 </div>
-                <!-- Phone Normal -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                <path d="M15 7a2 2 0 0 1 2 2" />
-                <path d="M15 3a6 6 0 0 1 6 6" />
-                </svg>
-
-                <!-- Phone Dark -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                <path d="M15 7a2 2 0 0 1 2 2" />
-                <path d="M15 3a6 6 0 0 1 6 6" />
-                </svg>
-            </div>
-            <div class="sidenav-element-title">
-                Categories
-            </div>`;
-    await $.getJSON("./json/categories.json", function(json){
-        Object.entries(json.categories).forEach((entry) => {
-            const [key, value] = entry
-            htmlContents += `
-            <div class="sidenav-element" 
-            onclick='toggleSideBarCategory("${key}")' 
-            >
-                <div> ${value.name} </div>` +
-                loadSideBarIcons() +
-            `</div>
-            <div class="sidenav-subcategory-container" style="display: none;" id="sideBarCat${key}">`
-            Object.entries(value.subcategories).forEach((entry) => {
-                const [key,value] = entry
-                htmlContents += `<a class="sidenav-subcategory-element" href="category.html">${value}</a>`
-            })
-            htmlContents += `</div>`;
-            
-        })
-    })
-    htmlContents += `<div> <br><br><br><br><br><br><br><br> </div>`;
-    document.querySelector('#sidenav').innerHTML = htmlContents;
-}
-
-
 // Carga de los productos en list view ("category.html")
 const loadProductListNormalCategory = async function () {
     var htmlContents = ""
@@ -553,7 +480,7 @@ const loadCartProducts = async function () {
         Object.entries(json.products).forEach((entry) => {
             const [key, value] = entry
             htmlContents +=`
-                <div class="mx-16 search-panel-result-panel-products-panel-productentry">
+                <div class="mx-16 search-panel-result-panel-products-panel-productentry" id="cartItem${value.name}">
                     <div class="search-panel-result-panel-products-panel-productentry-imgpanel">
                         <img src="${value.picture}" class="self-center search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
                     </div>
@@ -586,21 +513,21 @@ const loadCartProducts = async function () {
                         </div>
                         <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel">
                             <button class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-apply">
-                                <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext">
+                                <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext justify-center">
                                     <p>Product Detail</p>
                                     <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg>
                                 </div>
                             </button>
                             <button>
-                                <div class="content-center search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-reset">
+                                <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-reset justify-center"
+                                    onclick='document.getElementById("cartItem${value.name}").style.display="none"'>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <line x1="18" y1="6" x2="6" y2="18" />
                                     <line x1="6" y1="6" x2="18" y2="18" />
                                     </svg>
-                                    <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-resettext"> Remove item </p>
+                                    <div class="ml-8"> Remove item </div>
                                 </div>
-                            
                             </button>
                         </div>
                     </div>
@@ -610,7 +537,7 @@ const loadCartProducts = async function () {
     })
     htmlContents += `
         <div class="flex flex-col-reverse items-center md:items-end md:mx-16">
-            <button
+            <a href="checkout.html"
                 class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-apply">
                 <div
                     class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext">
@@ -620,7 +547,7 @@ const loadCartProducts = async function () {
                         <path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z" />
                     </svg>
                 </div>
-            </button>
+            </a>
 
         </div>`;
     document.querySelector('.cart').innerHTML = htmlContents
