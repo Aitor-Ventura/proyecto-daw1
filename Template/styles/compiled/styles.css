@@ -438,10 +438,7 @@ video {
 	}.container-cards{
 		padding-bottom: 0px;
 	}
-}.container-cards {
-    min-height: 30em;
-    
-  }#particles-js{
+}#particles-js{
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
@@ -645,7 +642,7 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(229, 231, 235, var(--tw-text-opacity));
 }.mobile-text-card-subtitulo{
-	width: 80%;
+	width: 100%;
 	padding-bottom: 0.5rem;
 	font-size: 1.25rem;
 	line-height: 1.75rem;
@@ -1641,6 +1638,8 @@ video {
 	height: 1.25rem;
 }.h-4{
 	height: 1rem;
+}.max-h-full{
+	max-height: 100%;
 }.w-full{
 	width: 100%;
 }.w-1\/12{
@@ -1783,10 +1782,10 @@ video {
 	padding-top: 0.89rem;
 }.pt-3{
 	padding-top: 0.75rem;
-}.pb-4{
-	padding-bottom: 1rem;
 }.pt-4{
 	padding-top: 1rem;
+}.pb-4{
+	padding-bottom: 1rem;
 }.pl-5{
 	padding-left: 1.25rem;
 }.pb-5{
