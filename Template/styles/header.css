@@ -102,7 +102,7 @@
     }
 
     .mobile-search-input {
-        @apply w-80 text-center mt-14 py-2 whitespace-nowrap text-xl self-center bg-gray-200 rounded-lg;   
+        @apply w-80 text-center mt-14 py-2 whitespace-nowrap text-xl text-black self-center bg-gray-200 rounded-lg;   
     }
 
   #nav-content {

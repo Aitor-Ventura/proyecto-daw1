@@ -127,7 +127,7 @@
 }
 
 .category-panel-products-panel-innerproducts-panel-productentry {
-    @apply flex flex-col rounded-md border-gray-200 border-2 py-5 mb-5 md:flex md:flex-row;
+    @apply flex flex-col rounded-md border-gray-200 border-2 dark:bg-gray-800 dark:hover:bg-gray-750 dark:border-0  py-5 mb-5 md:flex md:flex-row;
 }
 
 .category-panel-products-panel-innerproducts-panel-productentry-image {
@@ -187,7 +187,7 @@
 }
 
 .category-panel-products-panel-innerproducts-panel-productentry-panel-rightside-panel-buttons-panel-productdetail {
-    @apply px-2 py-2 rounded-lg text-white bg-indigo-600 border-black border-2 font-bold;
+    @apply px-2 py-2 rounded-lg text-white bg-indigo-600 border-black border-2 dark:border-0 dark:bg-gray-700 dark:hover:bg-gray-600  font-bold;
 }
 
 .category-panel-products-panel-innerproducts-panel-productentry-panel-rightside-panel-buttons-panel-productdetail-text {

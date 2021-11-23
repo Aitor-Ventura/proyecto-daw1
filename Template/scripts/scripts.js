@@ -179,7 +179,7 @@ const loadNavBarContents = async function() {
             <div class="nav-subcategory" style="display: none;" id="navCat${key}">`
             Object.entries(value.subcategories).forEach((entry) => {
                 const [key,value] = entry
-                htmlContents += `<a href="category.html">${value}</a>`
+                htmlContents += `<a href="category.html?${value.subcategory}">${value}</a>`
             })
             htmlContents += `</div></div>`;
         })
@@ -861,7 +861,7 @@ const loadProduct = async function() {
                 <p class="breadcrumbs-text"> / </p>
                 <a href="category.html" class="breadcrumbs-text">${value.category}</a>
                 <p class="breadcrumbs-text"> / </p>
-                <a href="product.html" class="text-sm text-center dark:text-white">${value.name}</a>
+                <a href="product.html?id=${value.id}" class="text-sm text-center dark:text-white">${value.name}</a>
             `
             imagesHTML = ""
             value.picture.forEach((entry) => {

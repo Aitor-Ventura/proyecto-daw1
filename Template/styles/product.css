@@ -130,7 +130,7 @@
     }
 
     .relatedProducts-card {
-        @apply sm:w-auto mb-8 lg:w-1/4 border-2 rounded-md border-gray-200 flex flex-col px-5 py-5 mx-5;
+        @apply sm:w-auto mb-8 lg:w-1/4 border-2 rounded-md border-gray-200 dark:bg-gray-800 dark:hover:bg-gray-750 dark:border-0  flex flex-col px-5 py-5 mx-5;
     }
 
     .relatedProducts-image-container {
@@ -166,5 +166,5 @@
     }
 
     .relatedProducts-buyNow-button {
-        @apply border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600;
+        @apply border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600 dark:border-0  dark:bg-gray-700 dark:hover:bg-gray-600 ;
     }

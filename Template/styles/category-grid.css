@@ -115,7 +115,7 @@
     }
     
     .specific-product-entry {
-        @apply border-2 rounded-md border-gray-200 flex flex-col px-5 py-5 justify-between;
+        @apply border-2 rounded-md border-gray-200 dark:bg-gray-800 dark:hover:bg-gray-750 dark:border-0  flex flex-col px-5 py-5 justify-between;
     }
     
     .image-container {
@@ -151,7 +151,7 @@
     }
 
     .buy-now-button {
-        @apply border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600;
+        @apply border-black border-2 rounded-lg px-2 py-0.5 font-bold text-white bg-indigo-600 dark:border-0 dark:bg-gray-700 dark:hover:bg-gray-600 ;
     }
 
     /* Show more products section */
