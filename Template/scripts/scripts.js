@@ -285,78 +285,6 @@ const toggleSideBarCategory = function(key) {
     
 };
 
-// Carga de la barra de navegación del cart
-const loadCartContents = async function() {
-    var htmlContents = `
-            <a href="javascript:void(0)" class="close-button" onclick="closeNav()">&times;</a>
-            <div class="sidenav-element-title">
-                <a href=login.html> Sign in </a>
-            </div>
-            <div class="sidenav-element-title">
-                Contact Us
-            </div>
-            <!-- Mail -->
-            <div class="sidenav-element">
-                <div>info@g2babies.com</div>
-                <!-- Mail Normal -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <polyline points="3 7 12 13 21 7" />
-                </svg>
-                <!-- Mail Dark -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <polyline points="3 7 12 13 21 7" />
-                </svg>
-            </div>
-
-            <!-- Phone -->
-            <div class="sidenav-element">
-                <div> +34 666 666 666 </div>
-                <!-- Phone Normal -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                <path d="M15 7a2 2 0 0 1 2 2" />
-                <path d="M15 3a6 6 0 0 1 6 6" />
-                </svg>
-
-                <!-- Phone Dark -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                <path d="M15 7a2 2 0 0 1 2 2" />
-                <path d="M15 3a6 6 0 0 1 6 6" />
-                </svg>
-            </div>
-            <div class="sidenav-element-title">
-                Categories
-            </div>`;
-    await $.getJSON("./json/categories.json", function(json){
-        Object.entries(json.categories).forEach((entry) => {
-            const [key, value] = entry
-            htmlContents += `
-            <div class="sidenav-element" 
-            onclick='toggleSideBarCategory("${key}")' 
-            >
-                <div> ${value.name} </div>` +
-                loadSideBarIcons() +
-            `</div>
-            <div class="sidenav-subcategory-container" style="display: none;" id="sideBarCat${key}">`
-            Object.entries(value.subcategories).forEach((entry) => {
-                const [key,value] = entry
-                htmlContents += `<a class="sidenav-subcategory-element" href="category.html">${value}</a>`
-            })
-            htmlContents += `</div>`;
-            
-        })
-    })
-    htmlContents += `<div> <br><br><br><br><br><br><br><br> </div>`;
-    document.querySelector('#sidenav').innerHTML = htmlContents;
-}
-
 // Función para obtener los parámetros enviados por la URL
 const getQueryParams = ( params, url ) => {
     let href = url;
@@ -401,7 +329,7 @@ const loadProductListNormalCategory = async function () {
             htmlContents +=`
             <div class="category-panel-products-panel-innerproducts-panel-productentry">
                 <div class="category-panel-products-panel-innerproducts-panel-productentry-image">
-                    <img src="${value.picture}" class="w-auto" width="240" height="240" alt="Product Image">
+                    <img loading="lazy" src="${value.picture}" class="w-auto" width="240" height="240" alt="Product Image">
                 </div>
 
                 <div class="category-panel-products-panel-innerproducts-panel-productentry-panel">
@@ -507,7 +435,7 @@ const loadProductListGridCategory = async function () {
             <a href="product.html?id=${value.id}" class="specific-product-entry">
                 <div>
                     <div class="image-container">
-                        <img src="${value.picture[0]}" class="product-image" width="240" height="240" alt="Product Image"> 
+                        <img loading="lazy" src="${value.picture[0]}" class="product-image" width="240" height="240" alt="Product Image"> 
                     </div>                        
                     <div>
                         <h2 class="product-title">${value.name}</h2>
@@ -541,7 +469,7 @@ const loadBestSellingIndex = async function() {
                 htmlContents +=`
                     <a href="product.html?id=${value.id}" class="bestselling-product">
                         <div class="bestselling-product-image-container">
-                            <img src="${value.picture[0]}" class="bestselling-product-image" width="240" height="240" alt="Product Image"> 
+                            <img loading="lazy" src="${value.picture[0]}" class="bestselling-product-image" width="240" height="240" alt="Product Image"> 
                         </div>                        
                         <div>
                             <h2 class="bestselling-product-title">${value.name}</h2>
@@ -571,7 +499,7 @@ const loadSearchListProduct = async function () {
             htmlContents +=`
             <div class="search-panel-result-panel-products-panel-productentry">
                 <div class="search-panel-result-panel-products-panel-productentry-imgpanel">
-                    <img src="${value.picture}" class="search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
+                    <img loading="lazy" src="${value.picture}" class="search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
                 </div>
                 <div class="search-panel-result-panel-products-panel-productentry-panel">
                     <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.name}</h4>
@@ -635,7 +563,7 @@ const loadCartProducts = async function () {
             htmlContents +=`
                 <div class="mx-16 search-panel-result-panel-products-panel-productentry" id="cartItem${value.name}">
                     <div class="search-panel-result-panel-products-panel-productentry-imgpanel">
-                        <img src="${value.picture}" class="self-center search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
+                        <img loading="lazy" src="${value.picture}" class="self-center search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
                     </div>
                     <div class="search-panel-result-panel-products-panel-productentry-panel">
                         <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.name}</h4>
@@ -722,7 +650,7 @@ const loadCheckoutProducts = async function () {
             htmlContents += `
             <div class="flex flex-row mt-5 border-b-2 border-gray-300 pb-5" id="checkout_product_${value.id}">
                 <div class="md:w-1/3 w-1/4 flex flex-col justify-between">
-                    <img src="${value.picture[0]}" alt="Product image">
+                    <img loading="lazy" src="${value.picture[0]}" alt="Product image">
                     <div>
                         <div class="flex flex-row cursor-pointer" onclick="toggleWishlist(${value.id})" id="wishlist_product_${value.id}">
                             <svg class="no_wishlist" xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
@@ -824,7 +752,7 @@ const loadSearchGridProduct = async function () {
             htmlContents +=`
             <a href="product.html?id=${value.id}" class="specific-product-entry">
                 <div class="image-container">
-                    <img src="${value.picture}" class="product-image" width="240" height="240" alt="Product Image">
+                    <img loading="lazy" src="${value.picture}" class="product-image" width="240" height="240" alt="Product Image">
                 </div>
                 <div>
                     <h2 class="product-title">${value.name}</h2>
@@ -865,7 +793,7 @@ const loadProduct = async function() {
             `
             imagesHTML = ""
             value.picture.forEach((entry) => {
-                imagesHTML += `<img src=${entry}></img>`
+                imagesHTML += `<img loading="lazy" src=${entry}></img>`
             })
 
             attributesHTML = ""
@@ -969,7 +897,7 @@ const loadProduct = async function() {
                 relatedProductsHTML += `
                 <a href="product.html?id=${childValue.id}" class="relatedProducts-card">
                     <div class="relatedProducts-image-container">
-                        <img src="${childValue.picture[0]}" class="relatedProducts-image" width="240" height="240" alt="Product Image"> 
+                        <img loading="lazy" src="${childValue.picture[0]}" class="relatedProducts-image" width="240" height="240" alt="Product Image"> 
                     </div>
                     <div>
                         <h2 class="relatedProducts-title">${childValue.name}</h2>
