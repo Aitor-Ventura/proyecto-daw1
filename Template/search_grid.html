@@ -18,16 +18,16 @@
             </div>
             <div class="title-grid">
                 <div>
-                    <h2 class="title-category">Search results</h2>
+                    <h2 class="title-category mb-4">Search results</h2>
                 </div>
                 <div class="view-selector">
                     <div class="grid-view" >
-                        <svg fill="indigo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/></svg>
+                        <svg fill="indigo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="m-auto"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/></svg>
                         <p class="grid-view-text">Grid view</p>
                     </div>
                     <div class="list-view" onclick="window.location.href='search.html'">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white" class="hidden invisible dark:visible dark:block"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="dark:hidden dark:invisible"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white" class="m-auto hidden invisible dark:visible dark:block"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="m-auto dark:hidden dark:invisible"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/></svg>
                         <p class="invisible sm:mr-0 lg:visible mb-2 lg:mb-0 ml-1 lg:mr-4">List view</p>
                     </div>
                     <div class="product-counter">
@@ -76,152 +76,7 @@
                         </div>
                     </div>
                     <!-- Product entries -->
-                    <div class="product-entries-panel">
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">1.48 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-1"></p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>                        
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">0.28 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-2">48.56 EUR</p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>                        
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">1.12 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-3">48.56 EUR</p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">1.48 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-1"></p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>                        
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">0.28 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-2">48.56 EUR</p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">1.48 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-1"></p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>                        
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">0.28 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-2">48.56 EUR</p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">1.48 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-1"></p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                        <a href="product.html" class="specific-product-entry">
-                            <div class="image-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Antu_insert-image.svg/512px-Antu_insert-image.svg.png" class="product-image" width="240" height="240" alt="Product Image"> 
-                            </div>                        
-                            <div>
-                                <h2 class="product-title">Product title</h2>
-                                <h4 class="product-description">Space for a small product description</h4>
-                            </div>
-                            <div class="buy-container">
-                                <div class="flex flex-col">
-                                    <p class="cost">0.28 EUR</p>
-                                    <p class="previous-cost" id="discount-prod-2">48.56 EUR</p>
-                                </div>
-                                <button class="buy-now-button">Buy now</button>
-                            </div>
-                        </a>
-                    </div>
+                    <div class="product-entries-panel"></div>
                 </div>
                 <!-- End of product entries -->
             </div>

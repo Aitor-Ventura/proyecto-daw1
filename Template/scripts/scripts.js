@@ -132,7 +132,6 @@ function toggleWishlist(id) {
 const html = document.querySelector("html");
 
 const toggleDarkMode = function() {
-    const checkbox = document.getElementById('checkbox');
     if (sessionStorage.getItem("darkMode") == "true"){
         html.classList.remove("dark");
         sessionStorage.setItem("darkMode","false");
@@ -166,7 +165,7 @@ const loadNavBarContents = async function() {
             onmouseleave='document.getElementById("navCat${key}").style.display="none"'
             >
                 <div class="category-button">
-                    <a class="pr-1" href="category.html">${value.name} </a>
+                    <a href="category.html?name=${value.name}">${value.name}</a>
                     <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-chevron-down" width="12" height="12" viewBox="0 0 24 24" stroke-width="3" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="6 9 12 15 18 9" />
@@ -250,7 +249,7 @@ const loadSideBarContents = async function() {
             <div class="sidenav-subcategory-container" style="display: none;" id="sideBarCat${key}">`
             Object.entries(value.subcategories).forEach((entry) => {
                 const [key,value] = entry
-                htmlContents += `<a class="sidenav-subcategory-element" href="category.html">${value}</a>`
+                htmlContents += `<a class="sidenav-subcategory-element" href="category.html?name=${value}">${value}</a>`
             })
             htmlContents += `</div>`;
             
@@ -286,12 +285,119 @@ const toggleSideBarCategory = function(key) {
     
 };
 
+// Carga de la barra de navegación del cart
+const loadCartContents = async function() {
+    var htmlContents = `
+            <a href="javascript:void(0)" class="close-button" onclick="closeNav()">&times;</a>
+            <div class="sidenav-element-title">
+                <a href=login.html> Sign in </a>
+            </div>
+            <div class="sidenav-element-title">
+                Contact Us
+            </div>
+            <!-- Mail -->
+            <div class="sidenav-element">
+                <div>info@g2babies.com</div>
+                <!-- Mail Normal -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <polyline points="3 7 12 13 21 7" />
+                </svg>
+                <!-- Mail Dark -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-mail" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <polyline points="3 7 12 13 21 7" />
+                </svg>
+            </div>
+
+            <!-- Phone -->
+            <div class="sidenav-element">
+                <div> +34 666 666 666 </div>
+                <!-- Phone Normal -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+                </svg>
+
+                <!-- Phone Dark -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-phone-call" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+                </svg>
+            </div>
+            <div class="sidenav-element-title">
+                Categories
+            </div>`;
+    await $.getJSON("./json/categories.json", function(json){
+        Object.entries(json.categories).forEach((entry) => {
+            const [key, value] = entry
+            htmlContents += `
+            <div class="sidenav-element" 
+            onclick='toggleSideBarCategory("${key}")' 
+            >
+                <div> ${value.name} </div>` +
+                loadSideBarIcons() +
+            `</div>
+            <div class="sidenav-subcategory-container" style="display: none;" id="sideBarCat${key}">`
+            Object.entries(value.subcategories).forEach((entry) => {
+                const [key,value] = entry
+                htmlContents += `<a class="sidenav-subcategory-element" href="category.html">${value}</a>`
+            })
+            htmlContents += `</div>`;
+            
+        })
+    })
+    htmlContents += `<div> <br><br><br><br><br><br><br><br> </div>`;
+    document.querySelector('#sidenav').innerHTML = htmlContents;
+}
+
+// Función para obtener los parámetros enviados por la URL
+const getQueryParams = ( params, url ) => {
+    let href = url;
+    // Get query strings
+    let regexp = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
+    let qString = regexp.exec(href);
+    return qString ? qString[1] : null;
+};
+
 // Carga de los productos en list view ("category.html")
 const loadProductListNormalCategory = async function () {
+    const category_name = getQueryParams('name', this.location.href).replace(/%20/g," ")
+    
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
         Object.entries(json.products).forEach((entry) => {
             const [key, value] = entry
+            if (value.category != category_name && value.subcategory != category_name) {
+                return
+            }
+
+            breadCrumbsHTML =`
+            <p><a href=".">Homepage</a> / <a href="#" class="category-panel-breadcrumbs-navigation-text">${category_name}</a></p>`
+
+            categoryHeading = `${category_name}`
+
+            displayHTML =`
+            <div class="category-panel-head-grid-items-view" onclick="window.location.href='category_grid.html?name=${category_name}'">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white" class="hidden invisible dark:visible dark:block m-auto"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="dark:hidden dark:invisible m-auto"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/></svg>
+                <p class="category-panel-head-grid-items-view-gridviewtext">Grid view</p>
+            </div>
+            <div class="category-panel-head-grid-items-view text-blue-600">
+                <svg fill="indigo" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/></svg>
+                <p class="category-panel-head-grid-items-view-listviewtext">List view</p>
+            </div>
+            <div class="category-panel-head-grid-items-products">
+                <p class="category-panel-head-grid-items-products-number">117</p>
+                <p class="category-panel-head-grid-items-products-text">Products</p>
+            </div>`
+
             htmlContents +=`
             <div class="category-panel-products-panel-innerproducts-panel-productentry">
                 <div class="category-panel-products-panel-innerproducts-panel-productentry-image">
@@ -331,7 +437,7 @@ const loadProductListNormalCategory = async function () {
                     <div class="category-panel-products-panel-innerproducts-panel-productentry-panel-rightside-panel-buttons-panel">
                         <button class="category-panel-products-panel-innerproducts-panel-productentry-panel-rightside-panel-buttons-panel-productdetail">
                             <div class="category-panel-products-panel-innerproducts-panel-productentry-panel-rightside-panel-buttons-panel-productdetail-text">
-                                <a href="product.html" >Product detail</a>
+                                <a href="product.html?id=${value.id}">Product detail</a>
                                 <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg>
                             </div>
                         </button>
@@ -348,17 +454,57 @@ const loadProductListNormalCategory = async function () {
             `
         })
     })
+
+    document.querySelector('.category-panel-breadcrumbs-navigation').innerHTML = breadCrumbsHTML
+    document.querySelector('.category-panel-head-grid-title-panel-title').innerHTML = categoryHeading
+    document.querySelector('.category-panel-head-grid-items').innerHTML = displayHTML
     document.querySelector('.category-panel-products-panel-innerproducts-panel').innerHTML = htmlContents
 }
 
 // Carga de los productos en grid view ("category_grid.html")
 const loadProductListGridCategory = async function () {
+    const category_name = getQueryParams('name', this.location.href).replace(/%20/g," ")
+
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
         Object.entries(json.products).forEach((entry) => {
             const [key, value] = entry
+            if (value.category != category_name && value.subcategory != category_name) {
+                return
+            }            
+
+            breadCrumbsHTML =`<p><a href=".">Homepage</a> / <a href="#" class="dark:text-white">${category_name}</a></p>`
+
+            categoryHeading = `${category_name}`
+
+            displayHTML=`
+            <div class="grid-view">
+                <svg fill="indigo" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                    <path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/>
+                </svg>
+                <p class="grid-view-text">Grid view</p>
+            </div>
+
+            <div class="list-view" onclick="window.location.href='category.html?name=${category_name}'">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white" class="dark-grid-icon">
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                    <path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="light-grid-icon">
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                    <path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/>
+                </svg>
+                <p class="invisible sm:mr-0 lg:visible mb-2 lg:mb-0 ml-1 lg:mr-4">List view</p>
+            </div>
+
+            <div class="product-counter">
+                <p class="products-numbers">117</p>
+                <p class="products-numbers-text">Products</p>
+            </div>`
+
             htmlContents +=`
-            <a href="product.html" class="specific-product-entry">
+            <a href="product.html?id=${value.id}" class="specific-product-entry">
                 <div>
                     <div class="image-container">
                         <img src="${value.picture[0]}" class="product-image" width="240" height="240" alt="Product Image"> 
@@ -379,6 +525,9 @@ const loadProductListGridCategory = async function () {
             `
         })
     })
+    document.querySelector('#breadcrumbs').innerHTML = breadCrumbsHTML
+    document.querySelector('.title-category').innerHTML = categoryHeading
+    document.querySelector('.view-selector').innerHTML = displayHTML
     document.querySelector('.product-entries-panel').innerHTML = htmlContents
 }
 
@@ -390,7 +539,7 @@ const loadBestSellingIndex = async function() {
             const [key, value] = entry
             if (value.bestSeller) {
                 htmlContents +=`
-                    <a href="product.html" class="bestselling-product">
+                    <a href="product.html?id=${value.id}" class="bestselling-product">
                         <div class="bestselling-product-image-container">
                             <img src="${value.picture[0]}" class="bestselling-product-image" width="240" height="240" alt="Product Image"> 
                         </div>                        
@@ -414,59 +563,61 @@ const loadBestSellingIndex = async function() {
 }
 
 // Carga de los productos en list view ("search.html")
-const loadSearchProductListNormalCategory = async function () {
+const loadSearchListProduct = async function () {
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
         Object.entries(json.products).forEach((entry) => {
             const [key, value] = entry
             htmlContents +=`
-                <div class="search-panel-result-panel-products-panel-productentry">
-                    <div class="search-panel-result-panel-products-panel-productentry-imgpanel">
-                        <img src="${value.picture}" class="search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
-                    </div>
-                    <div class="search-panel-result-panel-products-panel-productentry-panel">
-                        <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.name}</h4>
-                        <p class="search-panel-result-panel-products-panel-productentry-panel-description">${value.description}</p>
-                        <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext w-4/5 mt-5">
-                            <div class="search-panel-result-panel-products-panel-productentry-panel-grid-column">
-                                <p>Quality: </p>
-                                <p>Company: </p>
-                                <p>Delivery: </p>
-                                <p>Stock: </p>
-                            </div>
-                            <div class="search-panel-result-panel-products-panel-productentry-panel-grid-column">
-                                <p class="text-indigo-600">${value.quality}</p>
-                                <p class="">${value.company}</p>
-                                <p class="">${value.delivery}</p>
-                                <p class="text-indigo-600">${value.stock} items</p>
-                            </div>
+            <div class="search-panel-result-panel-products-panel-productentry">
+                <div class="search-panel-result-panel-products-panel-productentry-imgpanel">
+                    <img src="${value.picture}" class="search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
+                </div>
+                <div class="search-panel-result-panel-products-panel-productentry-panel">
+                    <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.name}</h4>
+                    <p class="search-panel-result-panel-products-panel-productentry-panel-description">${value.description}</p>
+                    <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext w-4/5 mt-5">
+                        <div class="search-panel-result-panel-products-panel-productentry-panel-grid-column">
+                            <p>Quality: </p>
+                            <p>Company: </p>
+                            <p>Delivery: </p>
+                            <p>Stock: </p>
+                        </div>
+                        <div class="search-panel-result-panel-products-panel-productentry-panel-grid-column">
+                            <p class="text-indigo-600">${value.quality}</p>
+                            <p class="">${value.company}</p>
+                            <p class="">${value.delivery}</p>
+                            <p class="text-indigo-600">${value.stock} items</p>
                         </div>
                     </div>
-                    <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel">
-                        <div>
-                            <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.price} EUR</h4>
-                            <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-oldprice" id="discount-prodpage-prod-2">${value.oldPrice} EUR</p>
-                        </div>
-                        <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel">
-                            <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-shippingtext">Free Shipping</p>
-                            <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-deliverytext">Delivery in ${value.delivery_time} day</p>
-                        </div>
-                        <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel">
-                            <button class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-apply">
+                </div>
+                <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel">
+                    <div>
+                        <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.price} EUR</h4>
+                        <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-oldprice" id="discount-prodpage-prod-2">${value.oldPrice} EUR</p>
+                    </div>
+                    <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel">
+                        <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-shippingtext">Free Shipping</p>
+                        <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-deliverytext">Delivery in ${value.delivery_time} day</p>
+                    </div>
+                    <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel">
+                        <a href="product.html?id=${value.id}" class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-apply">
+                            <button>
                                 <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext">
                                     <p>Product Detail</p>
                                     <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg>
                                 </div>
                             </button>
-                            <button>
-                                <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-reset">
-                                    <svg class="w-1/6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
-                                    <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-resettext">Add to wish list</p>
-                                </div>
-                            </button>
-                        </div>
+                        </a>
+                        <button>
+                            <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-reset">
+                                <svg class="w-1/6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
+                                <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-resettext">Add to wishlist</p>
+                            </div>
+                        </button>
                     </div>
                 </div>
+            </div>
             `
         })
     })
@@ -552,14 +703,194 @@ const loadCartProducts = async function () {
         </div>`;
     document.querySelector('.cart').innerHTML = htmlContents
 }
+// Carga de los productos en grid view ("search_grid.html")
+const loadSearchGridProduct = async function () {
+    var htmlContents = ""
+    await $.getJSON("./json/products.json", function(json){
+        Object.entries(json.products).forEach((entry) => {
+            const [key, value] = entry
+            htmlContents +=`
+            <a href="product.html?id=${value.id}" class="specific-product-entry">
+                <div class="image-container">
+                    <img src="${value.picture}" class="product-image" width="240" height="240" alt="Product Image">
+                </div>
+                <div>
+                    <h2 class="product-title">${value.name}</h2>
+                    <h4 class="product-description">${value.description}</h4>
+                </div>
+                <div class="buy-container">
+                    <div class="flex flex-col">
+                        <p class="cost">${value.price} EUR</p>
+                        <p class="previous-cost" id="discount-prod-1">${value.oldPrice} EUR</p>
+                    </div>
+                    <button class="buy-now-button">Buy now</button>
+                </div>
+            </a>
+            `
+        })
+    })
+    document.querySelector('.product-entries-panel').innerHTML = htmlContents
+}
+// Función que generará nº aleatorios en base a dos parámetros
+function randomNumber(min, max) {
+    return min + Math.floor(Math.random() * max)
+}
 
+// Carga de los productos ("product.html")
+const loadProduct = async function() {
+    const prod_id = getQueryParams('id', this.location.href)
+    var htmlContents = ""
+    await $.getJSON("./json/products.json", function(json){
+        Object.entries(json.products).forEach((entry) => {
+            const [key, value] = entry
+
+            if (value.id != prod_id) {
+                return
+            }
+            breadCrumbsHTML = 
+            `
+                <a href="index.html" class="breadcrumbs-text">Homepage</a>
+                <p class="breadcrumbs-text"> / </p>
+                <a href="category.html" class="breadcrumbs-text">${value.category}</a>
+                <p class="breadcrumbs-text"> / </p>
+                <a href="product.html" class="text-sm text-center dark:text-white">${value.name}</a>
+            `
+            imagesHTML = ""
+            value.picture.forEach((entry) => {
+                imagesHTML += `<img src=${entry}></img>`
+            })
+
+            attributesHTML = ""
+            count = 0
+            value.attributes.forEach((entry) => {
+                if (count == 3) {
+                    attributesHTML += `</tr><tr class="dark:text-white">`
+                    count = 0
+                }
+                
+                attributesHTML += `<td class="specification-table-data">${entry}</td>`
+                count++
+            })
+            
+            attributesHTML += "</tr>"
+            htmlContents += 
+            `
+            <div class="product-images-panel">
+                ${imagesHTML}
+            </div>
+
+            <!-- Product details -->
+            <div class="productDetails-panel">
+                <h1 class="productDetails-heading">${value.name}</h1>
+                <p class="productDetails-subheading">${value.description}</p>
+
+                <div class="w-auto">
+                    <div class="productDetails-info-container">
+                        <p class="productDetails-info">Category:</p>
+                        <p class="text-black dark:text-white">${value.category}</p>
+                        <p class="productDetails-info">Subategory:</p>
+                        <p class="text-black dark:text-white">${value.subcategory}</p>
+                        <p class="productDetails-info">Quality:</p>
+                        <p class="text-black dark:text-white">${value.quality}</p>
+                        <p class="productDetails-info">Stock:</p>
+                        <p class="text-blue-500">${value.stock > 0 ? "In stock" : "No stock available"}</p>
+                        <p class="productDetails-info">Delivery:</p>
+                        <p class="text-black dark:text-white">in ${value.delivery_time} days</p>
+                        <p class="productDetails-info">Company:</p>
+                        <p class="text-black dark:text-white">${value.company}</p>
+                        <p class="productDetails-info">Delivery area:</p>
+                        <p class="text-black dark:text-white">${value.delivery}</p>
+                    </div>
+                    
+                    <div class="buy-panel">
+                        <div class="price-container">
+                            <p class="product-cost">${value.price} EUR</p>
+                            <p class="product-previus-cost">${value.oldPrice} EUR</p>
+                        </div>
+
+                        <div class="mx-0 sm:ml-auto dark:text-black">
+                            <select class="product-uds-selector">
+                                <option>x1 Uds</option>
+                                <option>x2 Uds</option>
+                                <option>x3 Uds</option>
+                                <option>x4 Uds</option>
+                                <option>x5 Uds</option>
+                                <option>x10 Uds</option>
+                            </select>
+                        </div>
+                        <button class="cart-button">+ Add to cart</button>
+                    </div>
+                </div>
+                    
+                <div class="mt-8">
+                    <svg class="wishlist" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0H24V24H0z"/>
+                        <path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z" fill="rgba(231,76,60,1)"/>
+                    </svg>
+                    <p class="wishlist font-bold">Add to my wishlist</p>
+                </div>
+
+                <!-- Description & Specifications Container -->
+                <div class="mt-12">
+                    <!-- Description -->
+                    <h2 class="description-heading">${value.description}</h2>
+                    <div class="description-line"></div>
+
+                    <!-- Specification -->
+                    <p class="specification-heading">Product's Specifications</p>
+                    <div class="specification-table-container">
+                        <table>
+                            <tr class="border-b-2">
+                                <th class="specification-table-data">Dimensions</th>
+                                <th class="specification-table-data">Material</th>
+                                <th class="specification-table-data">Other specifications</th>
+                            </tr>
+                            ${attributesHTML}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            `
+            
+            relatedProductsHTML = ""
+            count = 0
+            // Get max 4 products in same category
+            Object.entries(json.products).forEach((entry) => {
+                const [childKey, childValue] = entry
+                if (childValue.category !== value.category || count === 4) return
+                relatedProductsHTML += `
+                <a href="product.html?id=${childValue.id}" class="relatedProducts-card">
+                    <div class="relatedProducts-image-container">
+                        <img src="${childValue.picture[0]}" class="relatedProducts-image" width="240" height="240" alt="Product Image"> 
+                    </div>
+                    <div>
+                        <h2 class="relatedProducts-title">${childValue.name}</h2>
+                        <h4 class="relatedProducts-description">${childValue.description}</h4>
+                    </div>
+                    <div class="relatedProducts-cost-container">
+                        <div class="relatedProducts-cost-column">
+                            <p class="relatedProducts-cost">${childValue.price} EUR</p>
+                            <p class="relatedProducts-previous-cost" id="discount-prod-1">${childValue.oldPrice} EUR</p>
+                        </div>
+                        <button class="relatedProducts-buyNow-button">Buy now</button>
+                    </div>
+                </a>`
+                count++
+            })
+        })
+        document.querySelector('.relatedProducts-grid').innerHTML = relatedProductsHTML
+        document.querySelector('.product-panel').innerHTML = htmlContents
+        document.querySelector('.breadcrumbs').innerHTML = breadCrumbsHTML
+    })
+
+}
 if (this.location.href.includes('category.html')) loadProductListNormalCategory()
 if (this.location.href.includes('category_grid.html')) loadProductListGridCategory()
-if (this.location.href.includes('search.html')) loadSearchProductListNormalCategory()
-if (this.location.href.includes('search_grid.html')) loadProductListGridCategory()
-if (this.location.href.includes('index.html')) loadBestSellingIndex()
-if (this.location.href.includes('cart.html')) loadCartProducts()
-
+if (this.location.href.includes('search.html')) loadSearchListProduct()
+if (this.location.href.includes('search_grid.html')) loadSearchGridProduct()
+if (this.location.href.includes('index.html') || this.location.href.search('.html') == -1) loadBestSellingIndex()
+if (this.location.href.includes('product.html')) loadProduct()
+if (this.location.href.includes('cart.html')) loadCartContents()
 /* Funciones de header */
 function openNav() {
   document.getElementById("sidenav").style.display = "flex";
@@ -580,7 +911,7 @@ function closeNav() {
 
 // Se reajusta el tamaño de la sidebar.
 // Cuando pones la ventana pequeña -> abres sidbar -> agrandas pantallas -> queda horrible
-window.onresize = function (event) {
+window.onresize = function () {
   if (document.getElementById("sidenav").style.display == "none") {
     return;
   }
@@ -618,4 +949,3 @@ $(".searchInput").on("keyup", function (e) {
     window.location.replace("search.html");
   }
 });
-

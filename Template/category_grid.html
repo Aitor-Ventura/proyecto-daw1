@@ -12,42 +12,15 @@
 
         <div class="main-container">
             <!-- Breadcrumbs navigation -->
-            <div class="text-sm text-gray-400">
-                <p><a href=".">Homepage</a> / <a href="#" class="dark:text-white">Videogames</a></p>
-            </div>
+            <div class="text-sm text-gray-400" id="breadcrumbs"></div>
 
             <!-- View selector and category name -->
             <div class="title-grid">
                 <div class="pb-4">
-                    <h2 class="title-category">Videogames</h2>
+                    <h2 class="title-category"></h2>
                 </div>
 
-                <div class="view-selector">
-                    <div class="grid-view">
-                        <svg fill="indigo" class="m-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="none" d="M0 0h24v24H0z"/>
-                            <path d="M21 3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"/>
-                        </svg>
-                        <p class="grid-view-text">Grid view</p>
-                    </div>
-
-                    <div class="list-view" onclick="window.location.href='category.html'">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white" class="dark-grid-icon">
-                            <path fill="none" d="M0 0h24v24H0z"/>
-                            <path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="light-grid-icon">
-                            <path fill="none" d="M0 0h24v24H0z"/>
-                            <path d="M8 4h13v2H8V4zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"/>
-                        </svg>
-                        <p class="invisible sm:mr-0 lg:visible mb-2 lg:mb-0 ml-1 lg:mr-4">List view</p>
-                    </div>
-
-                    <div class="product-counter">
-                        <p class="products-numbers">117</p>
-                        <p class="products-numbers-text">Products</p>
-                    </div>
-                </div>
+                <div class="view-selector"></div>
             </div>
 
             <div class="products_panel">
@@ -57,22 +30,22 @@
                         <h3 class="product-title text-center lg:text-left">Subcategories</h3>
                         <div class="subcategories-list">
                             <div class="specific-subcategory">
-                                <p class="text-sm">Subcategory name</p>
+                                <a href="category_grid.html?name=DC%20Supervillains" class="text-sm">DC Supervillains</a>
                                 <p class="products-subcategory-number">320</p>
                             </div>
 
                             <div class="specific-subcategory">
-                                <p class="text-sm">Subcategory name</p>
+                                <a href="category_grid.html?name=One%20Piece" class="text-sm">One Piece</a>
                                 <p class="products-subcategory-number">112</p>
                             </div>
 
                             <div class="specific-subcategory">
-                                <p class="text-sm">Subcategory name</p>
+                                <a href="category_grid.html?name=Naruto" class="text-sm">Naruto</a>
                                 <p class="products-subcategory-number">32</p>
                             </div>
 
                             <div class="specific-subcategory">
-                                <p class="text-sm">Subcategory name</p>
+                                <a href="category_grid.html?name=MARVEL%20Superheroes" class="text-sm">MARVEL Superheroes</a>
                                 <p class="products-subcategory-number">48</p>
                             </div>
                         </div>
