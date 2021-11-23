@@ -45,6 +45,14 @@ module.exports = {
         "3/4": "75%",
         full: "100%",
       },
+      padding: {
+        "3.9": "0.95rem",
+        "3.8": "0.9rem",
+        "3.7": "0.89rem"
+      },
+      width: {
+        "90": "22rem"
+      }
     },
   },
   variants: [],
