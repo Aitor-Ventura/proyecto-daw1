@@ -546,11 +546,92 @@ const loadSearchProductListNormalCategory = async function () {
     document.querySelector('.search-panel-result-panel-products-panel').innerHTML = htmlContents
 }
 
+// Carga todos los productos en el cart (Esto se ira desde que tengamos ruby xd)
+const loadCartProducts = async function () {
+    var htmlContents = ""
+    await $.getJSON("./json/products.json", function(json){
+        Object.entries(json.products).forEach((entry) => {
+            const [key, value] = entry
+            htmlContents +=`
+                <div class="mx-16 search-panel-result-panel-products-panel-productentry">
+                    <div class="search-panel-result-panel-products-panel-productentry-imgpanel">
+                        <img src="${value.picture}" class="self-center search-panel-result-panel-products-panel-productentry-imgpanel-img" width="240" height="240" alt="Product Image">
+                    </div>
+                    <div class="search-panel-result-panel-products-panel-productentry-panel">
+                        <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.name}</h4>
+                        <p class="search-panel-result-panel-products-panel-productentry-panel-description">${value.description}</p>
+                        <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext w-4/5 mt-5">
+                            <div class="search-panel-result-panel-products-panel-productentry-panel-grid-column">
+                                <p>Quality: </p>
+                                <p>Company: </p>
+                                <p>Delivery: </p>
+                                <p>Stock: </p>
+                            </div>
+                            <div class="search-panel-result-panel-products-panel-productentry-panel-grid-column">
+                                <p class="text-indigo-600">${value.quality}</p>
+                                <p class="">${value.company}</p>
+                                <p class="">${value.delivery}</p>
+                                <p class="text-indigo-600">${value.stock} items</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel">
+                        <div>
+                            <h4 class="search-panel-result-panel-products-panel-productentry-panel-title">${value.price} EUR</h4>
+                            <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-oldprice" id="discount-prodpage-prod-2">${value.oldPrice} EUR</p>
+                        </div>
+                        <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel">
+                            <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-shippingtext">Free Shipping</p>
+                            <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-deliverytext">Delivery in ${value.delivery_time} day</p>
+                        </div>
+                        <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel">
+                            <button class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-apply">
+                                <div class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext">
+                                    <p>Product Detail</p>
+                                    <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg>
+                                </div>
+                            </button>
+                            <button>
+                                <div class="content-center search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-reset">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                    <p class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-resettext"> Remove item </p>
+                                </div>
+                            
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `
+        })
+    })
+    htmlContents += `
+        <div class="flex flex-col-reverse items-center md:items-end md:mx-16">
+            <button
+                class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-apply">
+                <div
+                    class="search-panel-result-panel-products-panel-productentry-panel-rightside-panel-shippingbuttons-panel-applytext">
+                    <p> Proceed to checkout </p>
+                    <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z" />
+                    </svg>
+                </div>
+            </button>
+
+        </div>`;
+    document.querySelector('.cart').innerHTML = htmlContents
+}
+
 if (this.location.href.includes('category.html')) loadProductListNormalCategory()
 if (this.location.href.includes('category_grid.html')) loadProductListGridCategory()
 if (this.location.href.includes('search.html')) loadSearchProductListNormalCategory()
 if (this.location.href.includes('search_grid.html')) loadProductListGridCategory()
 if (this.location.href.includes('index.html')) loadBestSellingIndex()
+if (this.location.href.includes('cart.html')) loadCartProducts()
 
 /* Funciones de header */
 function openNav() {
