@@ -10,9 +10,15 @@
     background: linear-gradient(to top,  rgba(12, 17, 28) 97%, rgba(0, 0, 0, 0) 0);
   }
 
-  .container-cards {
-    @apply flex items-center flex-col max-w-full m-0 dark:dark-container-cards-bg bg-gray-950;
+  .normal-container-cards-bg {
     background: linear-gradient(to top, #dadada 97%, rgba(0, 0, 0, 0) 0);
+  }
+
+  .container-cards {
+    @apply flex items-center flex-col max-w-full m-0 bg-gray-200 lg:normal-container-cards-bg 
+          dark:bg-gray-950 lg:dark:dark-container-cards-bg;
+    min-height: 30em;
+    
   }
 
   #particles-js {
@@ -21,7 +27,7 @@
   }
 
   .article-card-base {
-    @apply rounded flex my-5 last:mt-5 last:mb-10 xl:max-w-6xl h-auto md:h-80;
+    @apply hidden rounded lg:flex my-5 last:mt-5 last:mb-10 xl:max-w-6xl h-auto md:h-80;
     width: 95%;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   }
@@ -67,12 +73,17 @@
   }
 
   .titulo-article {
-    @apply text-8xl font-medium pt-20 pb-4 text-center dark:text-gray-100;
+    @apply text-8xl md:text-9xl font-medium pt-20 pb-4 px-10 text-center dark:text-gray-100;
     font-weight: 500;
   }
 
   .subtitulo-article {
-    @apply text-center text-3xl dark:text-gray-100;
+    @apply hidden sm:block text-center text-3xl dark:text-gray-100;
   }
+
+
+
+
+
 
 }
