@@ -12,6 +12,7 @@
 @import "../index.css";
 @import "../product.css";
 @import "../search.css";
+@import "../cart.css";
 
 /* Variables globales */
 @layer components {

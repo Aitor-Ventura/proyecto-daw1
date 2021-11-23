@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        "8xl": ["6.5rem", { lineHeight: "1" }],
+        "8xl": ["5.5rem", { lineHeight: "1" }],
+        "9xl": ["6.5rem", { lineHeight: "1" }],
       },
       screens: {
         "3xl": "1600px",
@@ -33,6 +34,9 @@ module.exports = {
         "gray-850": "#192338",
         "gray-950": "#0c111c",
         "gray-1000": "#0b101a",
+
+        "purple-1000": "#38156e",
+        "purple-1100":"#2b1054",
       },
       minWidth: {
         0: "0",
@@ -41,6 +45,14 @@ module.exports = {
         "3/4": "75%",
         full: "100%",
       },
+      padding: {
+        "3.9": "0.95rem",
+        "3.8": "0.9rem",
+        "3.7": "0.89rem"
+      },
+      width: {
+        "90": "22rem"
+      }
     },
   },
   variants: [],
