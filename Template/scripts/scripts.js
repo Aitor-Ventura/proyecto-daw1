@@ -630,7 +630,7 @@ const loadCartProducts = async function () {
     await $.getJSON("./json/products.json", function(json){
         count = 0
         Object.entries(json.products).forEach((entry) => {
-            if (count === 3) return
+            if (count === 5) return
             const [key, value] = entry
             htmlContents +=`
                 <div class="mx-16 search-panel-result-panel-products-panel-productentry" id="cartItem${value.name}">
