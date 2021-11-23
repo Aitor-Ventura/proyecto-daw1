@@ -166,8 +166,15 @@ const loadNavBarContents = async function() {
             onmouseleave='document.getElementById("navCat${key}").style.display="none"'
             >
                 <div class="category-button">
-                    <a href="category.html">${value.name}</a>
-                    <svg class="cursor-pointer" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"></path></svg>
+                    <a class="pr-1" href="category.html">${value.name} </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="normal-icon icon icon-tabler icon-tabler-chevron-down" width="12" height="12" viewBox="0 0 24 24" stroke-width="3" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon icon-tabler icon-tabler-chevron-down" width="12" height="12" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
                 </div>
             
             <div class="nav-subcategory" style="display: none;" id="navCat${key}">`
