@@ -2,9 +2,10 @@
 <html lang="en" class="dark">
 <header>
     <div id="sidenav" class="sidenav"></div>
-    <div id="mobile-search-screen">
-        <a href="javascript:void(0)" class="close-button" onclick="closeMobileSearch()">&times;</a>
-        <input type="text" class="mobile-search-input searchInput" placeholder="Search for a product or a category" />
+    <div id="mobile-search-screen" focus="closeMobileSearch()">
+        <a href="javascript:void(0)" class="close-button dark:text-black" onclick="closeMobileSearch()">&times;</a>
+        <input type="text" id="mobile-search-input" class="dark:text-black mobile-search-input searchInput"
+            placeholder="Search for a product or a category" />
     </div>
     <nav class="nav-main">
         <div id="nav-content">
