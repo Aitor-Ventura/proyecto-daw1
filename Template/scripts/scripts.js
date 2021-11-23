@@ -628,7 +628,9 @@ const loadSearchListProduct = async function () {
 const loadCartProducts = async function () {
     var htmlContents = ""
     await $.getJSON("./json/products.json", function(json){
+        count = 0
         Object.entries(json.products).forEach((entry) => {
+            if (count === 3) return
             const [key, value] = entry
             htmlContents +=`
                 <div class="mx-16 search-panel-result-panel-products-panel-productentry" id="cartItem${value.name}">
@@ -703,6 +705,114 @@ const loadCartProducts = async function () {
         </div>`;
     document.querySelector('.cart').innerHTML = htmlContents
 }
+
+const loadCheckoutProducts = async function () {
+    var htmlContents = `
+    <h3 class="font-bold text-2xl">Order summary</h3>
+    <h4 class="text-sm text-gray-400">Price can change depending on shipping method and taxes of your state.</h4>
+    `
+    var totalPrice = 0
+    var count = 0
+    await $.getJSON("./json/products.json", function(json){
+        Object.entries(json.products).forEach((entry) => {
+            if (count === 5) return
+            count++
+            const [key, value] = entry
+            htmlContents += `
+            <div class="flex flex-row mt-5 border-b-2 border-gray-300 pb-5" id="checkout_product_${value.id}">
+                <div class="md:w-1/3 w-1/4 flex flex-col justify-between">
+                    <img src="${value.picture[0]}" alt="Product image">
+                    <div>
+                        <div class="flex flex-row cursor-pointer" onclick="toggleWishlist(${value.id})" id="wishlist_product_${value.id}">
+                            <svg class="no_wishlist" xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/></svg>
+                            <svg class="wishlist" xmlns="http://www.w3.org/2000/svg" fill="red" style="visibility: hidden; display:none;" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z"/></svg>
+                            <span class="text-gray-400 ml-2.5">Wishlist</span>
+                        </div>
+                        <div class="flex flex-row mt-1 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+                            <span class="text-gray-400 ml-2.5" onclick="document.getElementById('checkout_product_${value.id}').remove()">Remove</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-2/4 flex flex-col justify-between ml-5">
+                    <div class="flex flex-col">
+                        <h1 class="font-bold text-xl">${value.name}</h1>
+                        <div class="flex flex-row justify-between">
+                            <span class="text-gray-400">Company:</span>
+                            <span>${value.company}</span>
+                        </div>
+                        <div class="flex flex-row justify-between">
+                            <span class="text-gray-400">Quality:</span>
+                            <span>${value.quality}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-2xl text-blue-600 font-bold">${value.price} EUR</p>
+                        <p class="text-xl line-through text-gray-400">${value.oldPrice} EUR</p>
+                    </div>
+                </div>
+                <div class="w-1/4 md:w-1/3 lg:w-1/5 flex flex-col justify-between ml-5 dark:text-black">
+                    <div></div>
+                    <div><select name="units_product_1" id="select-units-checkout" class="w-full border-gray-500 border-2 rounded-md bg-gray-300 cursor-pointer text-center" form="form-checkout">
+                        <option value="1">x1 Uds</option>
+                        <option value="2">x2 Uds</option>
+                        <option value="3">x3 Uds</option>
+                        <option value="4">x4 Uds</option>
+                        <option value="5">x5 Uds</option>
+                        <option value="6">x6 Uds</option>
+                        <option value="7">x7 Uds</option>
+                        <option value="8">x8 Uds</option>
+                        <option value="9">x9 Uds</option>
+                        <option value="10">x10 Uds</option>
+                    </select></div>
+                </div>
+            </div>
+            `
+            totalPrice += value.price
+        })
+    })
+    htmlContents += `
+    <div class="mt-10">
+        <div class="flex flex-row justify-between">
+            <p class="font-bold">Subtotal</p>
+            <p class="font-bold">${(totalPrice - (totalPrice*0.17)).toFixed(2)} EUR</p>
+        </div>
+        <div class="flex flex-row justify-between">
+            <p class="font-bold">Tax</p>
+            <p class="font-bold">17% ${(totalPrice*0.17).toFixed(2)} EUR</p>
+        </div>
+        <div class="flex flex-row justify-between">
+            <p class="font-bold">Shipping</p>
+            <p class="font-bold">0 EUR</p>
+        </div>
+    </div>
+    <form action="#" method="post" class="mt-5 w-full flex flex-row">
+        <input type="text" placeholder="Apply promo code" class="placeholder-gray-400 pl-5 w-full border-t-2 border-l-2 border-b-2 border-gray-300 bg-gray-200 rounded-l-md dark:text-black">
+        <input type="submit" value="Apply now" class="font-bold border-t-2 border-b-2 border-r-2 border-gray-300 bg-gray-200 rounded-r-md pr-5 cursor-pointer dark:text-black">
+    </form>
+    <div class="flex flex-row justify-between">
+        <div>
+            <p class="font-bold">
+                Total Order
+            </p>
+            <p class="text-blue-600">
+                Guaranteed delivery day: November 12, 2021
+            </p>
+        </div>
+        <div>
+            <p class="font-bold text-blue-600 text-3xl text-right">${totalPrice.toFixed(2)} EUR</p>
+        </div>
+    </div>
+    `
+    document.querySelector('#order-summary').innerHTML = htmlContents
+    document.querySelector('#payment-button').innerHTML = `
+        <button type="submit" form="form-checkout" class="md:w-2/6 w-full mt-10 py-2 bg-blue-600 text-white font-bold rounded-lg cursor-pointer">Complete your order</button>
+    `
+    $('#form-checkout').submit(function (e) {
+        e.preventDefault()
+        window.location.href = 'https://www.paypal.com/paypalme/AlexandruLazar/' + totalPrice
+    }) 
+}
 // Carga de los productos en grid view ("search_grid.html")
 const loadSearchGridProduct = async function () {
     var htmlContents = ""
@@ -730,10 +840,6 @@ const loadSearchGridProduct = async function () {
         })
     })
     document.querySelector('.product-entries-panel').innerHTML = htmlContents
-}
-// Función que generará nº aleatorios en base a dos parámetros
-function randomNumber(min, max) {
-    return min + Math.floor(Math.random() * max)
 }
 
 // Carga de los productos ("product.html")
@@ -891,6 +997,7 @@ if (this.location.href.includes('search_grid.html')) loadSearchGridProduct()
 if (this.location.href.includes('index.html') || this.location.href.search('.html') == -1) loadBestSellingIndex()
 if (this.location.href.includes('product.html')) loadProduct()
 if (this.location.href.includes('cart.html')) loadCartProducts()
+if (this.location.href.includes('checkout.html')) loadCheckoutProducts()
 /* Funciones de header */
 function openNav() {
   document.getElementById("sidenav").style.display = "flex";
