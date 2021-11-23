@@ -610,6 +610,12 @@ video {
 	border-radius: 0.25rem;
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+	--tw-gradient-from: #111827;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(17, 24, 39, 0));
+	--tw-gradient-stops: var(--tw-gradient-from), #2b1054, var(--tw-gradient-to, rgba(43, 16, 84, 0));
+	--tw-gradient-to: #38156e;
+}.dark .mobile-article-card{
+	background-image: linear-gradient(to top right, var(--tw-gradient-stops));
 }@media (min-width: 768px){.mobile-article-card{
 		padding-top: 0px;
 		padding-bottom: 0px;

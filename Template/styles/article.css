@@ -89,13 +89,14 @@
   }
 
   .mobile-article-card {
-    @apply my-5 md:py-0 rounded lg:hidden bg-white flex flex-col-reverse items-center w-96 place-self-center;
+    @apply my-5 md:py-0 rounded lg:hidden bg-white flex flex-col-reverse items-center w-96 place-self-center
+    dark:bg-gradient-to-tr from-gray-900 via-purple-1100 to-purple-1000;
     height: 36em;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   }
 
   .mobile-container-text-card {
-    @apply text-center h-full w-8/12 flex flex-col items-center  py-10;
+    @apply text-center h-full w-8/12 flex flex-col items-center  py-10; 
   }
 
   .mobile-text-card-titulo {
