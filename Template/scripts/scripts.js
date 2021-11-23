@@ -890,7 +890,7 @@ if (this.location.href.includes('search.html')) loadSearchListProduct()
 if (this.location.href.includes('search_grid.html')) loadSearchGridProduct()
 if (this.location.href.includes('index.html') || this.location.href.search('.html') == -1) loadBestSellingIndex()
 if (this.location.href.includes('product.html')) loadProduct()
-if (this.location.href.includes('cart.html')) loadCartContents()
+if (this.location.href.includes('cart.html')) loadCartProducts()
 /* Funciones de header */
 function openNav() {
   document.getElementById("sidenav").style.display = "flex";
