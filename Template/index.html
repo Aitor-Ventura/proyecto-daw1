@@ -33,11 +33,11 @@
             <div class="bestselling-category-panel">
                 <h1 class="bestselling-heading">Best selling products</h1>
                 <div class="breaking-responsive-rows"><!--This class is used for breaking rows without affecting flexbox while in responsive view--></div>
-                <a href="category.html" class="bestselling-link">Marvel Comics</a>
-                <a href="category.html" class="bestselling-link">Anime and Manga</a>
-                <a href="category.html" class="bestselling-link">Videogames</a>
-                <a href="category.html" class="bestselling-link">DC Comics</a>
-                <a href="category.html" class="bestselling-link">Disney</a>
+                <a href="category.html?name=Marvel%20Comics" class="bestselling-link">Marvel Comics</a>
+                <a href="category.html?name=Anime%20and%20Manga" class="bestselling-link">Anime and Manga</a>
+                <a href="category.html?name=Videogames" class="bestselling-link">Videogames</a>
+                <a href="category.html?name=DC%20Comics" class="bestselling-link">DC Comics</a>
+                <a href="category.html?name=Disney" class="bestselling-link">Disney</a>
             </div>
 
             <!-- Three products from best selling products -->
@@ -56,6 +56,7 @@
                     loadSideBarContents();
                 })
                 $(".footer").load("footer.html")
+                
             })
         </script>
         <script src="./scripts/scripts.js" defer></script>

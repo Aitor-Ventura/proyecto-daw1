@@ -22,15 +22,26 @@
                 "sub_4":"Death Note"
             }
         },
+        "videogames": {
+            "id":3,
+            "name":"Videogames",
+            "product_ids":[],   
+            "subcategories": {
+                "sub_1":"Naughty Dog",
+                "sub_2":"Microsoft",
+                "sub_3":"Insomniac",
+                "sub_4":"LoL"
+            }
+        },
         "movies":{
             "id":4,
             "name":"Movies",
             "product_ids":[],   
             "subcategories": {
-                "sub_1":"Thriller",
-                "sub_2":"Clowns",
-                "sub_3":"Special 4 Girls",
-                "sub_4":"Special 4 Boys"
+                "sub_1":"Fast and Furious",
+                "sub_2":"Star Wars",
+                "sub_3":"Alien",
+                "sub_4":"MCU"
             }
         },
         "dc_comics":{
@@ -38,10 +49,10 @@
             "name":"DC Comics",
             "product_ids":[],   
             "subcategories": {
-                "sub_1":"Subcategory 1",
-                "sub_2":"Subcategory 2",
-                "sub_3":"Subcategory 3",
-                "sub_4":"Subcategory 4"
+                "sub_1":"DC Superheroes",
+                "sub_2":"DC Supervillains",
+                "sub_3":"DC Antiheroes",
+                "sub_4":"Snyderverse"
             }
         },
         "marvel_comics":{
@@ -49,10 +60,10 @@
             "name":"Marvel Comics",
             "product_ids":[],   
             "subcategories": {
-                "sub_1":"Subcategory 1",
-                "sub_2":"Subcategory 2",
-                "sub_3":"Subcategory 3",
-                "sub_4":"Subcategory 4"
+                "sub_1":"MARVEL Superheroes",
+                "sub_2":"MARVEL Supervillains",
+                "sub_3":"MARVEL Antiheroes",
+                "sub_4":"MCU"
             }
         },
         "model_kits":{
@@ -60,10 +71,7 @@
             "name":"Model Kits",
             "product_ids":[],   
             "subcategories": {
-                "sub_1":"Subcategory 1",
-                "sub_2":"Subcategory 2",
-                "sub_3":"Subcategory 3",
-                "sub_4":"Subcategory 4"
+                "sub_1":"Fantasy"
             }
         }
     }
