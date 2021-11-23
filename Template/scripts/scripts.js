@@ -686,6 +686,7 @@ const loadCartProducts = async function () {
                     </div>
                 </div>
             `
+            count++
         })
     })
     htmlContents += `
