@@ -179,7 +179,7 @@ const loadNavBarContents = async function() {
             <div class="nav-subcategory" style="display: none;" id="navCat${key}">`
             Object.entries(value.subcategories).forEach((entry) => {
                 const [key,value] = entry
-                htmlContents += `<a href="category.html?${value.subcategory}">${value}</a>`
+                htmlContents += `<a href="category.html?name=${value}">${value}</a>`
             })
             htmlContents += `</div></div>`;
         })
