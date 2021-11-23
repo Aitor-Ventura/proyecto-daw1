@@ -890,6 +890,9 @@ video {
 	padding-bottom: 0.25rem;
 	--tw-text-opacity: 1;
 	color: rgba(79, 70, 229, var(--tw-text-opacity));
+}.dark .nav-subcategory{
+	--tw-text-opacity: 1;
+	color: rgba(167, 139, 250, var(--tw-text-opacity));
 }.category-button{
 	margin-left: 1.25rem;
 	margin-right: 1.25rem;
@@ -1683,6 +1686,10 @@ video {
 	padding-bottom: 1.25rem;
 }.pr-5{
 	padding-right: 1.25rem;
+}.pl-1{
+	padding-left: 0.25rem;
+}.pr-1{
+	padding-right: 0.25rem;
 }.text-center{
 	text-align: center;
 }.text-right{
