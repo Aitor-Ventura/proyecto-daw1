@@ -1,0 +1,1 @@
+Primero, se deben instalar los módulos usando "npm i", y, tras finalizar, se debe ejecutar "npm run css-compile".
