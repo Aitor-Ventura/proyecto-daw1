@@ -1,0 +1,273 @@
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20211215112016)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211215112016"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20211215112122)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211215112122"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategories (20211215112132)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211215112132"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-12-15 11:22:02.065805"], ["updated_at", "2021-12-15 11:22:02.065805"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/category" for ::1 at 2021-12-15 11:22:44 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/category"):
+  
+Started POST "/categories" for ::1 at 2021-12-15 11:22:50 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>{}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (2.2ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-12-15 11:22:50.987386"], ["updated_at", "2021-12-15 11:22:50.987386"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 65ms (Views: 1.0ms | ActiveRecord: 8.2ms | Allocations: 9346)
+
+
+Started POST "/categories/1" for ::1 at 2021-12-15 11:23:01 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/categories/1"):
+  
+Started POST "/categories?id=1" for ::1 at 2021-12-15 11:23:06 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"id"=>"1", "category"=>{}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (3.3ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-12-15 11:23:06.825077"], ["updated_at", "2021-12-15 11:23:06.825077"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 15ms (Views: 0.8ms | ActiveRecord: 8.9ms | Allocations: 1931)
+
+
+Started POST "/categories?id=2" for ::1 at 2021-12-15 11:23:09 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"id"=>"2", "category"=>{}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (3.7ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-12-15 11:23:09.448424"], ["updated_at", "2021-12-15 11:23:09.448424"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 0.8ms | ActiveRecord: 9.5ms | Allocations: 1918)
+
+
+Started POST "/categories?id=4" for ::1 at 2021-12-15 11:23:11 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"id"=>"4", "category"=>{}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (5.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-12-15 11:23:11.936356"], ["updated_at", "2021-12-15 11:23:11.936356"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 19ms (Views: 0.9ms | ActiveRecord: 11.4ms | Allocations: 1906)
+
+
+Started GET "/categories?id=4" for ::1 at 2021-12-15 11:23:20 +0000
+Processing by CategoriesController#index as */*
+  Parameters: {"id"=>"4", "category"=>{}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1436)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20211215112132)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20211215112132"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20211215112132)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20211215112132)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20211215112132)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subcategories" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211215112132"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/categories?id=4" for ::1 at 2021-12-15 11:33:25 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as */*
+  Parameters: {"id"=>"4", "category"=>{}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 985)
+
+
+Started POST "/categories?id=4" for ::1 at 2021-12-15 11:33:29 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"id"=>"4", "category"=>{}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (3.1ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-12-15 11:33:29.934007"], ["updated_at", "2021-12-15 11:33:29.934007"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 1.1ms | ActiveRecord: 8.3ms | Allocations: 3313)
+
+
+Started GET "/categories?id=4" for ::1 at 2021-12-15 11:33:33 +0000
+Processing by CategoriesController#index as */*
+  Parameters: {"id"=>"4", "category"=>{}}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 919)
+
+
+Started GET "/categories?id=4" for ::1 at 2021-12-15 11:33:34 +0000
+Processing by CategoriesController#index as */*
+  Parameters: {"id"=>"4", "category"=>{}}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 813)
+
+
+Started GET "/categories?id=4&subcategorie" for ::1 at 2021-12-15 11:34:23 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as */*
+  Parameters: {"id"=>"4", "subcategorie"=>nil, "category"=>{}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 809)
+
+
+Started DELETE "/categories?id=1" for ::1 at 2021-12-15 11:34:31 +0000
+  
+ActionController::RoutingError (No route matches [DELETE] "/categories"):
+  
+Started DELETE "/categories/1" for ::1 at 2021-12-15 11:35:16 +0000
+Processing by CategoriesController#destroy as */*
+  Parameters: {"id"=>"1", "category"=>{}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:44:in `set_category'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:38:in `destroy'
+  [1m[36mCategory Destroy (2.9ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/categories_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:38:in `destroy'
+Completed 204 No Content in 38ms (ActiveRecord: 7.5ms | Allocations: 3866)
+
+
+Started GET "/categories" for ::1 at 2021-12-15 11:35:22 +0000
+Processing by CategoriesController#index as */*
+  Parameters: {"category"=>{}}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 707)
+
+
+Started POST "/categories" for ::1 at 2021-12-15 11:35:53 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"id"=>1, "name"=>"Disney", "subcategories"=>{"sub_1"=>"Villains", "sub_2"=>"Heroes", "sub_3"=>"Pixar", "sub_4"=>"Princesses"}, "category"=>{"id"=>1}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 181)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/categories_controller.rb:18:in `create'
+Started POST "/categories" for ::1 at 2021-12-15 11:38:04 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"id"=>1, "name"=>"Disney", "subcategories"=>"{sub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses}", "category"=>{"id"=>1}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 144)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/categories_controller.rb:18:in `create'
+Started POST "/categories" for ::1 at 2021-12-15 11:38:21 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"name"=>"Disney", "subcategories"=>"{sub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses}", "category"=>{}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (3.1ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-12-15 11:38:21.755654"], ["updated_at", "2021-12-15 11:38:21.755654"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 14ms (Views: 1.0ms | ActiveRecord: 7.9ms | Allocations: 1932)
+
+
+Started GET "/categories" for ::1 at 2021-12-15 11:38:26 +0000
+Processing by CategoriesController#index as */*
+  Parameters: {"name"=>"Disney", "subcategories"=>"{sub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses}", "category"=>{}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 815)
+
+
+Started GET "/categories" for ::1 at 2021-12-15 11:38:28 +0000
+Processing by CategoriesController#index as */*
+  Parameters: {"name"=>"Disney", "subcategories"=>"{sub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses}", "category"=>{}}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 813)
+
+
+Started GET "/categories" for ::1 at 2021-12-15 11:38:28 +0000
+Processing by CategoriesController#index as */*
+  Parameters: {"name"=>"Disney", "subcategories"=>"{sub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses}", "category"=>{}}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 813)
+
+
+Started PUT "/categories" for ::1 at 2021-12-15 11:38:40 +0000
+  
+ActionController::RoutingError (No route matches [PUT] "/categories"):
+  
+Started POST "/categories/Disney/%7Bsub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses%7D" for ::1 at 2021-12-15 11:38:55 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/categories/Disney/%7Bsub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses%7D"):
+  
+Started POST "/categories" for ::1 at 2021-12-15 11:39:06 +0000
+Processing by CategoriesController#create as */*
+  Parameters: {"name"=>"Disney", "subcategories"=>"{sub_1:Villains,sub_2:Heroes,sub_3:Pixar,sub_4:Princesses}", "category"=>{}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mCategory Create (3.4ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2021-12-15 11:39:06.124245"], ["updated_at", "2021-12-15 11:39:06.124245"]]
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:20:in `create'
+Completed 201 Created in 18ms (Views: 1.0ms | ActiveRecord: 9.8ms | Allocations: 1904)
+
+
