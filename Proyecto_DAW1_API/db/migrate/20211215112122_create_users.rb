@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :email
       t.string :address
-      t.string :state
+      t.string :country
       t.string :phonenumber
       t.string :city
       t.string :postcode

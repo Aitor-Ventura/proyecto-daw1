@@ -1,1 +1,4 @@
-node_modules/
+Template/node_modules/
+Proyecto_DAW1_API/node_modules
+Proyecto_DAW1_API/tmp
+Proyecto_DAW1_API/log/development.log

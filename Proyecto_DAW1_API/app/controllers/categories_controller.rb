@@ -46,6 +46,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.fetch(:category, {})
+      params.fetch(:category, {}).permit(:name, :subcategories)
     end
 end

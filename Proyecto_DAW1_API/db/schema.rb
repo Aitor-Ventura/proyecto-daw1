@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 2021_12_15_112132) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "address"
+    t.string "country"
+    t.string "phonenumber"
+    t.string "city"
+    t.string "postcode"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
